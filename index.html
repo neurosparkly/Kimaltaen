@@ -9,17 +9,29 @@
   <meta name="description" content="Paikka, jossa moninaisuus saa loistaa. Jaan täällä tietoa, kokemuksia ja ajatuksia neurovähemmistönä elämisestä. Lempeästi, toivoa vaalien.">
 </head>
 <body>
-<header class="site-header">
-<a class="brand" href="index.html">
-  <img src="logo.png" alt="Kimaltaen logo">
-</a>
-  <nav aria-label="Päänavigaatio">
-    <a href="index.html" aria-current="page">Etusivu</a>
-    <a href="tietoa.html">Tietoa</a>
-    <a href="kokemuksia.html">Kokemuksia</a>
-    <a href="yhteys.html">Yhteys</a>
-  </nav>
-</header>
+  <!-- Tähän header ja valikko -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo.png" alt="Kimaltaen logo" height="48">
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="/" aria-current="page">Etusivu</a></li>
+        <li><a href="/tietoa">Tietoa</a></li>
+        <li><a href="/kokemuksia">Kokemuksia</a></li>
+        <li><a href="/yhteys">Yhteys</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Tämän jälkeen sinun sivusi sisältö -->
+  <main>
+    ...vanha sisältösi...
+  </main>
+</body>
 
 <main class="container">
   <h1>Kimaltaen</h1>
