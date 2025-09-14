@@ -102,25 +102,29 @@ img {
 
 .hero-kuva {
   width: 100%;
-  max-height: 420px;
-  object-fit: cover;
+  max-height: 350px;   /* rajoittaa korkeutta */
+  object-fit: cover;   /* rajaa ilman vääristymää */
   border-radius: 16px;
   display: block;
   margin: 12px 0 20px;
 }
 
 .kuvitus {
+  max-width: 500px;    /* enintään 500px leveä */
+  width: 100%;
+  height: auto;
   display: block;
-  margin: 16px auto 12px;
+  margin: 16px auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
 .inline-ikoni {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
 }
+
 
 .sparkle {
   width: 40px;
