@@ -186,7 +186,27 @@ button.btn{border:none}
   height: auto;
   opacity: 0.85;
 }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; color: #222; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
 
+.site-header { border-bottom: 1px solid #eee; }
+.site-header .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; padding: 12px 16px; }
+.site-header .brand img { height: 32px; width: auto; display: block; }
+.site-header nav { display: flex; gap: 16px; padding: 0 16px 12px; flex-wrap: wrap; }
+.site-header nav a { text-decoration: none; color: #4a3f7a; padding: 6px 0; }
+.site-header nav a:hover { text-decoration: underline; }
+
+h1 { margin: 16px 0 10px; font-size: 2rem; }
+section { margin: 32px 0; }
+h2 { margin: 0 0 12px; font-size: 1.5rem; display: inline-flex; align-items: center; gap: 6px; }
+
+img { max-width: 100%; height: auto; }
+.hero-kuva { width: 100%; max-height: 420px; object-fit: cover; border-radius: 16px; display: block; margin: 12px 0 20px; }
+.kuvitus { display: block; margin: 16px auto 12px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.inline-ikoni { width: 22px; height: 22px; vertical-align: middle; }
+
+.site-footer { border-top: 1px solid #eee; padding: 16px; text-align: center; color: #555; }
 /* Varmista, ettei mikään yleinen sääntö piilota kuvia */
 img { max-width: 100%; height: auto; }
 
