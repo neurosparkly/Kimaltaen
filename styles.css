@@ -97,3 +97,55 @@ body {
 #primary-nav a[aria-current="page"] {
   background: #f4f4f5;
 }
+/* Hamburger-painike: kolme viivaa */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #111;
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+/* Kun menu auki, viivat ristiin */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Navigaatio oletuksena piilossa mobiilissa */
+#primary-nav {
+  display: none;
+}
+#primary-nav.open {
+  display: block;
+}
+
+/* Desktopissa näytä aina */
+@media (min-width: 601px){
+  .nav-toggle { display: none; }
+  #primary-nav { display: block; }
+  #primary-nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+}
