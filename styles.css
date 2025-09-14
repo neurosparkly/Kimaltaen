@@ -137,3 +137,14 @@ img {
   text-align: center;
   color: #555;
 }
+.kimallus {
+  text-align: center;     /* keskittää kuvan */
+  margin-top: 24px;       /* tilaa tekstin jälkeen */
+}
+
+.kimallus img {
+  max-width: 200px;       /* voit muuttaa kokoa sopivaksi */
+  height: auto;
+  opacity: 0.9;           /* pieni pehmeys */
+}
+
