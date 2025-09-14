@@ -209,4 +209,65 @@ img { max-width: 100%; height: auto; }
 .site-footer { border-top: 1px solid #eee; padding: 16px; text-align: center; color: #555; }
 /* Varmista, ettei mikään yleinen sääntö piilota kuvia */
 img { max-width: 100%; height: auto; }
+/* HEADER + NAV: vasemmalle ja painikenäky */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+/* Logo + nimi vierekkäin, vasemmalla */
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.site-header .brand img { height: 32px; width: auto; }
+
+/* NAV vasempaan reunaan */
+.site-header nav {
+  display: flex;
+  gap: 10px;
+  /* tärkeää: estä siirtyminen oikeaan laitaan */
+  margin-left: 0; 
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Painiketyyli linkeille */
+.site-header nav a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #dcd5f5;
+  background: #f5f2ff;
+  color: #4a3f7a;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  transition: background .2s ease, border-color .2s ease, transform .02s ease-in-out;
+}
+.site-header nav a:hover {
+  background: #ece6ff;
+  border-color: #cfc6f0;
+}
+.site-header nav a:active {
+  transform: translateY(1px);
+}
+
+/* Aktiivinen sivu: täytetty "primary"-painike */
+.site-header nav a[aria-current="page"] {
+  background: #7d5fb2;
+  border-color: #7d5fb2;
+  color: #fff;
+}
+
+/* Varmistetaan, ettei mikään yleissääntö työnnä navia oikealle */
+.site-header, .site-header * { text-align: left; }
 
