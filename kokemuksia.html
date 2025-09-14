@@ -9,10 +9,16 @@
   <meta name="description" content="Kokemuksia ja tarinoita: arjen oivalluksia, selviytymiskeinoja ja vertaistukea.">
   <style>
     /* Lisätyt tyylit logon ja kuvan muokkaukseen */
-    .site-header .brand img {
-      height: 80px;   /* suurempi logo */
-      width: auto;
-    }
+   .site-header .brand img {
+  height: 120px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .site-header .brand img {
+    height: 80px;  /* pienemmillä näytöillä hieman pienempi */
+  }
+}
     .kuvitus {
       max-width: 500px;
       width: 100%;
