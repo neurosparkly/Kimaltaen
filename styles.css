@@ -34,7 +34,7 @@ section {
   margin: 32px 0;
 }
 
-/* === HEADER & NAV === */
+/* HEADER asettelu */
 .site-header {
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ section {
   background: #fff;
 }
 
-/* Logo ja nimi */
+/* Logo + nimi vasemmalle */
 .site-header .brand {
   display: inline-flex;
   align-items: center;
@@ -57,10 +57,11 @@ section {
   width: auto;
 }
 
-/* Navigaatio painikkeina */
+/* NAV painikkeet oikealle */
 .site-header nav {
   display: flex;
   gap: 12px;
+  margin-left: auto;   /* tämä pakottaa navin oikeaan reunaan */
 }
 
 .site-header nav a {
