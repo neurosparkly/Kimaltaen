@@ -157,3 +157,36 @@ button.btn{border:none}
   margin-top: 10px;
   opacity: 0.8;
 }
+/* Kuville kevyet, turvalliset tyylit */
+.hero-kuva {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.kuvitus {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
+.inline-ikoni {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.sparkle {
+  width: 40px;
+  height: auto;
+  opacity: 0.85;
+}
+
+/* Varmista, ettei mikään yleinen sääntö piilota kuvia */
+img { max-width: 100%; height: auto; }
+
