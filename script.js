@@ -32,3 +32,13 @@
     if (nav.classList.contains('open')) wireShadows();
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btn.classList.toggle('active', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
