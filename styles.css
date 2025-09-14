@@ -1,225 +1,50 @@
-/* Kimaltaen — ammattimainen, responsiivinen teema */
-:root{
-  --bg:#faf9ff;
-  --text:#2d1b3d;
-  --muted:#7a6a8a;
-  --brand:#fddde6;
-  --accent:#7f5af0;
-  --border:#e3d7f3;
-  --radius:16px;
+/* === YLEISET PERUSTYYLIT === */
+* {
+  box-sizing: border-box;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:'Quicksand', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
-img{display:block;max-width:100%;height:auto}
-
-.container{max-width:960px;margin:0 auto;padding:0 1rem}
-
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-.header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
-.brand img{height:44px;width:44px;border-radius:50%}
-
-.site-nav{display:flex;gap:.6rem;align-items:center}
-.site-nav a{padding:.5rem .8rem;border-radius:999px;text-decoration:none;color:var(--text);border:1px solid transparent}
-.site-nav a:hover{border-color:var(--border);background:#fff}
-.nav-toggle{display:none;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.35rem .55rem;font-size:1.1rem}
-
-@media (max-width:780px){
-  .nav-toggle{display:inline-block}
-  .site-nav{
-    position:absolute;right:1rem;top:64px;display:none;flex-direction:column;gap:.4rem;
-    background:#fff;border:1px solid var(--border);border-radius:12px;padding:.6rem;min-width:200px;
-    box-shadow:0 8px 24px rgba(0,0,0,.08)
-  }
-  .site-nav.open{display:flex}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  color: #222;
+  background: #fff;
 }
 
-main.container{padding:1rem}
-
-.hero{padding:3rem 1rem;text-align:center;background:linear-gradient(180deg,var(--brand),#fff0);border-radius:var(--radius);margin-top:1rem}
-.hero h1{margin:0 0 .6rem;font-family:'Raleway', system-ui, sans-serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.6rem)}
-.cta-row{display:flex;gap:.6rem;justify-content:center;margin-top:.8rem}
-.btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:.65rem 1rem;text-decoration:none;display:inline-block}
-.btn.ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
-
-h2{font-family:'Raleway', system-ui, sans-serif;font-weight:700;margin:1.5rem 0 .6rem}
-h3{margin:.4rem 0}
-
-.cards{list-style:none;padding:0;margin:1rem 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.cards li{border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:#fff;transition:box-shadow .2s ease, transform .2s ease}
-.cards li:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.more{text-decoration:none;color:var(--accent)}
-
-.checklist{padding-left:1.1rem}
-.checklist li{margin:.6rem 0}
-
-.post{border-bottom:1px solid var(--border);padding:1rem 0}
-.post:last-child{border-bottom:none}
-
-label{display:grid;gap:.3rem;margin:.6rem 0}
-input,textarea,button{font:inherit;padding:.6rem .7rem;border:1px solid var(--border);border-radius:12px}
-button.btn{border:none}
-.muted{color:var(--muted)}
-
-.site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:3rem}
-
-/* Kimalteleva otsikkoefekti */
-.hero h1{
-  background: linear-gradient(90deg, #7f5af0, #fddde6, #7f5af0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size:200% auto;
-  animation: shimmer 3s linear infinite;
-}
-@keyframes shimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
-
-/* Tumma tila */
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0c0a10;--text:#eceaf0;--muted:#b6aeca;--brand:#6b5bb3;--border:#2d2a35}
-  .site-nav a:hover{background:#111}
-  .cards li,.site-footer{background:#0c0a10}
-  .btn.ghost{background:#0c0a10;color:var(--text)}
-}
-#yhteys {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fdfcff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-#yhteys h2 {
-  text-align: center;
-  color: #5a4a91;
+h1 {
+  margin: 16px 0 10px;
+  font-size: 2rem;
 }
 
-#yhteys form {
-  display: flex;
-  flex-direction: column;
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-#yhteys input,
-#yhteys textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+section {
+  margin: 32px 0;
 }
 
-#yhteys button {
-  padding: 10px 20px;
-  background: #7d5fb2;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#yhteys button:hover {
-  background: #5a4a91;
-}
-/* Hero-kuva etusivun yläosaan */
-.hero-kuva {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-
-/* Kuvituskuvat osioiden sisällä */
-.kuvitus {
-  max-width: 100%;
-  display: block;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Pieni ikoni otsikon yhteydessä */
-.inline-ikoni {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  margin-left: 6px;
-  opacity: 0.9;
-}
-
-/* Footerin kimalluskuva */
-.sparkle {
-  width: 40px;
-  margin-top: 10px;
-  opacity: 0.8;
-}
-/* Kuville kevyet, turvalliset tyylit */
-.hero-kuva {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-}
-
-.kuvitus {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 12px;
-}
-
-.inline-ikoni {
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
-  margin-left: 6px;
-}
-
-.sparkle {
-  width: 40px;
-  height: auto;
-  opacity: 0.85;
-}
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; color: #222; }
-.container { max-width: 980px; margin: 0 auto; padding: 24px; }
-
-.site-header { border-bottom: 1px solid #eee; }
-.site-header .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; padding: 12px 16px; }
-.site-header .brand img { height: 32px; width: auto; display: block; }
-.site-header nav { display: flex; gap: 16px; padding: 0 16px 12px; flex-wrap: wrap; }
-.site-header nav a { text-decoration: none; color: #4a3f7a; padding: 6px 0; }
-.site-header nav a:hover { text-decoration: underline; }
-
-h1 { margin: 16px 0 10px; font-size: 2rem; }
-section { margin: 32px 0; }
-h2 { margin: 0 0 12px; font-size: 1.5rem; display: inline-flex; align-items: center; gap: 6px; }
-
-img { max-width: 100%; height: auto; }
-.hero-kuva { width: 100%; max-height: 420px; object-fit: cover; border-radius: 16px; display: block; margin: 12px 0 20px; }
-.kuvitus { display: block; margin: 16px auto 12px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-.inline-ikoni { width: 22px; height: 22px; vertical-align: middle; }
-
-.site-footer { border-top: 1px solid #eee; padding: 16px; text-align: center; color: #555; }
-/* Varmista, ettei mikään yleinen sääntö piilota kuvia */
-img { max-width: 100%; height: auto; }
-/* HEADER + NAV: vasemmalle ja painikenäky */
+/* === HEADER & NAV === */
 .site-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 10px 16px;
+  justify-content: space-between; /* logo vasemmalle, nav oikealle */
+  padding: 10px 20px;
   border-bottom: 1px solid #eee;
   background: #fff;
 }
 
-/* Logo + nimi vierekkäin, vasemmalla */
+/* Logo ja nimi */
 .site-header .brand {
   display: inline-flex;
   align-items: center;
@@ -227,23 +52,21 @@ img { max-width: 100%; height: auto; }
   text-decoration: none;
   color: inherit;
 }
-.site-header .brand img { height: 32px; width: auto; }
-
-/* NAV vasempaan reunaan */
-.site-header nav {
-  display: flex;
-  gap: 10px;
-  /* tärkeää: estä siirtyminen oikeaan laitaan */
-  margin-left: 0; 
-  justify-content: flex-start;
-  flex-wrap: wrap;
+.site-header .brand img {
+  height: 32px;
+  width: auto;
 }
 
-/* Painiketyyli linkeille */
+/* Navigaatio painikkeina */
+.site-header nav {
+  display: flex;
+  gap: 12px;
+}
+
 .site-header nav a {
   display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 8px 16px;
+  border-radius: 999px; /* pill-muoto */
   border: 1px solid #dcd5f5;
   background: #f5f2ff;
   color: #4a3f7a;
@@ -253,21 +76,60 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 1px 0 rgba(0,0,0,0.03);
   transition: background .2s ease, border-color .2s ease, transform .02s ease-in-out;
 }
+
 .site-header nav a:hover {
   background: #ece6ff;
   border-color: #cfc6f0;
 }
+
 .site-header nav a:active {
   transform: translateY(1px);
 }
 
-/* Aktiivinen sivu: täytetty "primary"-painike */
+/* Aktiivisen sivun nappi */
 .site-header nav a[aria-current="page"] {
   background: #7d5fb2;
   border-color: #7d5fb2;
   color: #fff;
 }
 
-/* Varmistetaan, ettei mikään yleissääntö työnnä navia oikealle */
-.site-header, .site-header * { text-align: left; }
+/* === KUVAT === */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
+.hero-kuva {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin: 12px 0 20px;
+}
+
+.kuvitus {
+  display: block;
+  margin: 16px auto 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.inline-ikoni {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.sparkle {
+  width: 40px;
+  opacity: .85;
+}
+
+/* === FOOTER === */
+.site-footer {
+  border-top: 1px solid #eee;
+  padding: 16px;
+  text-align: center;
+  color: #555;
+}
