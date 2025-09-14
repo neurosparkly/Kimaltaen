@@ -43,9 +43,9 @@
       color: inherit;
     }
 .site-header .brand img {
-  height: 60px;  /* voit säätää sopivaksi esim. 50–80px */
-  width: auto;
-    }
+  height: 80px;   /* kokeile esim. 60–100px */
+  width: auto;    /* pitää mittasuhteet oikein */
+}
     .site-header nav {
       display: flex;
       gap: 12px;
