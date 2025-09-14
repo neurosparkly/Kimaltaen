@@ -1,354 +1,58 @@
-<!doctype html>
-<html lang="fi">
-<head>
-  <meta charset="utf-8">
-  <title>Kimaltaen — Moninaisuus saa loistaa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <style>
-    /* === YLEISET === */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.55;
-      color: #222;
-      background: #fff;
-    }
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    h1 {
-      margin: 16px 0 10px;
-      font-size: 2rem;
-    }
-    p { margin: 0 0 16px; }
-
-    /* HEADER */
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      border-bottom: 1px solid #eee;
-      background: #fff;
-    }
-    .site-header .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: inherit;
-    }
-.site-header .brand img {
-  height: 80px;   /* kokeile esim. 60–100px */
-  width: auto;    /* pitää mittasuhteet oikein */
-}
-    .site-header nav {
-      display: flex;
-      gap: 12px;
-      margin-left: auto;
-    }
-    .site-header nav a {
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid #dcd5f5;
-      background: #f5f2ff;
-      color: #4a3f7a;
-      text-decoration: none;
-      font-weight: 500;
-      line-height: 1;
-      box-shadow: 0 1px 0 rgba(0,0,0,.03);
-      transition: background .2s ease, border-color .2s ease, transform .02s ease-in-out;
-    }
-    .site-header nav a:hover {
-      background: #ece6ff;
-      border-color: #cfc6f0;
-    }
-    .site-header nav a:active {
-      transform: translateY(1px);
-    }
-    .site-header nav a[aria-current="page"] {
-      background: #7d5fb2;
-      border-color: #7d5fb2;
-      color: #fff;
-    }
-
-    /* KUVAT */
-    img { max-width: 100%; height: auto; }
-    .kimallus {
-      text-align: center;
-      margin-top: 24px;
-    }
-    .kimallus img {
-      max-width: 400px;
-      height: auto;
-      opacity: 0.9;
-    }
-
-    /* FOOTER */
-    .site-footer {
-      border-top: 1px solid #eee;
-      padding: 16px;
-      text-align: center;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Kimaltaen logo">
-    </a>
-    <nav aria-label="Päänavigaatio">
-      <a href="index.html" aria-current="page">Etusivu</a>
-      <a href="tietoa.html">Tietoa</a>
-      <a href="kokemuksia.html">Kokemuksia</a>
-      <a href="yhteys.html">Yhteys</a>
-    </nav>
-  </header>
-
-  <!-- SISÄLTÖ -->
-  <main class="container">
-    <h1>Kimaltaen</h1>
-    <p>
-      Kimaltaen on lempeä tila, jossa moninaisuus saa loistaa ✨  
-      Sivusto jakaa tietoa ja käytännön vinkkejä neurovähemmistön arkeen — 
-      selkeästi, myötätuntoisesti ja toivoa vaalien.
-    </p>
-    <p>
-      Täältä löydät ajatuksia ja kokemuksia, mutta ennen kaikkea 
-      toivon kipinöitä ja käytännön vinkkejä arjen tueksi.  
-      Jokainen saa olla oma itsensä — pienetkin teot voivat auttaa 
-      tekemään maailmasta vähän valoisamman.
-    </p>
-
-    <!-- Kimalluskuva -->
-    <div class="kimallus">
-      <img src="image1.png" alt="Kimalluskuvio">
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
-  </footer>
-
-  <script>
-    // Vuosi automaattisesti
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-.pieni-kuva {
-  max-width: 200px;  /* enintään 150px leveä */
-  width: 100%;       /* skaalautuu pienemmillä ruuduilla */
-  height: auto;      /* mittasuhteet säilyvät */
-}
-/* Logo kaikilla sivuilla */
-.site-header .brand img {
-  height: 120px;   /* tai haluamasi korkeus */
-  width: auto;     /* säilyttää mittasuhteet */
+:root { 
+  --nav-pad-x: 1rem; 
+  --nav-gap: .5rem; 
+  --shadow-w: 30px; 
 }
 
-@media (max-width: 600px) {
-  .site-header .brand img {
-    height: 80px;  /* mobiilissa vähän pienempi */
-  }
-}
-/* ---------------------------
-   Perus: kuvat ja kontti
---------------------------- */
-html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; }
-
-img, video, canvas, svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container, .wrap, main, section {
-  width: min(100% - 2rem, 1200px);
-  margin-inline: auto;
-}
-
-/* ---------------------------
-   Typografia
---------------------------- */
-:root{
-  --fs-900: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);  /* h1 skaalautuu */
-  --fs-800: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);   /* h2 */
-  --fs-400: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem); /* leipäteksti */
-  --space: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
-}
-
-h1 { font-size: var(--fs-900); line-height: 1.2; }
-h2 { font-size: var(--fs-800); line-height: 1.25; }
-p, li { font-size: var(--fs-400); line-height: 1.6; }
-
-/* ---------------------------
-   Header + logo
---------------------------- */
-.site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: #fff; border-bottom: 1px solid #eee;
-}
-.site-header .brand {
-  display: flex; align-items: center; gap: .75rem;
-  padding: .75rem var(--space);
-}
-.site-header .brand img { height: 56px; }
-
-/* ---------------------------
-   Navigaatio: rivittyy mobiilissa
---------------------------- */
-nav ul {
-  display: flex; flex-wrap: wrap;
-  gap: .5rem .75rem;
-  list-style: none; padding: .5rem var(--space); margin: 0;
-  justify-content: center;
-}
-nav a {
-  display: inline-block; padding: .5rem .75rem; border-radius: 999px;
-  text-decoration: none;
-}
-nav a:where(:hover,:focus){ background: #f4f4f5; }
-
-/* ---------------------------
-   Gridit kortteja/kuvia varten
---------------------------- */
-.grid {
-  display: grid; gap: var(--space);
-  grid-template-columns: repeat(12, 1fr);
-}
-.card, .experience
-/* Yleinen navigaatio */
-nav {
-  position: relative;
-}
-
-nav ul {
-  display: flex;
-  gap: .5rem;
-  padding: .5rem 1rem;
+/* ----- Perusrunko ----- */
+body {
   margin: 0;
-  list-style: none;
-  justify-content: flex-start;
+  font-family: system-ui, sans-serif;
+}
+.site-header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+}
+.brand {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: .5rem var(--nav-pad-x);
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* Linkit */
-nav a {
-  display: inline-block;
-  padding: .5rem .75rem;
-  border-radius: 999px;
-  text-decoration: none;
-  white-space: nowrap; /* estää rivittymisen */
-}
-
-/* Rullaava menu mobiilissa */
-@media (max-width: 600px) {
-  nav ul {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* sulava scrollaus iOS */
-    scrollbar-width: none;  /* piilottaa rullan Firefoxissa */
+/* ----- Desktop (>600px): näkyy rivinä ----- */
+@media (min-width: 601px){
+  #primary-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem .75rem;
+    margin: 0; padding: 0; list-style: none;
   }
-  nav ul::-webkit-scrollbar {
-    display: none; /* piilottaa rullan Chromessa/Safarissa */
-  }
-
-  /* Varjot molemmissa reunoissa */
-  nav::before,
-  nav::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 30px;        /* varjon leveys */
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  /* Vasemman reunan varjo */
-  nav::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
-    opacity: 0;          /* aluksi piilossa */
-    transition: opacity 0.2s;
-  }
-
-  /* Oikean reunan varjo */
-  nav::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
-  }
-}
-/* ----- Pakota valikko näkyviin mobiilissa ----- */
-@media (max-width: 600px){
-  nav, .nav, .site-nav { 
-    position: relative; 
-    z-index: 20;           /* varmistaa ettei jää jonkin alle */
-    background: #fff;      /* ettei teksti sekoitu taustaan */
-  }
-  nav ul, .nav ul, .site-nav ul {
-    display: flex !important;   /* kumoa teeman mahdollinen display:none */
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-height: none !important;
-    overflow: auto;             /* meidän rullaus toimii */
-    gap: .5rem;
-    padding: .5rem 1rem;
-    margin: 0;
-    list-style: none;
-  }
-  nav li, .nav li, .site-nav li { list-style: none; }
-  nav a, .nav a, .site-nav a {
-    display: inline-block;
-    white-space: nowrap;
+  #primary-nav a {
     padding: .5rem .75rem;
-    color: #111;                /* vaihda jos tummalla taustalla */
     text-decoration: none;
+    border-radius: 999px;
+    color: inherit;
   }
-
-  /* Rullaavat varjot (kuten aiemmin) */
-  nav::before, nav::after {
-    content: ""; position: absolute; top: 0; height: 100%; width: 30px;
-    pointer-events: none; z-index: 25;
-  }
-  nav::before { left: 0; background: linear-gradient(to right, rgba(255,255,255,0.9), transparent); opacity: 0; }
-  nav::after  { right: 0; background: linear-gradient(to left,  rgba(255,255,255,0.9), transparent); }
-  /* piilota skrollipalkki */
-  nav ul { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  nav ul::-webkit-scrollbar { display: none; }
 }
 
-/* Varmista kosketuskoko ja rivikorkeus */
-nav a { line-height: 1; }
-@media (pointer: coarse) {
-  nav a { min-height: 44px; }
-}
-/* ----- Mobiilin rullaava valikko (primary-nav + open) ----- */
+/* ----- Mobiili (≤600px): suljettuna piilossa ----- */
 @media (max-width: 600px){
-  /* koko nav-kontti näkyviin vain kun .open */
-  #primary-nav {
-    position: relative;
-    background: #fff;
-  }
-  /* suljettu tila */
-  #primary-nav:not(.open) ul {
+  #primary-nav > ul {
     display: none;
   }
-
-  /* auki: rullaava vaakalista */
-  #primary-nav.open ul {
+  #primary-nav.open > ul {
     display: flex;
-    gap: .5rem;
-    padding: .5rem 1rem;
+    gap: var(--nav-gap);
     margin: 0;
+    padding: .5rem var(--nav-pad-x);
     list-style: none;
 
     overflow-x: auto;
@@ -356,7 +60,7 @@ nav a { line-height: 1; }
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  #primary-nav.open ul::-webkit-scrollbar { display: none; }
+  #primary-nav.open > ul::-webkit-scrollbar { display: none; }
 
   #primary-nav a {
     display: inline-block;
@@ -364,36 +68,32 @@ nav a { line-height: 1; }
     padding: .5rem .75rem;
     border-radius: 999px;
     text-decoration: none;
-    color: #111;
+    color: inherit;
   }
 
-  /* Reunavarjot – oikea aina näkyvissä, vasen kun skrollattu */
+  /* Varjot reunoihin */
   #primary-nav::before,
   #primary-nav::after{
     content:"";
-    position:absolute; top:0; height:100%; width:30px;
-    pointer-events:none; z-index:5;
+    position:absolute; top:0; height:100%; width:var(--shadow-w);
+    pointer-events:none; z-index:5; opacity:0; transition:opacity .18s;
   }
-  /* vasen: syttyy kun .scrolled-left on päällä (ks. JS alla) */
   #primary-nav::before{
     left:0;
-    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
-    opacity:0; transition:opacity .2s;
+    background: linear-gradient(to right, rgba(255,255,255,0.92), transparent);
   }
-  #primary-nav.scrolled-left::before{ opacity:1; }
-
-  /* oikea: näkyy kun sisältö jatkuu oikealle */
   #primary-nav::after{
     right:0;
-    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+    background: linear-gradient(to left, rgba(255,255,255,0.92), transparent);
   }
+  #primary-nav.scrolled-left::before{ opacity:1; }
+  #primary-nav.scrolled-right::after{ opacity:1; }
+
+  /* ettei header leikkaa */
+  .site-header { overflow: visible; }
 }
 
-/* Varmista, ettei mikään leikkaa navia */
-@media (max-width:600px){
-  header, .header, .site-header { overflow: visible; }
+/* Korostus aktiiviselle linkille */
+#primary-nav a[aria-current="page"] {
+  background: #f4f4f5;
 }
-
-
-
-
