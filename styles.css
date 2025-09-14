@@ -81,3 +81,47 @@ button.btn{border:none}
   .cards li,.site-footer{background:#0c0a10}
   .btn.ghost{background:#0c0a10;color:var(--text)}
 }
+#yhteys {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fdfcff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#yhteys h2 {
+  text-align: center;
+  color: #5a4a91;
+}
+
+#yhteys form {
+  display: flex;
+  flex-direction: column;
+}
+
+#yhteys input,
+#yhteys textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#yhteys button {
+  padding: 10px 20px;
+  background: #7d5fb2;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#yhteys button:hover {
+  background: #5a4a91;
+}
+
