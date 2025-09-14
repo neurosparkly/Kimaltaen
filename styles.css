@@ -287,6 +287,50 @@ nav a {
     background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
   }
 }
+/* ----- Pakota valikko näkyviin mobiilissa ----- */
+@media (max-width: 600px){
+  nav, .nav, .site-nav { 
+    position: relative; 
+    z-index: 20;           /* varmistaa ettei jää jonkin alle */
+    background: #fff;      /* ettei teksti sekoitu taustaan */
+  }
+  nav ul, .nav ul, .site-nav ul {
+    display: flex !important;   /* kumoa teeman mahdollinen display:none */
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    overflow: auto;             /* meidän rullaus toimii */
+    gap: .5rem;
+    padding: .5rem 1rem;
+    margin: 0;
+    list-style: none;
+  }
+  nav li, .nav li, .site-nav li { list-style: none; }
+  nav a, .nav a, .site-nav a {
+    display: inline-block;
+    white-space: nowrap;
+    padding: .5rem .75rem;
+    color: #111;                /* vaihda jos tummalla taustalla */
+    text-decoration: none;
+  }
+
+  /* Rullaavat varjot (kuten aiemmin) */
+  nav::before, nav::after {
+    content: ""; position: absolute; top: 0; height: 100%; width: 30px;
+    pointer-events: none; z-index: 25;
+  }
+  nav::before { left: 0; background: linear-gradient(to right, rgba(255,255,255,0.9), transparent); opacity: 0; }
+  nav::after  { right: 0; background: linear-gradient(to left,  rgba(255,255,255,0.9), transparent); }
+  /* piilota skrollipalkki */
+  nav ul { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  nav ul::-webkit-scrollbar { display: none; }
+}
+
+/* Varmista kosketuskoko ja rivikorkeus */
+nav a { line-height: 1; }
+@media (pointer: coarse) {
+  nav a { min-height: 44px; }
+}
 
 
 
