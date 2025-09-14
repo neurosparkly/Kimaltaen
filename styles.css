@@ -1,0 +1,53 @@
+/* Kimaltaen — kevyt, saavutettava teematyylimäärittely */
+:root{
+  --bg:#fffefb;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --brand:#ffe066;
+  --accent:#2563eb;
+  --border:#e5e7eb;
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+
+.container{max-width:960px;margin:0 auto;padding:1rem}
+.site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.8);backdrop-filter:saturate(1) blur(8px);border-bottom:1px solid var(--border);display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.5rem 1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.brand img{height:40px;width:40px;border-radius:50%}
+.brand span{font-weight:700}
+nav{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+nav a{padding:.45rem .7rem;border-radius:999px;text-decoration:none;color:inherit;border:1px solid transparent}
+nav a:hover{border-color:var(--border);background:#fff}
+nav .ghost{border-color:var(--border)}
+
+.hero{padding:2rem 0;background:linear-gradient(180deg,var(--brand),#fff0);border-radius:var(--radius)}
+.hero h1{margin:.2rem 0 .4rem}
+.cta-row{display:flex;gap:.6rem;margin-top:.6rem}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:.6rem .9rem;text-decoration:none;display:inline-block}
+.btn.ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
+
+.cards{list-style:none;padding:0;margin:1rem 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.cards li{border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:#fff}
+
+.checklist{padding-left:1.1rem}
+.checklist li{margin:.6rem 0}
+
+.post{border-bottom:1px solid var(--border);padding:1rem 0}
+.post:last-child{border-bottom:none}
+
+label{display:grid;gap:.3rem;margin:.6rem 0}
+input,textarea,button{font:inherit;padding:.6rem .7rem;border:1px solid var(--border);border-radius:12px}
+button.btn{border:none}
+.muted{color:var(--muted)}
+
+.site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:2rem}
+
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b0b0c;--text:#e5e7eb;--muted:#a1a1aa;--brand:#b59d3b;--border:#2d2f34}
+  nav a:hover{background:#111}
+  .cards li, .site-footer{background:#0b0b0c}
+  .btn.ghost{background:#0b0b0c;color:var(--text)}
+}

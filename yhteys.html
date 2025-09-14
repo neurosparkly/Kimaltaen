@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <title>Yhteys — Kimaltaen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <meta name="description" content="Ota yhteyttä Kimaltaen-sivuun — palaute, vinkit ja vieraskynät tervetulleita.">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Kimaltaen logo">
+      <span>Kimaltaen</span>
+    </a>
+    <nav aria-label="Päänavigaatio">
+      <a href="index.html">Etusivu</a>
+      <a href="tietoa.html">Tietoa</a>
+      <a href="kokemuksia.html">Kokemuksia</a>
+      <a href="yhteys.html">Yhteys</a>
+      <a class="ghost" href="https://github.com/kayttajanimesi/kimaltaen-sivusto" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Yhteys</h1>
+    <p>Lähetä viesti tai palaute. Voit myös ehdottaa aiheita tai kertoa oman tarinasi.</p>
+    <form name="palaute" method="post" data-success="Kiitos viestistä!" data-error="Lähetys epäonnistui.">
+      <label>Nimi (valinnainen)
+        <input name="nimi" autocomplete="name">
+      </label>
+      <label>Sähköposti (valinnainen)
+        <input type="email" name="email" autocomplete="email">
+      </label>
+      <label>Viesti
+        <textarea name="viesti" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn">Lähetä</button>
+    </form>
+    <p class="muted">Huom: tämä lomake on esimerkki. Voit liittää Netlify Forms / Formspree -palvelun ilman omaa backendia.</p>
+  </main>
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+</html>
