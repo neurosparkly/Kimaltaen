@@ -1,11 +1,11 @@
-/* Kimaltaen — kevyt, saavutettava teematyylimäärittely */
+/* Kimaltaen -teema */
 :root{
-  --bg:#fffefb;
-  --text:#1f2937;
-  --muted:#6b7280;
-  --brand:#ffe066;
-  --accent:#2563eb;
-  --border:#e5e7eb;
+  --bg:#faf9ff;        /* hyvin vaalea violetti tausta */
+  --text:#2d1b3d;      /* syvä luumu (selkeä teksti) */
+  --muted:#7a6a8a;     /* pehmeä harmaavioletti */
+  --brand:#fddde6;     /* hempeä vaaleanpunainen (korostus taustoihin) */
+  --accent:#7f5af0;    /* kimalteleva violetti (painikkeet ja linkit) */
+  --border:#e3d7f3;    /* vaalea violetti raja */
   --radius:16px;
 }
 
@@ -44,6 +44,20 @@ button.btn{border:none}
 .muted{color:var(--muted)}
 
 .site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:2rem}
+
+/* Kimalteleva otsikkoefekti */
+h1 {
+  background: linear-gradient(90deg, #7f5af0, #fddde6, #7f5af0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
 
 @media (prefers-color-scheme: dark){
   :root{--bg:#0b0b0c;--text:#e5e7eb;--muted:#a1a1aa;--brand:#b59d3b;--border:#2d2f34}
