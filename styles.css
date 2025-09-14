@@ -227,6 +227,67 @@ nav a:where(:hover,:focus){ background: #f4f4f5; }
   grid-template-columns: repeat(12, 1fr);
 }
 .card, .experience
+/* Yleinen navigaatio */
+nav {
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  margin: 0;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+/* Linkit */
+nav a {
+  display: inline-block;
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap; /* estää rivittymisen */
+}
+
+/* Rullaava menu mobiilissa */
+@media (max-width: 600px) {
+  nav ul {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* sulava scrollaus iOS */
+    scrollbar-width: none;  /* piilottaa rullan Firefoxissa */
+  }
+  nav ul::-webkit-scrollbar {
+    display: none; /* piilottaa rullan Chromessa/Safarissa */
+  }
+
+  /* Varjot molemmissa reunoissa */
+  nav::before,
+  nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;        /* varjon leveys */
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Vasemman reunan varjo */
+  nav::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
+    opacity: 0;          /* aluksi piilossa */
+    transition: opacity 0.2s;
+  }
+
+  /* Oikean reunan varjo */
+  nav::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+  }
+}
+
 
 
 
