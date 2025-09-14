@@ -331,6 +331,68 @@ nav a { line-height: 1; }
 @media (pointer: coarse) {
   nav a { min-height: 44px; }
 }
+/* ----- Mobiilin rullaava valikko (primary-nav + open) ----- */
+@media (max-width: 600px){
+  /* koko nav-kontti näkyviin vain kun .open */
+  #primary-nav {
+    position: relative;
+    background: #fff;
+  }
+  /* suljettu tila */
+  #primary-nav:not(.open) ul {
+    display: none;
+  }
+
+  /* auki: rullaava vaakalista */
+  #primary-nav.open ul {
+    display: flex;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    margin: 0;
+    list-style: none;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #primary-nav.open ul::-webkit-scrollbar { display: none; }
+
+  #primary-nav a {
+    display: inline-block;
+    white-space: nowrap;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #111;
+  }
+
+  /* Reunavarjot – oikea aina näkyvissä, vasen kun skrollattu */
+  #primary-nav::before,
+  #primary-nav::after{
+    content:"";
+    position:absolute; top:0; height:100%; width:30px;
+    pointer-events:none; z-index:5;
+  }
+  /* vasen: syttyy kun .scrolled-left on päällä (ks. JS alla) */
+  #primary-nav::before{
+    left:0;
+    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
+    opacity:0; transition:opacity .2s;
+  }
+  #primary-nav.scrolled-left::before{ opacity:1; }
+
+  /* oikea: näkyy kun sisältö jatkuu oikealle */
+  #primary-nav::after{
+    right:0;
+    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+  }
+}
+
+/* Varmista, ettei mikään leikkaa navia */
+@media (max-width:600px){
+  header, .header, .site-header { overflow: visible; }
+}
 
 
 
