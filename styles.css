@@ -1,150 +1,147 @@
-/* === YLEISET PERUSTYYLIT === */
-* {
-  box-sizing: border-box;
-}
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Kimaltaen — Moninaisuus saa loistaa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <style>
+    /* === YLEISET === */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.55;
+      color: #222;
+      background: #fff;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      margin: 16px 0 10px;
+      font-size: 2rem;
+    }
+    p { margin: 0 0 16px; }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.55;
-  color: #222;
-  background: #fff;
-}
+    /* HEADER */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+    .site-header .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .site-header .brand img {
+      height: 32px;
+      width: auto;
+    }
+    .site-header nav {
+      display: flex;
+      gap: 12px;
+      margin-left: auto;
+    }
+    .site-header nav a {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #dcd5f5;
+      background: #f5f2ff;
+      color: #4a3f7a;
+      text-decoration: none;
+      font-weight: 500;
+      line-height: 1;
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+      transition: background .2s ease, border-color .2s ease, transform .02s ease-in-out;
+    }
+    .site-header nav a:hover {
+      background: #ece6ff;
+      border-color: #cfc6f0;
+    }
+    .site-header nav a:active {
+      transform: translateY(1px);
+    }
+    .site-header nav a[aria-current="page"] {
+      background: #7d5fb2;
+      border-color: #7d5fb2;
+      color: #fff;
+    }
 
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 24px;
-}
+    /* KUVAT */
+    img { max-width: 100%; height: auto; }
+    .kimallus {
+      text-align: center;
+      margin-top: 24px;
+    }
+    .kimallus img {
+      max-width: 200px;
+      height: auto;
+      opacity: 0.9;
+    }
 
-h1 {
-  margin: 16px 0 10px;
-  font-size: 2rem;
-}
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid #eee;
+      padding: 16px;
+      text-align: center;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Kimaltaen logo">
+      <span>Kimaltaen</span>
+    </a>
+    <nav aria-label="Päänavigaatio">
+      <a href="index.html" aria-current="page">Etusivu</a>
+      <a href="tietoa.html">Tietoa</a>
+      <a href="kokemuksia.html">Kokemuksia</a>
+      <a href="yhteys.html">Yhteys</a>
+    </nav>
+  </header>
 
-h2 {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
+  <!-- SISÄLTÖ -->
+  <main class="container">
+    <h1>Kimaltaen</h1>
+    <p>
+      Kimaltaen on lempeä tila, jossa moninaisuus saa loistaa ✨  
+      Sivusto jakaa tietoa ja käytännön vinkkejä neurovähemmistön arkeen — 
+      selkeästi, myötätuntoisesti ja toivoa vaalien.
+    </p>
+    <p>
+      Täältä löydät ajatuksia ja kokemuksia, mutta ennen kaikkea 
+      toivon kipinöitä ja käytännön vinkkejä arjen tueksi.  
+      Jokainen saa olla oma itsensä — pienetkin teot voivat auttaa 
+      tekemään maailmasta vähän valoisamman.
+    </p>
 
-section {
-  margin: 32px 0;
-}
+    <!-- Kimalluskuva -->
+    <div class="kimallus">
+      <img src="image1.png" alt="Kimalluskuvio">
+    </div>
+  </main>
 
-/* HEADER asettelu */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo vasemmalle, nav oikealle */
-  padding: 10px 20px;
-  border-bottom: 1px solid #eee;
-  background: #fff;
-}
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
+  </footer>
 
-/* Logo + nimi vasemmalle */
-.site-header .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: inherit;
-}
-.site-header .brand img {
-  height: 32px;
-  width: auto;
-}
-
-/* NAV painikkeet oikealle */
-.site-header nav {
-  display: flex;
-  gap: 12px;
-  margin-left: auto;   /* tämä pakottaa navin oikeaan reunaan */
-}
-
-.site-header nav a {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px; /* pill-muoto */
-  border: 1px solid #dcd5f5;
-  background: #f5f2ff;
-  color: #4a3f7a;
-  text-decoration: none;
-  font-weight: 500;
-  line-height: 1;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-  transition: background .2s ease, border-color .2s ease, transform .02s ease-in-out;
-}
-
-.site-header nav a:hover {
-  background: #ece6ff;
-  border-color: #cfc6f0;
-}
-
-.site-header nav a:active {
-  transform: translateY(1px);
-}
-
-/* Aktiivisen sivun nappi */
-.site-header nav a[aria-current="page"] {
-  background: #7d5fb2;
-  border-color: #7d5fb2;
-  color: #fff;
-}
-
-/* === KUVAT === */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.hero-kuva {
-  width: 100%;
-  max-height: 350px;   /* rajoittaa korkeutta */
-  object-fit: cover;   /* rajaa ilman vääristymää */
-  border-radius: 16px;
-  display: block;
-  margin: 12px 0 20px;
-}
-
-.kuvitus {
-  max-width: 500px;    /* enintään 500px leveä */
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 16px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-
-.inline-ikoni {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
-
-.sparkle {
-  width: 40px;
-  opacity: .85;
-}
-
-/* === FOOTER === */
-.site-footer {
-  border-top: 1px solid #eee;
-  padding: 16px;
-  text-align: center;
-  color: #555;
-}
-.kimallus {
-  text-align: center;     
-  margin-top: 24px;       
-}
-
-.image1.png {
-  max-width: 200px;       
-  height: auto;
-  opacity: 0.9;           
-}
-
+  <script>
+    // Vuosi automaattisesti
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
