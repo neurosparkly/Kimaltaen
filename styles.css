@@ -144,3 +144,9 @@
   </script>
 </body>
 </html>
+.pieni-kuva {
+  max-width: 200px;  /* enintään 200px leveä */
+  width: 100%;       /* skaalautuu pienemmillä ruuduilla */
+  height: auto;      /* mittasuhteet säilyvät */
+}
+
