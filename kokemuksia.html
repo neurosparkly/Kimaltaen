@@ -6,22 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <!-- Optional fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
 
   <meta name="description" content="Kokemuksia ja oivalluksia neurovähemmistönä elämisestä — maskaamisesta näkyväksi, arjesta ja vahvuuksista.">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="logo">
-      <span>Kimaltaen</span>
-    </a>
-    <nav aria-label="Päänavigaatio">
-      <a href="index.html">Etusivu</a>
-      <a href="tietoa.html">Tietoa</a>
-      <a href="kokemuksia.html">Kokemuksia</a>
-      <a href="yhteys.html">Yhteys</a>
-      <a class="ghost" href="https://github.com/kayttajanimesi/kimaltaen-sivusto" target="_blank" rel="noopener">GitHub</a>
-    </nav>
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Kimaltaen etusivu">
+        <img src="logo.png" alt="Kimaltaen">
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Avaa valikko">☰</button>
+
+      <nav id="primary-nav" class="site-nav" aria-label="Päänavigaatio">
+        <a href="index.html">Etusivu</a>
+        <a href="tietoa.html">Tietoa</a>
+        <a href="kokemuksia.html">Kokemuksia</a>
+        <a href="yhteys.html">Yhteys</a>
+        <a class="ghost" href="https://github.com/neurosparkly/kimaltaen-sivusto" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
