@@ -149,4 +149,16 @@
   width: 100%;       /* skaalautuu pienemmillä ruuduilla */
   height: auto;      /* mittasuhteet säilyvät */
 }
+/* Logo kaikilla sivuilla */
+.site-header .brand img {
+  height: 120px;   /* tai haluamasi korkeus */
+  width: auto;     /* säilyttää mittasuhteet */
+}
+
+@media (max-width: 600px) {
+  .site-header .brand img {
+    height: 80px;  /* mobiilissa vähän pienempi */
+  }
+}
+
 
