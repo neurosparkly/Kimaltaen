@@ -10,19 +10,26 @@
   <meta name="description" content="Kimaltaen on paikka, jossa moninaisuus saa loistaa. Tietoa, kokemuksia ja ajatuksia neurovähemmistönä elämisestä.">
 </head>
 <body>
-  <header class="site-header">
+<header class="site-header">
+  <div class="container header-row">
     <a class="brand" href="index.html">
-      <img src="logo.png" alt="Kimaltaen logo">
+      <img src="logo.png" alt="Kimaltaen logo" />
       <span>Kimaltaen</span>
     </a>
-    <nav aria-label="Päänavigaatio">
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Avaa valikko">
+      ☰
+    </button>
+
+    <nav id="primary-nav" class="site-nav">
       <a href="index.html">Etusivu</a>
       <a href="tietoa.html">Tietoa</a>
       <a href="kokemuksia.html">Kokemuksia</a>
       <a href="yhteys.html">Yhteys</a>
-      <a class="ghost" href="https://github.com/kayttajanimesi/kimaltaen-sivusto" target="_blank" rel="noopener">GitHub</a>
     </nav>
-  </header>
+  </div>
+</header>
+
 
   <main class="container">
     <section class="hero">
