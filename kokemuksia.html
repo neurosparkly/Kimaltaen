@@ -7,52 +7,29 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
   <meta name="description" content="Kokemuksia ja tarinoita: arjen oivalluksia, selviytymiskeinoja ja vertaistukea.">
+  <style>
+    /* Lisätyt tyylit logon ja kuvan muokkaukseen */
+    .site-header .brand img {
+      height: 80px;   /* suurempi logo */
+      width: auto;
+    }
+    .kuvitus {
+      max-width: 500px;
+      width: 100%;
+      display: block;
+      margin: 30px auto; /* keskittää ja lisää väliä */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <a class="brand" href="index.html">
     <img src="logo.png" alt="Kimaltaen logo">
-    <span>Kimaltaen</span>
+    <!-- poistettu teksti <span>Kimaltaen</span> -->
   </a>
   <nav aria-label="Päänavigaatio">
-    <a href="index.html" aria-current="page">Etusivu</a>
+    <a href="index.html">Etusivu</a>
     <a href="tietoa.html">Tietoa</a>
-    <a href="kokemuksia.html">Kokemuksia</a>
-    <a href="yhteys.html">Yhteys</a>
-  </nav>
-</header>
-
-  <main class="container">
-    <h1>Kokemuksia</h1>
-
-    <section>
-      <p>Tähän kootaan pieniä välähdyksiä ja oivalluksia arjesta. Jokainen kokemus on arvokas —
-      erilaisuus on voimaa, joka saa loistaa.</p>
-    </section>
-
-    <section>
-      <h2>Artikkelit <img src="image4.png" alt="" class="inline-ikoni"></h2>
-
-      <article>
-        <h3>Maskaamisesta näkyväksi</h3>
-        <p>Moni meistä on tottunut peittämään osia itsestään. Mitä tapahtuu, kun annamme tilaa
-        omalle rytmille ja tarpeille?</p>
-      </article>
-
-      <article>
-        <h3>Kohtaamisen pikavinkit</h3>
-        <p>Pienet teot tekevät paljon: selkeä viestintä, tauot, aistikuorman huomioiminen ja
-        ennakoitavuus.</p>
-      </article>
-    </section>
-  </main>
-    <img src="image3.png" alt="Erilaisia ihmisiä valossa" class="kuvitus">
-
-
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <a href="kokemuksia.html" aria-c
