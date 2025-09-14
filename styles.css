@@ -160,5 +160,73 @@
     height: 80px;  /* mobiilissa vähän pienempi */
   }
 }
+/* ---------------------------
+   Perus: kuvat ja kontti
+--------------------------- */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container, .wrap, main, section {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+/* ---------------------------
+   Typografia
+--------------------------- */
+:root{
+  --fs-900: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);  /* h1 skaalautuu */
+  --fs-800: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);   /* h2 */
+  --fs-400: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem); /* leipäteksti */
+  --space: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+}
+
+h1 { font-size: var(--fs-900); line-height: 1.2; }
+h2 { font-size: var(--fs-800); line-height: 1.25; }
+p, li { font-size: var(--fs-400); line-height: 1.6; }
+
+/* ---------------------------
+   Header + logo
+--------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: #fff; border-bottom: 1px solid #eee;
+}
+.site-header .brand {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .75rem var(--space);
+}
+.site-header .brand img { height: 56px; }
+
+/* ---------------------------
+   Navigaatio: rivittyy mobiilissa
+--------------------------- */
+nav ul {
+  display: flex; flex-wrap: wrap;
+  gap: .5rem .75rem;
+  list-style: none; padding: .5rem var(--space); margin: 0;
+  justify-content: center;
+}
+nav a {
+  display: inline-block; padding: .5rem .75rem; border-radius: 999px;
+  text-decoration: none;
+}
+nav a:where(:hover,:focus){ background: #f4f4f5; }
+
+/* ---------------------------
+   Gridit kortteja/kuvia varten
+--------------------------- */
+.grid {
+  display: grid; gap: var(--space);
+  grid-template-columns: repeat(12, 1fr);
+}
+.card, .experience
+
 
 
