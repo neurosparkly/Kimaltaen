@@ -22,25 +22,26 @@
   </nav>
 </header>
 
-  <main class="container">
-    <h1>Yhteys</h1>
+<main class="container">
+  <h1>Yhteys</h1>
 
-    <section id="yhteys">
-      <h2>Lähetä viesti <img src="image4.png" alt="" class="inline-ikoni"></h2>
-      <form action="https://formspree.io/f/xpwjeabg" method="POST">
-        <label>Nimi (valinnainen)
-          <input name="nimi" autocomplete="name">
-        </label>
-        <label>Sähköposti (valinnainen)
-          <input type="email" name="email" autocomplete="email">
-        </label>
-        <label>Viesti
-          <textarea name="viesti" rows="5" required></textarea>
-        </label>
-        <button type="submit" class="btn">Lähetä</button>
-      </form>
-    </section>
-  </main>
+  <section id="yhteys">
+    <h2>Lähetä viesti <img src="image4.png" alt="" class="inline-ikoni"></h2>
+
+    <form action="https://formspree.io/f/xpwjeabg" method="POST">
+      <label for="nimi">Nimi (valinnainen)</label>
+      <input id="nimi" name="nimi" autocomplete="name">
+
+      <label for="sahkoposti">Sähköposti (valinnainen)</label>
+      <input id="sahkoposti" type="email" name="email" autocomplete="email" placeholder="sinun@email.com">
+
+      <label for="viesti">Viesti</label>
+      <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
+
+      <button type="submit" class="btn">Lähetä</button>
+    </form>
+  </section>
+</main>
 
   <footer class="site-footer">
     <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
