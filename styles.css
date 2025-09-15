@@ -1,83 +1,79 @@
-/* Kimaltaen — ammattimainen, responsiivinen teema */
-:root{
-  --bg:#faf9ff;
-  --text:#2d1b3d;
-  --muted:#7a6a8a;
-  --brand:#fddde6;
-  --accent:#7f5af0;
-  --border:#e3d7f3;
-  --radius:16px;
+
+:root { 
+  --nav-pad-x: 1rem; 
+  --nav-gap: .5rem; 
+  --shadow-w: 30px; 
+  --maxw: 1000px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:'Quicksand', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
-img{display:block;max-width:100%;height:auto}
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#111; background:#fff; }
 
-.container{max-width:960px;margin:0 auto;padding:0 1rem}
+/* Layout helpers */
+.container { width: min(100% - 2rem, var(--maxw)); margin-inline:auto; }
+section { padding: 2rem 0; }
 
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-.header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
-.brand img{height:44px;width:44px;border-radius:50%}
+/* Header */
+.site-header { border-bottom:1px solid #eee; position:sticky; top:0; background:#fff; z-index:50; }
+.brand { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem var(--nav-pad-x); }
+.brand .logo { display:flex; align-items:center; gap:.5rem; text-decoration:none; color:inherit; }
+.brand .logo img{ height:40px; width:auto; display:block; }
+.brand .logo span{ font-weight:700; font-size:1.1rem; letter-spacing:.2px; }
 
-.site-nav{display:flex;gap:.6rem;align-items:center}
-.site-nav a{padding:.5rem .8rem;border-radius:999px;text-decoration:none;color:var(--text);border:1px solid transparent}
-.site-nav a:hover{border-color:var(--border);background:#fff}
-.nav-toggle{display:none;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.35rem .55rem;font-size:1.1rem}
+/* Hamburger button (three lines) */
+.nav-toggle{
+  display:flex; flex-direction:column; justify-content:space-between;
+  width:28px; height:22px; background:none; border:0; padding:0; cursor:pointer;
+}
+.nav-toggle span{ display:block; height:3px; width:100%; background:#111; border-radius:2px; transition:transform .3s, opacity .3s; }
+.nav-toggle.active span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2){ opacity:0; }
+.nav-toggle.active span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
 
-@media (max-width:780px){
-  .nav-toggle{display:inline-block}
-  .site-nav{
-    position:absolute;right:1rem;top:64px;display:none;flex-direction:column;gap:.4rem;
-    background:#fff;border:1px solid var(--border);border-radius:12px;padding:.6rem;min-width:200px;
-    box-shadow:0 8px 24px rgba(0,0,0,.08)
+/* Desktop nav */
+@media (min-width: 601px){
+  #primary-nav > ul{ display:flex; gap:1rem; margin:0; padding:0 var(--nav-pad-x) .75rem; list-style:none; }
+  #primary-nav a{ text-decoration:none; padding:.5rem .75rem; border-radius:999px; color:inherit; }
+  .nav-toggle{ display:none; }
+}
+
+/* Mobile nav (closed by default) */
+@media (max-width: 600px){
+  #primary-nav{ position:relative; }
+  #primary-nav > ul{ display:none; }
+  #primary-nav.open > ul{
+    display:flex; flex-wrap:nowrap; gap:var(--nav-gap); margin:0; padding:.5rem var(--nav-pad-x); list-style:none;
+    overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-width:none;
   }
-  .site-nav.open{display:flex}
+  #primary-nav.open > ul::-webkit-scrollbar{ display:none; }
+  #primary-nav.open > ul > li{ flex:0 0 auto; }
+  #primary-nav a{ display:inline-block; white-space:nowrap; padding:.5rem .75rem; border-radius:999px; text-decoration:none; color:inherit; }
+
+  /* Edge shadows */
+  #primary-nav::before, #primary-nav::after{
+    content:""; position:absolute; top:0; height:100%; width:var(--shadow-w); pointer-events:none; z-index:5; opacity:.9;
+  }
+  #primary-nav::before{ left:0; background:linear-gradient(to right, #fff, transparent); opacity:0; transition:opacity .18s; }
+  #primary-nav::after{ right:0; background:linear-gradient(to left,  #fff, transparent); }
+  #primary-nav.scrolled-left::before{ opacity:1; }
+
+  .site-header{ overflow:visible; }
 }
 
-main.container{padding:1rem}
+/* Main content basics */
+h1{ font-size: clamp(1.6rem, 1.2rem + 2vw, 2.25rem); margin: 1rem 0 .5rem; }
+h2{ font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); margin: 1rem 0 .5rem; }
+p{ line-height:1.6; }
 
-.hero{padding:3rem 1rem;text-align:center;background:linear-gradient(180deg,var(--brand),#fff0);border-radius:var(--radius);margin-top:1rem}
-.hero h1{margin:0 0 .6rem;font-family:'Raleway', system-ui, sans-serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.6rem)}
-.cta-row{display:flex;gap:.6rem;justify-content:center;margin-top:.8rem}
-.btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:.65rem 1rem;text-decoration:none;display:inline-block}
-.btn.ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
+.hero{ padding: 3rem 0; background: #fafafa; border-bottom:1px solid #eee; }
+.hero .container{ display:grid; gap:1rem; }
 
-h2{font-family:'Raleway', system-ui, sans-serif;font-weight:700;margin:1.5rem 0 .6rem}
-h3{margin:.4rem 0}
-
-.cards{list-style:none;padding:0;margin:1rem 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.cards li{border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:#fff;transition:box-shadow .2s ease, transform .2s ease}
-.cards li:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.more{text-decoration:none;color:var(--accent)}
-
-.checklist{padding-left:1.1rem}
-.checklist li{margin:.6rem 0}
-
-.post{border-bottom:1px solid var(--border);padding:1rem 0}
-.post:last-child{border-bottom:none}
-
-label{display:grid;gap:.3rem;margin:.6rem 0}
-input,textarea,button{font:inherit;padding:.6rem .7rem;border:1px solid var(--border);border-radius:12px}
-button.btn{border:none}
-.muted{color:var(--muted)}
-
-.site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:3rem}
-
-/* Kimalteleva otsikkoefekti */
-.hero h1{
-  background: linear-gradient(90deg, #7f5af0, #fddde6, #7f5af0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size:200% auto;
-  animation: shimmer 3s linear infinite;
+.card{
+  border:1px solid #eee; border-radius:16px; padding:1rem; background:#fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
 }
-@keyframes shimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
 
-/* Tumma tila */
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0c0a10;--text:#eceaf0;--muted:#b6aeca;--brand:#6b5bb3;--border:#2d2a35}
-  .site-nav a:hover{background:#111}
-  .cards li,.site-footer{background:#0c0a10}
-  .btn.ghost{background:#0c0a10;color:var(--text)}
-}
+/* Footer */
+footer{ border-top:1px solid #eee; margin-top:2rem; }
+footer .container{ display:flex; align-items:center; justify-content:space-between; padding:1rem 0; font-size:.95rem; }
