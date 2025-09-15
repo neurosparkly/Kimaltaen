@@ -5,70 +5,106 @@
   <title>Pala palalta — Pharrell ja uskon voima</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon & CSS -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+  <!-- SEO -->
+  <meta name="description" content="Pohdiskeleva essee Pharrellin Piece by Piece -elokuvasta, uskon merkityksestä ja neurovähemmistön kokemuksista.">
+  <link rel="canonical" href="https://www.esimerkkidomain.fi/pharrell.html">
 
-  <!-- Meta description -->
-  <meta name="description" content="Pohdintaa Pharrellin Piece by Piece -elokuvasta ja uskon voimasta neurovähemmistön näkökulmasta.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pala palalta — Pharrell ja uskon voima">
+  <meta property="og:description" content="Pohdiskeleva essee Pharrellin Piece by Piece -elokuvasta, uskon merkityksestä ja neurovähemmistön kokemuksista.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.esimerkkidomain.fi/pharrell.html">
+  <meta property="og:image" content="https://www.esimerkkidomain.fi/assets/pharrell-hero.jpg">
+  <meta property="og:locale" content="fi_FI">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pala palalta — Pharrell ja uskon voima">
+  <meta name="twitter:description" content="Pohdiskeleva essee Pharrellin Piece by Piece -elokuvasta, uskon merkityksestä ja neurovähemmistön kokemuksista.">
+  <meta name="twitter:image" content="https://www.esimerkkidomain.fi/assets/pharrell-hero.jpg">
+
+  <!-- Styles & Favicons -->
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Header (sama kuin muilla sivuilla) -->
   <header class="site-header">
     <a class="brand" href="index.html">
-      <img src="logo.png" alt="Kimaltaen logo">
+      <img src="logo.png" alt="Kimaltaen">
     </a>
-
-    <button class="nav-toggle" aria-label="Valikon avaus">
-      <span></span><span></span><span></span>
-    </button>
-
     <nav aria-label="Päänavigaatio">
       <ul>
         <li><a href="index.html">Etusivu</a></li>
         <li><a href="tietoa.html">Tietoa</a></li>
-        <li><a href="kokemuksia.html">Kokemuksia</a></li>
+        <li><a href="kokemuksia.html" aria-current="page">Kokemuksia</a></li>
         <li><a href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
         <li><a href="yhteys.html">Yhteys</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
-    <h1>Pala palalta — uskon voima</h1>
+  <main class="content" id="main">
+    <nav class="breadcrumb" aria-label="Murupolku">
+      <ol>
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="kokemuksia.html">Kokemuksia</a></li>
+        <li aria-current="page">Pala palalta — Pharrell ja uskon voima</li>
+      </ol>
+    </nav>
 
-    <p> Olen aina kokenut vetoa tietynlaisiin ihmisiin. En edes ymmärtänyt miksi – vain jokin heidän tavassaan katsoa maailmaa, 
-    heidän herkkyydessään tai omaperäisyydessään sai minut tuntemaan oloni nähdyksi. 
-    Vasta myöhemmin, kun olen alkanut hahmottaa omaa neurovähemmistöön kuulumistani, olen huomannut, 
-    että moni näistä kirjailijoista, näyttelijöistä ja taiteilijoista on itsekin kuulunut neurovähemmistöihin.
-    Jokin sisäinen tunnistin osasi yhdistää meidät jo ennen kuin sanat tai diagnoosit antoivat selitystä. <p> 
-<p> Taide on usein toiminut peilinä: se, mitä en itse osannut sanoittaa, löytyi toisen kynästä, laulusta tai roolista. 
-Kun katsoin Pharrell Williamsin Piece by Piece -elokuvan, tunnistin taas saman tunteen. 
-Pharrell kertoi tarinansa Lego-palikoiden avulla, ei tavanomaisena lineaarisena elämäkertana, vaan värikkäänä, rytmikkäänä ja välillä kaoottisenakin rakennelmana. 
-Juuri sellaisena kuin elämä monesti on: pala palalta kasattua, etsien muotoaan, eikä aina muiden käsitettävissä.     <p> 
-    <p> Elokuvaa katsoessa pysähdyin erityisesti kahteen ajatukseen. Ensinnäkin siihen, miten tärkeää on, että joku uskoo sinuun. 
-    Pharrell kertoi, miten hänen nuoruutensa mentorit ja ystävät näkivät hänessä potentiaalin, silloinkin kun hän itse vielä epäröi. 
-    Pieni tuki, oikea-aikainen rohkaisu, voi olla se ratkaiseva kipinä, joka saa luovan voiman syttymään. 
-    Toiseksi siihen, miten vähitellen oma sisäinen usko voi kasvaa niin vahvaksi, että sillä murretaan ulkopuolisten odotukset. 
-    Kun Pharrell yhdisti synesteettiset näkemyksensä, omaperäisen rytmitajunsa ja halunsa tehdä asioita toisin, 
-    tuloksena oli jotain niin mullistavaa, että ympäristö ei aluksi edes ymmärtänyt mitä oli tapahtumassa.     <p> 
-      <p> Tämä dynamiikka on tuttu monille meistä, jotka elämme neurovähemmistönä: ympäristö ei aina osaa nähdä lahjojamme, vaan kiinnittää huomiota siihen, mikä poikkeaa totutusta. Mutta jos löytyy edes yksi ihminen, joka uskoo – opettaja, ystävä, työtoveri, läheinen – se usko voi olla ratkaiseva. Se luo mahdollisuuden myös sisäisen uskon kasvulle. Ja kun tuo usko on paikallaan, voi toteuttaa asioita, jotka ulkopuolisen silmin näyttävät käsittämättömiltä, jopa mahdottomilta.     <p> 
- <p> Piece by Piece muistutti minua myös siitä, että oma tarina ei tarvitse mahtua muiden muotteihin. Pharrell ei halunnut perinteistä dokumenttia, vaan valitsi Legot, koska ne tuntui enemmän häneltä. 
- Tämä itsessään oli teko, joka sanoi: “minun tapani kertoa on arvokas, vaikka se ei olisi tavallinen.” Samalla tavalla jokainen neurovähemmistöön kuuluva kertoo omaa tarinaansa omilla ehdoillaan, joskus väreinä, joskus rytmeinä, joskus hiljaisuutena.     <p> 
+    <article class="post">
+      <header class="post-header">
+        <h1>Pala palalta — uskon voima</h1>
+        <p class="post-meta">
+          <time datetime="2025-09-15">15.9.2025</time> • Lukuaika ~5 min
+        </p>
+        <!-- Hero-kuva (valinnainen) -->
+        <!-- <figure class="post-hero">
+          <img src="assets/pharrell-hero.jpg" alt="Piece by Piece -elokuvan inspiroima hero-kuva">
+          <figcaption>“Piece by Piece” inspiroi katsomaan tarinaa omilla ehdoilla.</figcaption>
+        </figure> -->
+      </header>
 
-    <p> Kun katson taaksepäin omaa vetovoimaani “tietynlaisiin ihmisiin”, ymmärrän nyt, että kyse ei ollut sattumasta. Se oli tunnistamista, vaikka sanat puuttuivat. 
-    Heidän kauttaan löysin peilejä, jotka vahvistivat, että en ole yksin. Pharrellin tarina vahvistaa tätä kokemusta: uskon voima on sekä sisäinen että ulkoinen, ja se voi synnyttää jotain, joka muuttaa kokonaisia kulttuureja.     <p> 
+      <div class="post-body">
+        <p>Olen aina kokenut vetoa tietynlaisiin ihmisiin. En edes ymmärtänyt miksi – vain jokin heidän tavassaan katsoa maailmaa, heidän herkkyydessään tai omaperäisyydessään sai minut tuntemaan oloni nähdyksi. Vasta myöhemmin, kun olen alkanut hahmottaa omaa neurovähemmistöön kuulumistani, olen huomannut, että moni näistä kirjailijoista, näyttelijöistä ja taiteilijoista on itsekin kuulunut neurovähemmistöön. Jokin sisäinen tunnistin osasi yhdistää meidät jo ennen kuin sanat tai diagnoosit antoivat selitystä.</p>
 
-    <p> Mitä jos jokainen meistä näkisi toisissaan legopalat, jotka jo ovat olemassa, ja uskaltaisi uskoa niiden potentiaaliin? Silloin maailma voisi olla rakennelma, jossa moninaisuus ei ole poikkeus vaan rikkaus.</p>
+        <p>Taide on usein toiminut peilinä: se, mitä en itse osannut sanoittaa, löytyi toisen kynästä, laulusta tai roolista. Kun katsoin Pharrell Williamsin <em>Piece by Piece</em> -elokuvan, tunnistin taas saman tunteen. Pharrell kertoi tarinansa Lego-palojen kautta – ei tavanomaisena lineaarisena elämäkertana, vaan värikkäänä, rytmikkäänä ja välillä kaoottisenakin rakennelmana. Juuri sellaisena kuin elämä monesti on: pala palalta kasattua, etsien muotoaan, eikä aina muiden käsitettävissä.</p>
 
+        <p>Elokuvaa katsoessa pysähdyin erityisesti kahteen ajatukseen. Ensinnäkin siihen, miten tärkeää on, että joku uskoo sinuun. Pharrell kertoi, miten hänen nuoruutensa mentorit ja ystävät näkivät hänessä potentiaalin, silloinkin kun hän itse vielä epäröi. Pieni tuki, oikea-aikainen rohkaisu, voi olla se ratkaiseva kipinä, joka saa luovan voiman syttymään. Toiseksi siihen, miten vähitellen oma sisäinen usko voi kasvaa niin vahvaksi, että sillä murretaan ulkopuolisten odotukset. Kun Pharrell yhdisti synesteettiset näkemyksensä, omaperäisen rytmitajunsa ja halunsa tehdä asioita toisin, tuloksena oli jotain niin mullistavaa, että ympäristö ei aluksi edes ymmärtänyt mitä oli tapahtumassa.</p>
+
+        <p>Tämä dynamiikka on tuttu monille meistä, jotka elämme neurovähemmistönä: ympäristö ei aina osaa nähdä lahjojamme, vaan kiinnittää huomiota siihen, mikä poikkeaa totutusta. Mutta jos löytyy edes yksi ihminen, joka uskoo – opettaja, ystävä, työtoveri, läheinen – se usko voi olla ratkaiseva. Se luo mahdollisuuden myös sisäisen uskon kasvulle. Ja kun tuo usko on paikallaan, voi toteuttaa asioita, jotka ulkopuolisen silmin näyttävät käsittämättömiltä, jopa mahdottomilta.</p>
+
+        <p><em>Piece by Piece</em> muistutti minua myös siitä, että oma tarina ei tarvitse mahtua muiden muotteihin. Pharrell ei halunnut perinteistä dokumenttia, vaan valitsi Lego-palat – keinon, joka tuntui enemmän häneltä. Tämä itsessään oli teko, joka sanoi: “minun tapani kertoa on arvokas, vaikka se ei olisi tavallinen.” Samalla tavalla jokainen neurovähemmistöön kuuluva kertoo omaa tarinaansa omilla ehdoillaan, joskus väreinä, joskus rytmeinä, joskus hiljaisuutena.</p>
+
+        <p>Kun katson taaksepäin omaa vetovoimaani “tietynlaisiin ihmisiin”, ymmärrän nyt, että kyse ei ollut sattumasta. Se oli tunnistamista, vaikka sanat puuttuivat. Heidän kauttaan löysin peilejä, jotka vahvistivat, että en ole yksin. Pharrellin tarina vahvistaa tätä kokemusta: uskon voima on sekä sisäinen että ulkoinen, ja se voi synnyttää jotain, joka muuttaa kokonaisia kulttuureja.</p>
+
+        <p>Mitä jos jokainen meistä näkisi toisissaan palat, jotka jo ovat olemassa, ja uskaltaisi uskoa niiden potentiaaliin? Silloin maailma voisi olla rakennelma, jossa moninaisuus ei ole poikkeus vaan rikkaus.</p>
+      </div>
+
+      <footer class="post-footer">
+        <a class="btn" href="kokemuksia.html" aria-label="Takaisin Kokemuksia-sivulle">← Takaisin Kokemuksiaan</a>
+      </footer>
+    </article>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <p>© 2025 Kimaltaen — Moninaisuus saa loistaa ✨</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Schema.org (valinnainen) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pala palalta — Pharrell ja uskon voima",
+    "datePublished": "2025-09-15",
+    "dateModified": "2025-09-15",
+    "author": {"@type": "Person", "name": "Kimaltaen"},
+    "image": "https://www.esimerkkidomain.fi/assets/pharrell-hero.jpg",
+    "mainEntityOfPage": "https://www.esimerkkidomain.fi/pharrell.html",
+    "inLanguage": "fi"
+  }
+  </script>
 </body>
 </html>
