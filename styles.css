@@ -253,6 +253,14 @@ footer .container{
 #form-status.ok{ color:#2f7a4a; }
 #form-status.err{ color:#b23838; }
 h1, h2, h3, h4, h5, h6 {
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f6f6fb; /* taustaväri tyhjille reunoille */
+}
+
   color: #4B0082; /* tumma violetti (indigo) */
 }
 
