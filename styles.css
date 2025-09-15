@@ -252,3 +252,7 @@ footer .container{
 #form-status{ font-size:.95rem; margin-top:4px; }
 #form-status.ok{ color:#2f7a4a; }
 #form-status.err{ color:#b23838; }
+h1, h2, h3, h4, h5, h6 {
+  color: #4B0082; /* tumma violetti (indigo) */
+}
+
