@@ -1,76 +1,7 @@
 <!doctype html>
 <html lang="fi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kimaltaen – Kokemuksia</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="content.js"></script>
-  <script defer src="app.js"></script>
+<head> <title>Kokemuksia — Kimaltaen</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"> <link rel="stylesheet" href="styles.css"> <meta name="description" content="Kokemuksia ja oivalluksia neurovähemmistönä elämisestä — maskaamisesta näkyväksi, arjesta ja vahvuuksista.">
 </head>
-<body class="theme-classic">
-  <header class="header">
-    <div class="container navbar">
-      <a class="logo" href="index.html" aria-label="Kimaltaen etusivu">
-        <img src="assets/logo.png" alt="Kimaltaen logo" onerror="this.src='https://dummyimage.com/300x100/111827/ffffff.png&text=Kimaltaen'">
-        <span class="brand" data-brand-text>Kimaltaen</span>
-      </a>
-      <nav class="right-actions">
-        <button class="hamburger is-hidden" data-hamburger aria-label="Avaa valikko" aria-controls="mobiilivalikko" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-        <div class="nav-links">
-          <a href="index.html" >Etusivu</a>
-          <a href="tietoa.html" >Tietoa</a>
-          <a href="kokemuksia.html" class="active">Kokemuksia</a>
-          <a class="cta" href="#ota-yhteytta">Ota yhteyttä</a>
-        </div>
-      </nav>
-    </div>
-    <div id="mobiilivalikko" class="container mobile-drawer" data-mobile-drawer>
-      <a href="index.html">Etusivu</a>
-      <a href="tietoa.html">Tietoa</a>
-      <a href="kokemuksia.html">Kokemuksia</a>
-      <a href="#ota-yhteytta">Ota yhteyttä</a>
-    </div>
-  </header>
-  <main class="container">
-
-<section class="hero">
-  <div>
-    <h1 data-slot="kokemuksia.title">Kokemuksia</h1>
-    <p data-slot="kokemuksia.lead">Referenssit, asiakaspalautteet ja esimerkkitarinat.</p>
-  </div>
-  <div class="hero-media">
-    <img src="assets/cases.jpg" alt="Kokemuksia" onerror="this.src='https://dummyimage.com/1200x720/e0e7ff/3730a3.png&text=Cases'">
-  </div>
-</section>
-
-<section class="grid grid-2">
-  <article class="card"><h3 data-slot="kokemuksia.items.0.title">Referenssi #1</h3><p data-slot="kokemuksia.items.0.body">Haaste, ratkaisu ja tulos.</p></article>
-  <article class="card"><h3 data-slot="kokemuksia.items.1.title">Referenssi #2</h3><p data-slot="kokemuksia.items.1.body">Haaste, ratkaisu ja tulos.</p></article>
-  <article class="card"><h3 data-slot="kokemuksia.items.2.title">Asiakaspalaute</h3><p data-slot="kokemuksia.items.2.body">“Selkeä, nopea ja laadukas toteutus.” – Asiakkaan nimi</p></article>
-  <article class="card"><h3 data-slot="kokemuksia.items.3.title">Ennen → jälkeen</h3><p data-slot="kokemuksia.items.3.body">Kuvaile konkreettinen parannus ja sen vaikutus.</p></article>
-</section>
-
-  </main>
-  <footer class="footer">
-    <div class="container">
-      © Kimaltaen – kaikki oikeudet pidätetään. · <a href="#tietosuoja">Tietosuojaseloste</a>
-      <div style="float:right">
-        <label for="theme">Teema:</label>
-        <select id="theme" data-theme-picker>
-          <option value="">Default</option>
-          <option value="theme-classic" selected>Classic</option>
-          <option value="theme-forest">Forest</option>
-          <option value="theme-berry">Berry</option>
-          <option value="theme-sunset">Sunset</option>
-          <option value="theme-ink">Ink (tumma)</option>
-        </select>
-      </div>
-    </div>
-  </footer>
-</body>
+<body> <header class="site-header"> <a class="brand" href="index.html"> <img src="logo.png" alt="Kimaltaen logo"> <span>Kimaltaen</span> </a> <button class="hamburger" data-hamburger aria-label="Avaa valikko" aria-controls="mobiilivalikko" aria-expanded="false"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/> </svg> </button> <nav aria-label="Päänavigaatio"> <a href="index.html">Etusivu</a> <a href="tietoa.html">Tietoa</a> <a href="kokemuksia.html">Kokemuksia</a> <a href="yhteys.html">Yhteys</a> </nav> </header> <div class="mobile-drawer container" id="mobiilivalikko" hidden> <a href="index.html">Etusivu</a> <a href="tietoa.html">Tietoa</a> <a href="kokemuksia.html">Kokemuksia</a> <a href="yhteys.html">Yhteys</a> </div> <main class="container"> <h1>Kokemuksia</h1>
+<section class="image-section"><figure><img class="content-image" src="assets/image3.jpg" alt="Kuva 3"></figure></section> <article class="post"> <h2>Piilosta valoon</h2> <p>Usein maskataan ja piilotetaan itseään, jotta mahtuisi mukaan. Kun ympäristö vahvistaa, ei riko — kukin meistä voi puhjeta kukkaan.</p> </article> <article class="post"> <h2>Aistit ja arki</h2> <p>Kuulokkeet, tauot ja selkeät sopimukset muuttavat päivän kulkua valtavasti. Pienetkin mukautukset kimmeltävät arjessa.</p> </article> <p class="muted">Voit lisätä tänne omia tarinoitasi ja vieraskynäkirjoituksia.</p> </main> <footer class="site-footer"> <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small> </footer> <script src="script.js"></script> </body>
 </html>

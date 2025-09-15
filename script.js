@@ -1,42 +1,40 @@
-(() => {
-  // 1) Copyright-vuosi
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+// Pieni apuskripti: päivitä copyright-vuosi ja demo-lomake
+(function(){
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 
-  // 2) Hamburger-nappi ja nav
-  const btn = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('primary-nav');
-  if (!btn || !nav) return;
-
-  // Avaa/sulje valikko yhdellä kuuntelijalla
-  btn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    btn.classList.toggle('active', open);                 // 3 viivaa → risti
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) wireShadows();                               // kytke varjot kun auki
+  const form = document.forms.namedItem('palaute');
+  form?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    alert(form?.dataset?.success || "Kiitos!");
+    form?.reset();
   });
+})();
 
-  // 3) Reunavarjot rullaavaan valikkoon (vasen näkyy kun skrollattu, oikea jos sisältö jatkuu)
-  function wireShadows(){
-    const scroller = nav.querySelector('ul');
-    if (!scroller) return;
-
-    const update = () => {
-      nav.classList.toggle('scrolled-left', scroller.scrollLeft > 0);
-      const moreRight = scroller.scrollWidth - scroller.clientWidth - scroller.scrollLeft > 0;
-      nav.classList.toggle('scrolled-right', moreRight);
-    };
-
-    scroller.addEventListener('scroll', update, { passive: true });
-    // Päivitä heti avattaessa
-    requestAnimationFrame(update);
+// --- Added: hamburger toggle ---
+(function(){
+  const btn = document.querySelector('[data-hamburger]');
+  const drawer = document.getElementById('mobiilivalikko');
+  const nav = document.querySelector('.site-header nav');
+  function close(){
+    if(!drawer) return;
+    drawer.style.display = 'none';
+    btn?.setAttribute('aria-expanded','false');
   }
-
-  // Jos valikko on jo auki (SSR tms.), kytke varjot
-  if (nav.classList.contains('open')) wireShadows();
-
-  // Ikkunan koon muuttuessa päivitä varjot, jos auki
-  window.addEventListener('resize', () => {
-    if (nav.classList.contains('open')) wireShadows();
-  });
+  function open(){
+    if(!drawer) return;
+    drawer.style.display = 'block';
+    btn?.setAttribute('aria-expanded','true');
+  }
+  function isMobile(){ return window.matchMedia('(max-width:780px)').matches; }
+  if(btn && drawer && nav){
+    btn.addEventListener('click',()=>{
+      const openNow = btn.getAttribute('aria-expanded') === 'true';
+      if(openNow) close(); else open();
+    });
+    window.addEventListener('resize',()=>{
+      if(!isMobile()){ close(); drawer.style.display='none'; nav.style.display='flex'; }
+      else { nav.style.display='none'; }
+    });
+  }
 })();

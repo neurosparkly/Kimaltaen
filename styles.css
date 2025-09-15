@@ -1,104 +1,86 @@
-/* ==== Base + CSS variables (easy theming) ==== */
-:root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --text: #0f172a;      /* slate-900 */
-  --muted: #475569;     /* slate-600 */
-  --border: #e2e8f0;    /* slate-200 */
-  --soft: #f1f5f9;      /* slate-100 */
-  --brand: #0ea5e9;     /* sky-500 */
-  --brand-strong: #0284c7;
+/* Kimaltaen — kevyt, saavutettava teematyylimäärittely */
+:root{
+  --bg:#fffefb;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --brand:#ffe066;
+  --accent:#2563eb;
+  --border:#e5e7eb;
+  --radius:16px;
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+
+.container{max-width:960px;margin:0 auto;padding:1rem}
+.site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.8);backdrop-filter:saturate(1) blur(8px);border-bottom:1px solid var(--border);display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.5rem 1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.brand img{height:40px;width:40px;border-radius:50%}
+.brand span{font-weight:700}
+nav{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+nav a{padding:.45rem .7rem;border-radius:999px;text-decoration:none;color:inherit;border:1px solid transparent}
+nav a:hover{border-color:var(--border);background:#fff}
+nav .ghost{border-color:var(--border)}
+
+.hero{padding:2rem 0;background:linear-gradient(180deg,var(--brand),#fff0);border-radius:var(--radius)}
+.hero h1{margin:.2rem 0 .4rem}
+.cta-row{display:flex;gap:.6rem;margin-top:.6rem}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:.6rem .9rem;text-decoration:none;display:inline-block}
+.btn.ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
+
+.cards{list-style:none;padding:0;margin:1rem 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.cards li{border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:#fff}
+
+.checklist{padding-left:1.1rem}
+.checklist li{margin:.6rem 0}
+
+.post{border-bottom:1px solid var(--border);padding:1rem 0}
+.post:last-child{border-bottom:none}
+
+label{display:grid;gap:.3rem;margin:.6rem 0}
+input,textarea,button{font:inherit;padding:.6rem .7rem;border:1px solid var(--border);border-radius:12px}
+button.btn{border:none}
+.muted{color:var(--muted)}
+
+.site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:2rem}
+
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b0b0c;--text:#e5e7eb;--muted:#a1a1aa;--brand:#b59d3b;--border:#2d2f34}
+  nav a:hover{background:#111}
+  .cards li, .site-footer{background:#0b0b0c}
+  .btn.ghost{background:#0b0b0c;color:var(--text)}
+}
+/* --- Added: Mobile navigation (keeps existing värit) --- */
+.hamburger{display:none;padding:.45rem .6rem;border-radius:12px;border:1px solid var(--border);background:#fff}
+.hamburger svg{display:block;width:22px;height:22px}
+.mobile-drawer{display:none;padding:.5rem 1rem}
+.mobile-drawer a{display:block;padding:.5rem .7rem;margin:.25rem 0;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:inherit;background:#fff}
+
+@media (max-width: 780px){
+  .site-header nav{display:none}
+  .hamburger{display:inline-flex;align-items:center;justify-content:center}
 }
 
-/* Container */
-.container { width: min(1100px, 92vw); margin: 0 auto; padding: 1rem; }
 
-/* Header + Nav */
-.header {
-  position: sticky; top: 0; z-index: 50;
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  backdrop-filter: saturate(180%) blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-.navbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-
-.logo { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; color: inherit; }
-.logo img { height: clamp(40px, 7vw, 72px); width: auto; }
-.logo .brand { font-weight: 800; font-size: clamp(1.125rem, 2.8vw, 1.8rem); letter-spacing: .2px; }
-
-.nav-links { display: flex; align-items: center; gap: .5rem; }
-.nav-links a {
-  padding: .6rem .9rem; border-radius: .75rem; text-decoration: none;
-  color: var(--text); border: 1px solid transparent; transition: border-color .2s, background .2s, transform .06s; font-weight: 600;
-}
-.nav-links a:hover { background: var(--soft); border-color: var(--border); }
-.nav-links a:active { transform: translateY(1px); }
-a.active { background: var(--soft); }
-
-.right-actions { margin-left: auto; display: flex; gap: .5rem; align-items: center; }
-
-.hamburger { display: none; padding: .5rem .65rem; border-radius: .75rem; border: 1px solid var(--border); background: var(--surface); }
-.hamburger:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand), white 40%); outline-offset: 2px; }
-.hamburger svg { display: block; height: 22px; width: 22px; }
-
-/* Mobile Drawer */
-.mobile-drawer { display: none; padding: .75rem 0 1rem 0; }
-.mobile-drawer a {
-  display: block; padding: .7rem .9rem; margin: .25rem 0; border-radius: .75rem;
-  text-decoration: none; color: var(--text); border: 1px solid var(--border); background: var(--surface); font-weight: 600;
+/* Enlarged logo */
+.site-header .brand img,
+.logo img {
+  height: clamp(60px, 8vw, 120px);
 }
 
-/* Hero */
-.hero {
-  padding: clamp(2rem, 5vw, 4rem) 0;
-  display: grid; grid-template-columns: 1.4fr .9fr; gap: 1rem; align-items: center;
+
+/* Added: content images & larger logo */
+.site-header .brand img,
+.logo img { height: clamp(56px, 8vw, 88px); width: auto; } /* larger but responsive */
+
+.content-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border, #e2e8f0);
+  display: block;
 }
-.hero h1 { font-size: clamp(1.6rem, 4.5vw, 2.75rem); line-height: 1.2; margin: 0 0 .5rem 0; }
-.hero p { margin: 0; font-size: clamp(1rem, 2.7vw, 1.125rem); color: #334155; }
-.hero .hero-media img { width: 100%; height: auto; border-radius: 1rem; border: 1px solid var(--border); }
-@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
-
-/* Grid + Cards */
-.grid { display: grid; gap: 1rem; }
-.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (max-width: 960px) { .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 680px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
-
-.card {
-  border: 1px solid var(--border); border-radius: 1rem; padding: 1rem; background: var(--surface);
-  box-shadow: 0 1px 1px rgba(0,0,0,.02);
-}
-.card h3 { margin: .25rem 0 .5rem 0; font-size: 1.125rem; }
-.card p { margin: 0; color: var(--muted); }
-
-/* Buttons */
-.button, .cta {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: .6rem .9rem; border-radius: .75rem; text-decoration: none; font-weight: 700;
-  border: 1px solid var(--border); color: var(--text); background: var(--surface);
-}
-.cta { background: var(--brand); color: white; border-color: transparent; }
-.cta:hover { background: var(--brand-strong); }
-
-/* Footer */
-.footer { margin-top: 3rem; border-top: 1px solid var(--border); padding: 2rem 0; color: var(--muted); font-size: .95rem; }
-
-/* Helpers */
-.is-hidden { display: none !important; }
-
-/* ==== Optional theme classes you can apply to <body class="theme-xxx"> ==== */
-.theme-classic { --brand:#3b82f6; --brand-strong:#2563eb; }
-.theme-forest  { --brand:#16a34a; --brand-strong:#15803d; }
-.theme-berry   { --brand:#ec4899; --brand-strong:#db2777; }
-.theme-sunset  { --brand:#f97316; --brand-strong:#ea580c; }
-.theme-ink     { --bg:#0b1220; --surface:#0b1220; --text:#e5e7eb; --muted:#cbd5e1; --border:#1f2937; --soft:#111827; --brand:#22d3ee; --brand-strong:#06b6d4; }
+.image-section { margin: 1.25rem 0 2rem 0; }
+.image-section figure { margin: 0; }
+.image-section figcaption { font-size: .925rem; color: var(--muted, #475569); margin-top: .4rem; }
