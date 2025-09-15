@@ -77,3 +77,11 @@ p{ line-height:1.6; }
 /* Footer */
 footer{ border-top:1px solid #eee; margin-top:2rem; }
 footer .container{ display:flex; align-items:center; justify-content:space-between; padding:1rem 0; font-size:.95rem; }
+
+.site-header .brand img {
+  height: 120px;   /* iso logo */
+  width: auto;
+}
+@media (max-width:600px) {
+  .site-header .brand img { height: 80px; }
+}
