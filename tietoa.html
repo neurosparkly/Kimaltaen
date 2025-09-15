@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Canonical & Sitemap (päivitä SITE_URL tarvittaessa) -->
+  <!-- Canonical & Sitemap -->
   <link rel="canonical" href="https://kimaltaen.fi/tietoa.html">
   <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
 
@@ -45,7 +45,7 @@
         <li><a href="index.html">Etusivu</a></li>
         <li><a href="tietoa.html" aria-current="page">Tietoa</a></li>
         <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="linkit-ja-lahteet.html"</a></li>
+        <li><a href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
         <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
       </ul>
     </nav>
@@ -98,11 +98,15 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Päivitetty-leima (ISO datetime attribuuttiin + FI-lokaali näkyville)
-    (function(){
+    (function () {
       const el = document.getElementById('updated-date');
       const now = new Date();
       el.setAttribute('datetime', now.toISOString());
-      el.textContent = now.toLocaleDateString('fi-FI', { year: 'numeric', month: 'long', day: 'numeric' });
+      el.textContent = now.toLocaleDateString('fi-FI', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
     })();
   </script>
 </body>
