@@ -31,35 +31,6 @@
 
   <!-- SISÄLTÖ -->
   <main class="container">
-    <h1>Tervetuloa Kimaltaen-sivulle</h1>
-    <p>
-      Tämä on paikka, jossa moninaisuus saa loistaa.  
-      Jaan täällä kokemuksia ja ajatuksia neurovähemmistönä elämisestä —  
-      vinkkejä ja ideoita arkeen ✨
-    </p>
-
-    <img src="image1.png" alt="Kimalluskuvio" class="kuvitus">
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
-    </div>
-  </footer>
-
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
-  <script>
-    // Lisää dynaaminen vuosiluku
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
-
-  <!-- SISÄLTÖ -->
-  <main class="container">
     <h1>Kimaltaen</h1>
     <p>
       Kimaltaen on tila, jossa jokainen saa loistaa ✨.  
@@ -73,9 +44,7 @@
     </p>
 
     <!-- Kimalluskuva -->
-    <div class="kimallus">
-      <img src="image1.png" alt="Kimalluskuvio">
-    </div>
+    <img src="image1.png" alt="Kimalluskuvio" class="kuvitus">
   </main>
 
   <!-- FOOTER -->
@@ -83,8 +52,10 @@
     <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
   </footer>
 
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
