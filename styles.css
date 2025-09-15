@@ -285,4 +285,9 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
+/* Vain tälle kortille: älä leikkaa, näytä koko kuva */
+.media-contain img{
+  object-fit: contain;
+  background:#f6f6fb; /* siisti tausta mahdollisille reunoille */
+}
 
