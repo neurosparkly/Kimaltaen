@@ -1,87 +1,222 @@
+/* =========================================================
+   Kimaltaen – Yhtenäinen tyylitiedosto
+   ========================================================= */
 
-:root { 
-  --nav-pad-x: 1rem; 
-  --nav-gap: .5rem; 
-  --shadow-w: 30px; 
+/* CSS-muuttujat */
+:root {
+  --nav-pad-x: 1rem;
+  --nav-gap: .5rem;
+  --shadow-w: 30px;
   --maxw: 1000px;
+
+  --pill-bg: #f5f2ff;
+  --pill-border: #dcd5f5;
+  --pill-text: #4a3f7a;
+  --pill-bg-hover: #ece6ff;
+  --pill-border-hover: #cfc6f0;
+  --pill-active-bg: #7d5fb2;
+  --pill-active-text: #fff;
+
+  --text: #111;
+  --bg: #fff;
+  --muted-border: #eee;
 }
 
+/* Perusasetukset */
 * { box-sizing: border-box; }
 html, body { margin:0; padding:0; }
-body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#111; background:#fff; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); }
+img { max-width: 100%; height: auto; display: block; }
+p { line-height: 1.6; margin: 0 0 1rem; }
+h1 { font-size: clamp(1.6rem, 1.2rem + 2vw, 2.25rem); margin: 1rem 0 .5rem; }
+h2 { font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); margin: 1rem 0 .5rem; }
 
-/* Layout helpers */
-.container { width: min(100% - 2rem, var(--maxw)); margin-inline:auto; }
+/* Layout */
+.container { width: min(100% - 2rem, var(--maxw)); margin-inline: auto; }
 section { padding: 2rem 0; }
 
-/* Header */
-.site-header { border-bottom:1px solid #eee; position:sticky; top:0; background:#fff; z-index:50; }
-.brand { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem var(--nav-pad-x); }
-.brand .logo { display:flex; align-items:center; gap:.5rem; text-decoration:none; color:inherit; }
-.brand .logo img{ height:40px; width:auto; display:block; }
-.brand .logo span{ font-weight:700; font-size:1.1rem; letter-spacing:.2px; }
+/* =========================================================
+   HEADER + NAV
+   ========================================================= */
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--muted-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem var(--nav-pad-x);
+}
 
-/* Hamburger button (three lines) */
+/* Logo-linkki */
+.site-header .brand{
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  color: inherit;
+}
+.site-header .brand img{
+  height: 120px;     /* yhtenäinen, iso logo */
+  width: auto;
+}
+@media (max-width:600px){
+  .site-header .brand img{ height: 80px; }
+}
+
+/* NAV – yhteinen pohja (ul sisään) */
+.site-header nav > ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop-nav (napeille pilli-tyyli ja oikealle reuna) */
+@media (min-width:601px){
+  .site-header nav{
+    display: flex;
+    margin-left: auto;           /* ← tämä työntää navin oikealle */
+  }
+  .site-header nav > ul{
+    display: flex;
+    gap: 1rem;
+    padding: 0 var(--nav-pad-x) .5rem;
+  }
+  .site-header nav a{
+    display: inline-block;
+    text-decoration: none;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    color: var(--pill-text);
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    transition: background .2s, border-color .2s, transform .02s;
+  }
+  .site-header nav a:hover{ background: var(--pill-bg-hover); border-color: var(--pill-border-hover); }
+  .site-header nav a:active{ transform: translateY(1px); }
+  .site-header nav a[aria-current="page"]{
+    background: var(--pill-active-bg);
+    border-color: var(--pill-active-bg);
+    color: var(--pill-active-text);
+  }
+  /* Näppäimistöfokus */
+  .site-header nav a:focus-visible{
+    outline: 3px solid rgba(125,95,178,.35);
+    outline-offset: 2px;
+  }
+}
+
+/* Mobiili-nav: suljettu oletuksena, aukeaa kun navilla on .open */
+@media (max-width:600px){
+  .site-header nav{
+    position: relative;
+    margin-left: auto;
+  }
+  .site-header nav > ul{ display: none; }
+  .site-header nav.open > ul{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--nav-gap);
+    padding: .5rem var(--nav-pad-x);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-header nav.open > ul::-webkit-scrollbar{ display: none; }
+  .site-header nav.open > ul > li{ flex: 0 0 auto; }
+  .site-header nav.open a{
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    color: var(--pill-text);
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  }
+  .site-header nav.open a[aria-current="page"]{
+    background: var(--pill-active-bg);
+    border-color: var(--pill-active-bg);
+    color: var(--pill-active-text);
+  }
+
+  /* Reuna-varjot vaakarullaukseen */
+  .site-header nav::before,
+  .site-header nav::after{
+    content:""; position:absolute; top:0; height:100%; width:var(--shadow-w);
+    pointer-events:none; z-index:5; opacity:.9;
+  }
+  .site-header nav::before{ left:0; background:linear-gradient(to right, var(--bg), transparent); opacity:0; transition: opacity .18s; }
+  .site-header nav::after{ right:0; background:linear-gradient(to left,  var(--bg), transparent); }
+  .site-header nav.scrolled-left::before{ opacity:1; }
+}
+
+/* Hampurilainen (jos käytössä) */
 .nav-toggle{
-  display:flex; flex-direction:column; justify-content:space-between;
-  width:28px; height:22px; background:none; border:0; padding:0; cursor:pointer;
+  display: none; /* oletuksena piilossa desktopissa */
+  background: none; border: 0; padding: 0; cursor: pointer;
+  width: 28px; height: 22px;
 }
-.nav-toggle span{ display:block; height:3px; width:100%; background:#111; border-radius:2px; transition:transform .3s, opacity .3s; }
-.nav-toggle.active span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
-.nav-toggle.active span:nth-child(2){ opacity:0; }
-.nav-toggle.active span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
-
-/* Desktop nav */
-@media (min-width: 601px){
-  #primary-nav > ul{ display:flex; gap:1rem; margin:0; padding:0 var(--nav-pad-x) .75rem; list-style:none; }
-  #primary-nav a{ text-decoration:none; padding:.5rem .75rem; border-radius:999px; color:inherit; }
-  .nav-toggle{ display:none; }
+.nav-toggle span{
+  display: block; height: 3px; width: 100%;
+  background: var(--text); border-radius: 2px;
+  transition: transform .3s, opacity .3s;
 }
+.nav-toggle.active span:nth-child(1){ transform: translateY(9px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2){ opacity: 0; }
+.nav-toggle.active span:nth-child(3){ transform: translateY(-9px) rotate(-45deg); }
 
-/* Mobile nav (closed by default) */
-@media (max-width: 600px){
-  #primary-nav{ position:relative; }
-  #primary-nav > ul{ display:none; }
-  #primary-nav.open > ul{
-    display:flex; flex-wrap:nowrap; gap:var(--nav-gap); margin:0; padding:.5rem var(--nav-pad-x); list-style:none;
-    overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-width:none;
-  }
-  #primary-nav.open > ul::-webkit-scrollbar{ display:none; }
-  #primary-nav.open > ul > li{ flex:0 0 auto; }
-  #primary-nav a{ display:inline-block; white-space:nowrap; padding:.5rem .75rem; border-radius:999px; text-decoration:none; color:inherit; }
-
-  /* Edge shadows */
-  #primary-nav::before, #primary-nav::after{
-    content:""; position:absolute; top:0; height:100%; width:var(--shadow-w); pointer-events:none; z-index:5; opacity:.9;
-  }
-  #primary-nav::before{ left:0; background:linear-gradient(to right, #fff, transparent); opacity:0; transition:opacity .18s; }
-  #primary-nav::after{ right:0; background:linear-gradient(to left,  #fff, transparent); }
-  #primary-nav.scrolled-left::before{ opacity:1; }
-
-  .site-header{ overflow:visible; }
+@media (max-width:600px){
+  .nav-toggle{ display: flex; flex-direction: column; justify-content: space-between; }
 }
 
-/* Main content basics */
-h1{ font-size: clamp(1.6rem, 1.2rem + 2vw, 2.25rem); margin: 1rem 0 .5rem; }
-h2{ font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); margin: 1rem 0 .5rem; }
-p{ line-height:1.6; }
-
-.hero{ padding: 3rem 0; background: #fafafa; border-bottom:1px solid #eee; }
-.hero .container{ display:grid; gap:1rem; }
+/* =========================================================
+   SISÄLTÖKOMPONENTIT
+   ========================================================= */
+.hero{
+  padding: 3rem 0;
+  background: #fafafa;
+  border-bottom: 1px solid var(--muted-border);
+}
+.hero .container{ display: grid; gap: 1rem; }
 
 .card{
-  border:1px solid #eee; border-radius:16px; padding:1rem; background:#fff;
+  border: 1px solid var(--muted-border);
+  border-radius: 16px;
+  padding: 1rem;
+  background: #fff;
   box-shadow: 0 1px 0 rgba(0,0,0,0.02);
 }
 
-/* Footer */
-footer{ border-top:1px solid #eee; margin-top:2rem; }
-footer .container{ display:flex; align-items:center; justify-content:space-between; padding:1rem 0; font-size:.95rem; }
-
-.site-header .brand img {
-  height: 120px;   /* iso logo */
-  width: auto;
+/* Yhtenäiset kuvituskuvat kaikilla sivuilla */
+.kuvitus{
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
-@media (max-width:600px) {
-  .site-header .brand img { height: 80px; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{
+  border-top: 1px solid var(--muted-border);
+  margin-top: 2rem;
+}
+footer .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-size: .95rem;
+}
+
+/* =========================================================
+   Saavutettavuus & miellyttävä liike
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
