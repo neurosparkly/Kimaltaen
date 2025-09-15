@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <title>Kokemuksia — Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+  <!-- SEO -->
+  <meta name="description" content="Neurovähemmistön kokemuksia ja esseitä: arjen tarinoita, peilejä ja toivoa.">
+  <link rel="canonical" href="https://www.esimerkkidomain.fi/kokemuksia.html">
+
+  <!-- Styles & Favicons -->
+  <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,87 +19,69 @@
     <a class="brand" href="index.html">
       <img src="logo.png" alt="Kimaltaen logo">
     </a>
-
     <button class="nav-toggle" aria-label="Valikon avaus">
       <span></span><span></span><span></span>
     </button>
-
     <nav aria-label="Päänavigaatio">
       <ul>
         <li><a href="index.html">Etusivu</a></li>
         <li><a href="tietoa.html">Tietoa</a></li>
         <li><a href="kokemuksia.html" aria-current="page">Kokemuksia</a></li>
-        <li><a href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
-        <li><a href="/otayhteytta.html">Ota yhteyttä</a><li>  
+        <li><a href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
+        <li><a href="yhteys.html">Yhteys</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- SISÄLTÖ -->
-  <main class="container">
+  <!-- MAIN -->
+  <main class="content" id="main">
     <h1>Kokemuksia</h1>
-    <p>
-      Kokoan tänne pieniä kokemuksia ja ajatuksia.  
-      Uskon, että erilaisuus on voimaa ja jokaisen  tulisi saada loistaa.
-    </p>
+    <p>Neurovähemmistön arjesta, kulttuurista ja merkityksellisistä hetkistä. Esseitä, tarinoita ja pohdintoja.</p>
 
-    <section>
-      <h2>Artikkelit</h2>
-
-      <article>
-        <h3>Maskaamisesta näkyväksi</h3>
-        <p>
-          Olen oppinut peittämään osia itsestäni.  
-          Kun annan tilaa omalle rytmilleni ja tarpeilleni,
-          huomaan, että maailma voi kantaa lempeämmin.
-        </p>
+    <section class="cards" aria-label="Kokemustarinat">
+      
+      <!-- Esimerkkikortti (voit säilyttää omasi tähän) -->
+      <article class="card post-card">
+        <a class="card-link" href="esimerkki.html">
+          <figure class="card-media">
+            <img src="assets/image3.png" alt="Esimerkkikuva kokemukselle">
+          </figure>
+          <div class="card-content">
+            <h2 class="card-title">Maskaamisesta näkyväksi</h2>
+            <p class="card-meta"><time datetime="2025-08-15">15.8.2025</time> • Kokemus</p>
+            <p class="card-excerpt">Moni meistä on tottunut piilottamaan osia itsestään. Mitä jos maailma vahvistaisi, ei rikkoisi?</p>
+            <span class="btn btn-link">Lue koko juttu →</span>
+          </div>
+        </a>
       </article>
 
-      <article>
-        <h3>Kohtaamisen pikavinkit</h3>
-        <p>
-          Pienet teot tekevät paljon: selkeä viestintä, taukojen salliminen,
-          aistikuorman huomioiminen ja ennakoitavuus.  
-          Ne auttavat minua ja voivat auttaa muitakin.
-        </p>
+      <!-- Pharrell-kortti -->
+      <article class="card post-card">
+        <a class="card-link" href="pharrell.html" aria-label="Lue koko juttu: Pala palalta — Pharrell ja uskon voima">
+          <figure class="card-media">
+            <img src="assets/lego-mina.png" alt="Kirjoittajan Lego-hahmo kuvituksena">
+          </figure>
+          <div class="card-content">
+            <h2 class="card-title">Pala palalta — Pharrell ja uskon voima</h2>
+            <p class="card-meta"><time datetime="2025-09-15">15.9.2025</time> • Essee</p>
+            <p class="card-excerpt">
+              Miten toisen usko ja oma sisäinen usko voivat muuttaa kaiken —
+              ajatuksia Pharrellin <em>Piece by Piece</em> -elokuvasta ja
+              neurovähemmistön kokemuksista.
+            </p>
+            <span class="btn btn-link">Lue koko juttu →</span>
+          </div>
+        </a>
       </article>
-      <!-- UUSI: Pharrell-kokemus-kortti -->
-<!-- Pharrell-kokemuskortti -->
-<article class="card post-card">
-  <a class="card-link" href="pharrell.html" aria-label="Lue koko juttu: Piece By Piece — Pharrell ja uskon voima">
-    <figure class="card-media">
-      <img src="assets/lego-mina.png" alt="Kirjoittajan Lego-hahmo kuvituksena">
-    </figure>
-    <div class="card-content">
-      <h2 class="card-title">Piece By Piece — Pharrell ja uskon voima</h2>
-      <p class="card-meta">
-        <time datetime="2025-09-15">15.9.2025</time> • Essee
-      </p>
-      <p class="card-excerpt">
-        Miten toisen usko ja oma sisäinen usko voivat muuttaa kaiken —
-        ajatuksia Pharrellin <em>Piece by Piece</em> -elokuvasta ja
-        neurovähemmistön kokemuksista.
-      </p>
-      <span class="btn btn-link">Lue koko juttu →</span>
-    </div>
-  </a>
-</article>
 
     </section>
-
-    <img src="image3.png" alt="Erilaisia ihmisiä valossa" class="kuvitus">
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Kimaltaen ✨</small>
-    </div>
+  <footer class="site-footer">
+    <p>© 2025 Kimaltaen ✨</p>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
