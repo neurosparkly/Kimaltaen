@@ -4,17 +4,79 @@
   <meta charset="utf-8">
   <title>Linkit & lähteet — Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon & CSS -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Canonical & Sitemap -->
+  <link rel="canonical" href="https://kimaltaen.fi/linkit-ja-lahteet.html">
+  <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
+
+  <!-- Meta description -->
+  <meta name="description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Linkit & lähteet — Kimaltaen">
+  <meta property="og:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kimaltaen.fi/linkit-ja-lahteet.html">
+  <meta property="og:image" content="https://kimaltaen.fi/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linkit & lähteet — Kimaltaen">
+  <meta name="twitter:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
+  <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
+
+  <!-- Sivukohtainen tyyli (voit siirtää styles.css-tiedostoon) -->
+  <style>
+    :root{
+      --ink:#1b1b1f;
+      --muted:#5a5a6a;
+      --bg:#faf9fc;
+      --card:#ffffff;
+      --brand:#4a148c;
+      --brand-05:#f3eafe;
+      --ring:rgba(74,20,140,.18);
+    }
+    .links-page{background:var(--bg);}
+    .page-hero{max-width:1100px;margin:0 auto;padding:3rem 1.25rem 1.5rem;text-align:center}
+    .page-hero h1{font-size:clamp(1.8rem,2.6vw,2.4rem);color:var(--brand);margin:.25rem 0 .5rem}
+    .page-hero .lead{max-width:70ch;margin:0 auto;color:var(--muted)}
+    .toc{margin:1rem auto 0;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+    .toc a{padding:.5rem .75rem;border-radius:999px;background:var(--brand-05);color:var(--brand);text-decoration:none;border:1px solid var(--ring);font-weight:600}
+    .toc a:hover{filter:brightness(0.98)}
+    .link-section{max-width:1100px;margin:2rem auto;padding:0 1.25rem}
+    .link-section h2{color:var(--brand);font-size:1.4rem;margin:0 0 .75rem}
+    .backtop{margin:.75rem 0 0}.backtop a{color:var(--muted);text-decoration:none}.backtop a:hover{color:var(--brand)}
+    .link-grid{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:1024px){.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.link-grid{grid-template-columns:1fr}}
+    .link-card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.05);overflow:hidden;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease}
+    .link-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.10);border-color:rgba(0,0,0,.1)}
+    .card-link{display:flex;flex-direction:column;gap:.45rem;padding:1rem 1.1rem;height:100%;text-decoration:none}
+    .card-title{color:var(--ink);font-weight:700;line-height:1.3}
+    .card-desc{color:var(--muted)}
+    .meta{display:flex;gap:.5rem;align-items:center;margin-top:.1rem}
+    .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:700;letter-spacing:.01em;padding:.28rem .5rem;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand)}
+    .badge.lang{background:#eef8ff;color:#005a99;border-color:rgba(0,90,153,.2)}
+    .badge.type{background:#f7f7fa;color:#444;border-color:rgba(0,0,0,.08)}
+    .ext{width:14px;height:14px;margin-left:auto;opacity:.7;flex-shrink:0;background:
+      conic-gradient(from 45deg at 60% 40%, currentColor 0 25%, transparent 0) top right/10px 10px no-repeat,
+      linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
+    /* Aktiivinen nav-linkki (jos ei jo styles.css:ssä) */
+    .site-header nav a[aria-current="page"]{font-weight:700;color:var(--brand);text-decoration:underline;text-underline-offset:.2em}
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- HEADER: sama kuin etusivulla, aktiivinen korostus tällä sivulla -->
   <header class="site-header">
     <a class="brand" href="index.html">
       <img src="logo.png" alt="Kimaltaen logo">
     </a>
 
-    <button class="nav-toggle" aria-label="Valikon avaus">
+    <button class="nav-toggle" aria-label="Valikon avaus" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
@@ -23,73 +85,34 @@
         <li><a href="index.html">Etusivu</a></li>
         <li><a href="tietoa.html">Tietoa</a></li>
         <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="yhteys.html">Yhteys</a></li>
+        <li><a href="linkit-ja-lahteet.html" aria-current="page">Linkit &amp; lähteet</a></li>
+        <li><a href="yhteys.html">Ota yhteyttä</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="content">
-    <h1>Linkit & lähteet</h1>
-    <p>Kuratoitu kokoelma neurodiversiteettiparadigmasta ja neurovähemmistöjen osallisuudesta. Englanninkieliset teokset ovat alkuperäisnimillään. Jokaisen perässä on lyhyt kuvaus. Lista päivittyy — voit vinkata lisää luettavaa <a href="yhteys.html">Ota yhteyttä</a> -sivun kautta.</p>
+  <!-- SISÄLTÖ -->
+  <main class="links-page" aria-labelledby="links-title">
+    <!-- HERO -->
+    <header class="page-hero">
+      <h1 id="links-title">Linkit &amp; lähteet</h1>
+      <p class="lead">
+        Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.
+        Englanninkieliset teokset alkuperäisnimillä. Jokaisen perässä lyhyt suomenkielinen kuvaus.
+      </p>
 
-    <h2>Peruskäsitteet ja historia</h2>
-    <ul>
-      <li><a href="https://researchdirect.westernsydney.edu.au/islandora/object/uws:4426" target="_blank">Judy Singer — Odd People In (1998, thesis)</a> — neurodiversity-termin varhainen muotoilu ja liikkeen tausta.</li>
-      <li><a href="https://neuroqueer.com/neurodiversity-some-basic-terms-definitions/" target="_blank">Nick Walker — Neurodiversity: Some Basic Terms & Definitions</a> — selkeä sanasto.</li>
-      <li><a href="https://neuroqueer.com/autism-and-the-pathology-paradigm/" target="_blank">Nick Walker — Autism & the Pathology Paradigm</a> — miksi fokuksen tulee siirtyä oikeuksiin ja ympäristön muutokseen.</li>
-      <li><a href="https://dsq-sds.org/issue/view/45" target="_blank">Disability Studies Quarterly — Autism and the Concept of Neurodiversity (special issue)</a> — varhaisia yhteisölähtöisiä puheenvuoroja.</li>
-      <li><a href="https://doi.org/10.1007/978-981-13-8437-0" target="_blank">Kapp, S.K. (ed.) — Autistic Community and the Neurodiversity Movement (2020)</a> — kokoaa liikkeen taustaa ja ääniä.</li>
-    </ul>
+      <nav class="toc" aria-label="Sivun osiot">
+        <a href="#perus">Peruskäsitteet &amp; historia</a>
+        <a href="#arki">Arki &amp; käytännöt</a>
+        <a href="#tyo">Työ &amp; organisaatiot</a>
+        <a href="#tiede">Tutkimus &amp; artikkelit</a>
+      </nav>
+    </header>
 
-    <h2>Paradigmat ja teoriat</h2>
-    <ul>
-      <li><a href="https://doi.org/10.1080/09687599.2012.710008" target="_blank">Damian Milton — The Double Empathy Problem (2012)</a> — empatiakuilu neurovähemmistön ja neurotyypillisten välillä.</li>
-      <li><a href="https://newleftreview.org/issues/ii36/articles/nancy-fraser-reframing-justice-in-a-globalizing-world" target="_blank">Nancy Fraser — Reframing Justice in a Globalizing World (2005)</a> — tunnustus, jako ja edustus oikeudenmukaisuuden ulottuvuuksina.</li>
-      <li><a href="https://doi.org/10.1177/1745691620959833" target="_blank">Robert Chapman — Neurodiversity and the Social Ecology of Mental Functions (2021)</a> — neurodiversiteetti ekologisena ilmiönä.</li>
-      <li><a href="https://doi.org/10.1080/09687599.2016.1256273" target="_blank">T. Mladenov — Disability and Social Justice (2016)</a> — kriittinen vammaistutkimus ja rakenteellinen tarkastelu.</li>
-    </ul>
-
-    <h2>Osallisuus ja arki</h2>
-    <ul>
-      <li><a href="https://doi.org/10.1177/1362361320919286="_blank">Crompton et al. (2020)</a> — vertaisten välinen viestintä.</li>
-      <li><a href="https://doi.org/10.1177/13623613231223036" target="_blank">Field et al. (2024)</a> — maskaamisen kuormittavuus.</li>
-      <li><a href="https://doi.org/10.1080/09687599.2025.2498417" target="_blank">Wassell, C. (2025)</a> — osallisuus ja hyvinvointi ilon kautta.</li>
-      <li><a href="https://yle.fi/a/74-20178418" target="_blank">Yle (2025)</a> — tutkimus aistiesteettömyydestä kaupunkiympäristössä.</li>
-      <li><a href="https://www.hs.fi/elama/art-2000011163587.html" target="_blank">HS (Suoranta, 2025)</a> — artikkeli maskaamisesta.</li>
-    </ul>
-
-    <h2>Työelämä ja koulutus</h2>
-    <ul>
-      <li><a href="https://doi.org/10.1177/2156869318804297" target="_blank">Botha & Frost (2020)</a> — neurovähemmistöjen mielenterveys ja stressimallit.</li>
-      <li><a href="https://doi.org/10.1089/aut.2023.0046" target="_blank">Szechy & O’Donnell (2024)</a> — työelämän haasteet ja empatiakuilu.</li>
-      <li><a href="https://www.researchgate.net/publication/366291518_Neurodiversity_at_work_Drive_innovation_performance_and_productivity_with_a_neurodiverse_workforce_by_Theo_Smith_and_Amanda_Kirby_London_Kogan_Page_2021_310_pages_xx_paperback" target="_blank">Amanda Kirby & Theo Smith — Neurodiversity at Work (2021)</a> — käytännöllinen opas organisaatioille.</li>
-    </ul>
-
-    <h2>Media, kulttuuri ja representaatio</h2>
-    <ul>
-      <li><a href="https://doi.org/10.26522/brocked.v23i2.311" target="_blank">Belcher & Maich (2014)</a> — autismin esitykset mediassa.</li>
-      <li><a href="https://doi.org/10.1089/aut.2020.0043" target="_blank">Pearson & Rose (2021)</a> — maskaamisen narratiivit ja stigma.</li>
-      <li><a href="https://doi.org/10.1177/13623613221129123" target="_blank">Milton, Gurbuz & López (2022)</a> — Double empathy problem: Ten years on.</li>
-    </ul>
-
-    <h2>Oppaat ja raportit</h2>
-    <ul>
-      <li><a href="https://urn.fi/URN:ISBN:978-952-408-088-0" target="_blank">THL — Osallisuuden edistäjän opas (2023)</a>.</li>
-      <li><a href="https://urn.fi/URN:ISBN:978-952-302-917-0" target="_blank">THL — Mitä osallisuus on? (Isola ym., 2017)</a>.</li>
-      <li><a href="https://helda.helsinki.fi/handle/10138/177929" target="_blank">Jääskeläinen, E. (2017)</a> — autismin kirjon kokemuksia osallisuudesta (väitöskirja).</li>
-      <li><a href="https://urn.fi/URN:ISBN:978-952-302-402-1" target="_blank">Arnkil & Seikkula (2015)</a> — dialogisuus ja osallisuus.</li>
-      <li><a href="opas.html" target="_blank">Opas — Osallisuus kuuluu kaikille</a> — käytännön opas opparisi pohjalta.</li>
-    </ul>
-
-    <p><a href="tietoa.html">← Takaisin Tietoa-sivulle</a></p>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>© 2025 Kimaltaen — Moninaisuus saa loistaa ✨</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- OSIO 1 -->
+    <section id="perus" class="link-section" aria-labelledby="h-perus">
+      <h2 id="h-perus">Peruskäsitteet &amp; historia</h2>
+      <ul class="link-grid" role="list">
+        <li class="link-card" role="listitem">
+          <a class="card-link" href="https://neuroqueer.com/neurodiversity-terms-and-definitions/" target="_blank" rel="noopener">
+            <span class="card-title">Nick Walker — Neurodiversity: Some Basic Terms &amp; Definiti
