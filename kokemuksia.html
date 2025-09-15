@@ -8,17 +8,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img src="logo.png" alt="Kimaltaen logo">
-  </a>
-  <nav aria-label="Päänavigaatio">
-    <a href="index.html" aria-current="page">Kokemuksia</a>
-    <a href="tietoa.html">Tietoa</a>
-    <a href="kokemuksia.html">Kokemuksia</a>
-    <a href="yhteys.html">Yhteys</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Kimaltaen logo">
+    </a>
+    <nav aria-label="Päänavigaatio">
+      <a href="index.html">Etusivu</a>
+      <a href="tietoa.html">Tietoa</a>
+      <a href="kokemuksia.html" aria-current="page">Kokemuksia</a>
+      <a href="yhteys.html">Yhteys</a>
+    </nav>
+  </header>
 
   <main class="container">
     <h1>Kokemuksia</h1>
@@ -29,7 +29,6 @@
 
     <section>
       <h2>Artikkelit</h2>
-
       <article>
         <h3>Maskaamisesta näkyväksi</h3>
         <p>
@@ -53,9 +52,8 @@
   </main>
 
   <footer class="site-footer">
-    <small>© <span id="year"></span> Kimaltaen ✨</small>
+    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
   </footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
