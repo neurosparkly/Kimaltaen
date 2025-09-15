@@ -263,4 +263,26 @@ h1, h2, h3, h4, h5, h6 {
 
   color: #4B0082; /* tumma violetti (indigo) */
 }
+.hero-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-text {
+  flex: 1 1 300px;
+}
+
+.hero-image {
+  flex: 0 0 200px; /* kuvan maksimileveys */
+  margin: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
 
