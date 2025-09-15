@@ -23,7 +23,7 @@
         <li><a href="index.html">Etusivu</a></li>
         <li><a href="tietoa.html">Tietoa</a></li>
         <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="linkit-ja-lahteet.html"</a></li>
+        <li><a href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
         <li><a href="otayhteytta.html" aria-current="page">Ota yhteyttä</a></li>
       </ul>
     </nav>
@@ -33,30 +33,29 @@
   <main class="container">
     <h1>Ota yhteyttä</h1>
     <p>
-      Jos haluat kirjoittaa minulle, voit lähettää viestin alla olevalla lomakkeella. <br>  
+      Jos haluat kirjoittaa minulle, voit lähettää viestin alla olevalla lomakkeella. <br>
       Olen iloinen jokaisesta tervehdyksestä, kysymyksestä ja ajatuksesta ✨
     </p>
 
-   <section id="yhteys">
-  <h2>Lähetä viesti</h2>
-  <form action="https://formspree.io/f/xpwjeabg" method="POST">
-    <label for="nimi">Nimi (valinnainen)</label>
-    <input id="nimi" name="nimi" autocomplete="name">
+    <section id="yhteys">
+      <h2>Lähetä viesti</h2>
+      <form action="https://formspree.io/f/xpwjeabg" method="POST">
+        <label for="nimi">Nimi (valinnainen)</label>
+        <input id="nimi" name="nimi" type="text" autocomplete="name">
 
-    <label for="sahkoposti">Sähköposti (valinnainen)</label>
-    <input id="sahkoposti" type="email" name="email" autocomplete="email" inputmode="email" placeholder="sinun@email.com">
+        <label for="sahkoposti">Sähköposti (valinnainen)</label>
+        <input id="sahkoposti" type="email" name="email" autocomplete="email" inputmode="email" placeholder="sinun@email.com">
 
-    <label for="viesti">Viesti</label>
-    <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
+        <label for="viesti">Viesti</label>
+        <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
 
-    <!-- Hunajapurkki (valinnainen) -->
-    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Hunajapurkki (spam-ansa) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-    <button type="submit">Lähetä</button>
-    <p id="form-status" role="status" aria-live="polite"></p>
-  </form>
-</section>
-
+        <button type="submit">Lähetä</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
   <!-- FOOTER -->
