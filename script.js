@@ -34,26 +34,30 @@
   }
 })();
 document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-header nav");
+  const form = document.querySelector("#yhteys form");
+  const status = document.getElementById("form-status");
+  if (!form || !status) return;
 
-  if (navToggle && nav) {
-    // Avaa/sulje menu klikistä
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("active");
-    });
-
-    // Reunavarjon hallinta vaakaskrollissa
-    const ul = nav.querySelector("ul");
-    if (ul) {
-      ul.addEventListener("scroll", () => {
-        if (ul.scrollLeft > 0) {
-          nav.classList.add("scrolled-left");
-        } else {
-          nav.classList.remove("scrolled-left");
-        }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { Accept: "application/json" },
       });
+      if (res.ok) {
+        status.textContent = "Kiitos viestistäsi! ✨";
+        status.className = "ok";
+        form.reset();
+      } else {
+        status.textContent = "Lähetyksessä tapahtui virhe. Yritä uudelleen.";
+        status.className = "err";
+      }
+    } catch {
+      status.textContent = "Verkkovirhe. Tarkista yhteys.";
+      status.className = "err";
     }
-  }
+  });
 });
