@@ -1,64 +1,66 @@
 <!doctype html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8">
-  <title>Tietoa — Kimaltaen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <title>Tietoa – Kimaltaen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kimaltaen: lempeitä, selkeitä kirjoituksia neurovähemmistöjen arjesta neurodiversiteettiparadigman näkökulmasta." />
+  <link rel="canonical" href="https://kimaltaen.fi/tietoa" />
+  <style>
+    :root { --max: 72ch; --fg:#1b1b1b; --muted:#5a5a5a; --bg:#fff; }
+    html { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--fg); background:var(--bg); }
+    body { margin:0; padding:2rem 1.25rem; display:grid; place-items:center; }
+    main { max-width:var(--max); line-height:1.6; }
+    h1,h2 { line-height:1.2; }
+    .lead { font-size:1.125rem; color:var(--muted); }
+    nav a { color:inherit; text-underline-offset:3px; }
+    ul { padding-left:1.25rem; }
+    .note { background:#f7f7f8; border-radius:12px; padding:1rem 1.25rem; }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Kimaltaen logo">
-    </a>
-
-    <button class="nav-toggle" aria-label="Valikon avaus">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav aria-label="Päänavigaatio">
-      <ul>
-        <li><a href="index.html">Etusivu</a></li>
-        <li><a href="tietoa.html" aria-current="page">Tietoa</a></li>
-        <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="/otayhteytta.html">Ota yhteyttä</a><li>  
-      </ul>
-    </nav>
+<main>
+  <header>
+    <h1>Tietoa</h1>
+    <p class="lead">Kirjoitan selkeästi ja lempeästi – toivoa vaalien.</p>
   </header>
 
-  <!-- SISÄLTÖ -->
-  <main class="container">
-    <h1>Tietoa</h1>
+  <section aria-labelledby="miksi">
+    <h2 id="miksi">Miksi Kimaltaen?</h2>
     <p>
-      Minulle Kimaltaen on syntynyt tarpeesta luoda tila, jossa saan jakaa
-      omia kokemuksiani ja näkökulmiani neurovähemmistön arjesta.
+      Kimaltaen on syntynyt tarpeesta luoda tila, jossa voin jakaa omia kokemuksiani ja
+      näkökulmiani neurovähemmistön arjesta. Tavoitteeni on sanoittaa arkea niin,
+      että lukijalle jää tilaa hengittää ja toivo saa tilaa kasvaa.
     </p>
+  </section>
+
+  <section aria-labelledby="teemat">
+    <h2 id="teemat">Teemat</h2>
+    <ul>
+      <li>arjen selkeys ja saavutettavuus</li>
+      <li>kohtaamisen tavat</li>
+      <li>omien rajojen tunnistaminen</li>
+      <li>pienet teot, jotka kantavat toivoa</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="nako">
+    <h2 id="nako">Mistä näkökulmasta kirjoitan?</h2>
     <p>
-      Haluan kirjoittaa asioista selkeästi ja lempeästi — toivoa vaalien.
+      Kirjoitan <strong>neurodiversiteettiparadigmasta</strong> käsin: neurologinen moninaisuus on osa ihmisyyden kirjoa.
+      Usein kuormitus syntyy ympäristön esteistä ja odotuksista – siksi selkeys, ennakoitavuus ja yhteisöllisyys
+      ovat tämän sivun ytimessä. Jos haluat sukeltaa syvemmälle tutkimuksiin ja esseisiin tästä näkökulmasta,
+      kurkkaa erillinen sivu <a href="/linkit-ja-lahteet">Linkit &amp; lähteet</a>.
     </p>
-
-    <h2>Teemat</h2>
-    <p>
-      Kirjoitukseni koskettavat mm. arjen selkeyttä ja saavutettavuutta,
-      kohtaamisen tapoja, omien rajojen tunnistamista sekä sitä, miten
-      pienetkin teot voivat luoda toivoa.
+    <p class="note">
+      Huom. Pidän sisällöt kokemuksellisina ja ei-lääketieteellisinä. Linkkisivulla lähteet on kuratoitu
+      neurodiversiteettiparadigman hengessä.
     </p>
+  </section>
 
-    <img src="image2.png" alt="Abstrakti kuvitus" class="kuvitus">
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Kimaltaen ✨</small>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <nav aria-label="Sivunavigaatio">
+    <a href="/linkit-ja-lahteet">→ Linkit &amp; lähteet</a>
+  </nav>
+</main>
 </body>
 </html>
