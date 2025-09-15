@@ -33,3 +33,27 @@
     });
   }
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-header nav");
+
+  if (navToggle && nav) {
+    // Avaa/sulje menu klikistä
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("active");
+    });
+
+    // Reunavarjon hallinta vaakaskrollissa
+    const ul = nav.querySelector("ul");
+    if (ul) {
+      ul.addEventListener("scroll", () => {
+        if (ul.scrollLeft > 0) {
+          nav.classList.add("scrolled-left");
+        } else {
+          nav.classList.remove("scrolled-left");
+        }
+      });
+    }
+  }
+});
