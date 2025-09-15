@@ -1,81 +1,76 @@
 <!doctype html>
 <html lang="fi">
 <head>
-  <title>Kokemuksia — Kimaltaen</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="logo2.png">
+  <title>Kimaltaen – Kokemuksia</title>
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Kokemuksia ja tarinoita: arjen oivalluksia, selviytymiskeinoja ja vertaistukea.">
-  <style>
-    /* Logo isommaksi (mobiilissa pienempi) */
-    .site-header .brand img { height: 120px; width: auto; }
-    @media (max-width: 600px) {
-      .site-header .brand img { height: 80px; }
-    }
-
-    /* Alareunan kuvitus keskelle */
-    .kuvitus {
-      max-width: 500px;
-      width: 100%;
-      display: block;
-      margin: 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-  </style>
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Kimaltaen logo">
-      <!-- poistettu teksti <span>Kimaltaen</span> -->
-    </a>
-    <nav aria-label="Päänavigaatio">
+<body class="theme-classic">
+  <header class="header">
+    <div class="container navbar">
+      <a class="logo" href="index.html" aria-label="Kimaltaen etusivu">
+        <img src="assets/logo.png" alt="Kimaltaen logo" onerror="this.src='https://dummyimage.com/300x100/111827/ffffff.png&text=Kimaltaen'">
+        <span class="brand" data-brand-text>Kimaltaen</span>
+      </a>
+      <nav class="right-actions">
+        <button class="hamburger is-hidden" data-hamburger aria-label="Avaa valikko" aria-controls="mobiilivalikko" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="nav-links">
+          <a href="index.html" >Etusivu</a>
+          <a href="tietoa.html" >Tietoa</a>
+          <a href="kokemuksia.html" class="active">Kokemuksia</a>
+          <a class="cta" href="#ota-yhteytta">Ota yhteyttä</a>
+        </div>
+      </nav>
+    </div>
+    <div id="mobiilivalikko" class="container mobile-drawer" data-mobile-drawer>
       <a href="index.html">Etusivu</a>
       <a href="tietoa.html">Tietoa</a>
-      <a href="kokemuksia.html" aria-current="page">Kokemuksia</a>
-      <a href="yhteys.html">Yhteys</a>
-    </nav>
+      <a href="kokemuksia.html">Kokemuksia</a>
+      <a href="#ota-yhteytta">Ota yhteyttä</a>
+    </div>
   </header>
-
   <main class="container">
-    <h1>Kokemuksia</h1>
 
-    <section>
-      <p>
-        Tähän kootaan pieniä välähdyksiä ja oivalluksia arjesta. Jokainen kokemus on arvokas —
-        erilaisuus on voimaa, joka saa loistaa.
-      </p>
-    </section>
+<section class="hero">
+  <div>
+    <h1 data-slot="kokemuksia.title">Kokemuksia</h1>
+    <p data-slot="kokemuksia.lead">Referenssit, asiakaspalautteet ja esimerkkitarinat.</p>
+  </div>
+  <div class="hero-media">
+    <img src="assets/cases.jpg" alt="Kokemuksia" onerror="this.src='https://dummyimage.com/1200x720/e0e7ff/3730a3.png&text=Cases'">
+  </div>
+</section>
 
-    <section>
-      <h2>Artikkelit</h2>
-      <article>
-        <h3>Maskaamisesta näkyväksi</h3>
-        <p>
-          Moni meistä on tottunut peittämään osia itsestään. Mitä tapahtuu, kun annamme tilaa
-          omalle rytmille ja tarpeille?
-        </p>
-      </article>
+<section class="grid grid-2">
+  <article class="card"><h3 data-slot="kokemuksia.items.0.title">Referenssi #1</h3><p data-slot="kokemuksia.items.0.body">Haaste, ratkaisu ja tulos.</p></article>
+  <article class="card"><h3 data-slot="kokemuksia.items.1.title">Referenssi #2</h3><p data-slot="kokemuksia.items.1.body">Haaste, ratkaisu ja tulos.</p></article>
+  <article class="card"><h3 data-slot="kokemuksia.items.2.title">Asiakaspalaute</h3><p data-slot="kokemuksia.items.2.body">“Selkeä, nopea ja laadukas toteutus.” – Asiakkaan nimi</p></article>
+  <article class="card"><h3 data-slot="kokemuksia.items.3.title">Ennen → jälkeen</h3><p data-slot="kokemuksia.items.3.body">Kuvaile konkreettinen parannus ja sen vaikutus.</p></article>
+</section>
 
-      <article>
-        <h3>Kohtaamisen pikavinkit</h3>
-        <p>
-          Pienet teot tekevät paljon: selkeä viestintä, tauot, aistikuorman huomioiminen ja
-          ennakoitavuus.
-        </p>
-      </article>
-    </section>
   </main>
-
-  <!-- Ihmiskuva alas keskelle -->
-  <img src="image3.png" alt="Erilaisia ihmisiä valossa" class="kuvitus">
-
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
+  <footer class="footer">
+    <div class="container">
+      © Kimaltaen – kaikki oikeudet pidätetään. · <a href="#tietosuoja">Tietosuojaseloste</a>
+      <div style="float:right">
+        <label for="theme">Teema:</label>
+        <select id="theme" data-theme-picker>
+          <option value="">Default</option>
+          <option value="theme-classic" selected>Classic</option>
+          <option value="theme-forest">Forest</option>
+          <option value="theme-berry">Berry</option>
+          <option value="theme-sunset">Sunset</option>
+          <option value="theme-ink">Ink (tumma)</option>
+        </select>
+      </div>
+    </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

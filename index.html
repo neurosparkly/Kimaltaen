@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kimaltaen – Etusivu</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
 </head>
-<body>
+<body class="theme-classic">
   <header class="header">
     <div class="container navbar">
       <a class="logo" href="index.html" aria-label="Kimaltaen etusivu">
-        <img src="https://dummyimage.com/200x80/111827/ffffff.png&text=Kimaltaen" alt="Kimaltaen logo">
-        <span class="brand">Kimaltaen</span>
+        <img src="assets/logo.png" alt="Kimaltaen logo" onerror="this.src='https://dummyimage.com/300x100/111827/ffffff.png&text=Kimaltaen'">
+        <span class="brand" data-brand-text>Kimaltaen</span>
       </a>
       <nav class="right-actions">
         <button class="hamburger is-hidden" data-hamburger aria-label="Avaa valikko" aria-controls="mobiilivalikko" aria-expanded="false">
@@ -20,51 +22,77 @@
           </svg>
         </button>
         <div class="nav-links">
-          <a href="index.html" style="background:#e2e8f0">Etusivu</a>
-          <a href="tietoa-ja-kokemuksia.html" >Tietoa &amp; kokemuksia</a>
+          <a href="index.html" class="active">Etusivu</a>
+          <a href="tietoa.html" >Tietoa</a>
+          <a href="kokemuksia.html" >Kokemuksia</a>
           <a class="cta" href="#ota-yhteytta">Ota yhteyttä</a>
         </div>
       </nav>
     </div>
     <div id="mobiilivalikko" class="container mobile-drawer" data-mobile-drawer>
       <a href="index.html">Etusivu</a>
-      <a href="tietoa-ja-kokemuksia.html">Tietoa &amp; kokemuksia</a>
+      <a href="tietoa.html">Tietoa</a>
+      <a href="kokemuksia.html">Kokemuksia</a>
       <a href="#ota-yhteytta">Ota yhteyttä</a>
     </div>
   </header>
   <main class="container">
 
-    <section class="hero">
-      <h1>Kimaltaen – selkeästi ja kauniisti myös puhelimella</h1>
-      <p>Etusivun sisältö on jaettu joustaviin palstoihin. Logo on riittävän iso, painikkeet ovat oikeassa reunassa ja mobiilissa käytössä on hampurilaisvalikko.</p>
-    </section>
+<section class="hero">
+  <div>
+    <h1 data-slot="home.hero_title">Kimaltaen – selkeästi ja kauniisti myös puhelimella</h1>
+    <p data-slot="home.hero_lead">Etusivu kokoaa tärkeimmät nostot. Tietosisällöt sekä kokemukset ovat omilla sivuillaan.</p>
+    <p style="margin-top:1rem">
+      <a class="cta" href="tietoa.html">Lue tietoa</a>
+      <a class="button" href="kokemuksia.html" style="margin-left:.5rem">Katso kokemuksia</a>
+    </p>
+  </div>
+  <div class="hero-media">
+    <img src="assets/hero.jpg" alt="Esittelykuva" onerror="this.src='https://dummyimage.com/1200x720/e2e8f0/475569.png&text=Hero+image'">
+  </div>
+</section>
 
-    <section class="grid grid-3">
-      <article class="card">
-        <h3>Nopea tieto</h3>
-        <p>Tiivis nosto ajankohtaisista asioista. Toimii yhdellä palstalla puhelimella.</p>
-      </article>
-      <article class="card">
-        <h3>Palvelut</h3>
-        <p>Kuvaus palveluista ja hyödyistä. Helppo lukea kaikilla näytöillä.</p>
-      </article>
-      <article class="card">
-        <h3>Ajankohtaista</h3>
-        <p>Uutiset, blogit tai päivitykset. Katoaa siististi yhdelle palstalle mobiilissa.</p>
-      </article>
-    </section>
+<section class="grid grid-3">
+  <article class="card">
+    <h3>Nopea tieto</h3>
+    <p>Tiivis nosto ajankohtaisista asioista.</p>
+  </article>
+  <article class="card">
+    <h3>Palvelut</h3>
+    <p>Kuvaus palveluista ja hyödyistä.</p>
+  </article>
+  <article class="card">
+    <h3>Ajankohtaista</h3>
+    <p>Uutiset, blogit tai päivitykset.</p>
+  </article>
+</section>
 
-    <section id="ota-yhteytta" class="hero">
-      <h2>Ota yhteyttä</h2>
-      <p>Lähetä viesti tai varaa aika – palaamme pikaisesti.</p>
-    </section>
+<section id="ota-yhteytta" class="hero">
+  <div>
+    <h2>Ota yhteyttä</h2>
+    <p>Lähetä viesti tai varaa aika – palaamme pikaisesti.</p>
+  </div>
+  <div class="hero-media">
+    <img src="assets/contact.jpg" alt="Yhteydenotto" onerror="this.src='https://dummyimage.com/1200x720/f1f5f9/475569.png&text=Contact'">
+  </div>
+</section>
 
   </main>
   <footer class="footer">
     <div class="container">
       © Kimaltaen – kaikki oikeudet pidätetään. · <a href="#tietosuoja">Tietosuojaseloste</a>
+      <div style="float:right">
+        <label for="theme">Teema:</label>
+        <select id="theme" data-theme-picker>
+          <option value="">Default</option>
+          <option value="theme-classic" selected>Classic</option>
+          <option value="theme-forest">Forest</option>
+          <option value="theme-berry">Berry</option>
+          <option value="theme-sunset">Sunset</option>
+          <option value="theme-ink">Ink (tumma)</option>
+        </select>
+      </div>
     </div>
   </footer>
-  <script src="app.js"></script>
 </body>
 </html>

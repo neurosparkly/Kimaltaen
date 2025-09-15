@@ -2,154 +2,76 @@
 <html lang="fi">
 <head>
   <meta charset="utf-8">
-  <title>Tietoa — Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <style>
-    /* === YLEISET === */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.55;
-      color: #222;
-      background: #fff;
-    }
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    h1 {
-      margin: 16px 0 10px;
-      font-size: 2rem;
-    }
-    h2 {
-      margin: 28px 0 12px;
-      font-size: 1.5rem;
-      color: #4a3f7a;
-    }
-    p { margin: 0 0 16px; }
-
-    /* HEADER */
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      border-bottom: 1px solid #eee;
-      background: #fff;
-    }
-    .site-header .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: inherit;
-    }
-    .site-header .brand img {
-      height: 80px;
-      width: auto;
-    }
-    .site-header nav {
-      display: flex;
-      gap: 12px;
-      margin-left: auto;
-    }
-    .site-header nav a {
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid #dcd5f5;
-      background: #f5f2ff;
-      color: #4a3f7a;
-      text-decoration: none;
-      font-weight: 500;
-      line-height: 1;
-      box-shadow: 0 1px 0 rgba(0,0,0,.03);
-      transition: background .2s ease, border-color .2s ease, transform .02s ease-in-out;
-    }
-    .site-header nav a:hover {
-      background: #ece6ff;
-      border-color: #cfc6f0;
-    }
-    .site-header nav a:active {
-      transform: translateY(1px);
-    }
-    .site-header nav a[aria-current="page"] {
-      background: #7d5fb2;
-      border-color: #7d5fb2;
-      color: #fff;
-    }
-
-    /* KUVAT */
-    img { max-width: 100%; height: auto; }
-    .kuvitus {
-      max-width: 500px;
-      width: 100%;
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    }
-
-    /* FOOTER */
-    .site-footer {
-      border-top: 1px solid #eee;
-      padding: 16px;
-      text-align: center;
-      color: #555;
-    }
-  </style>
+  <title>Kimaltaen – Tietoa</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
 </head>
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Kimaltaen logo">
-    </a>
-    <nav aria-label="Päänavigaatio">
+<body class="theme-classic">
+  <header class="header">
+    <div class="container navbar">
+      <a class="logo" href="index.html" aria-label="Kimaltaen etusivu">
+        <img src="assets/logo.png" alt="Kimaltaen logo" onerror="this.src='https://dummyimage.com/300x100/111827/ffffff.png&text=Kimaltaen'">
+        <span class="brand" data-brand-text>Kimaltaen</span>
+      </a>
+      <nav class="right-actions">
+        <button class="hamburger is-hidden" data-hamburger aria-label="Avaa valikko" aria-controls="mobiilivalikko" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="nav-links">
+          <a href="index.html" >Etusivu</a>
+          <a href="tietoa.html" class="active">Tietoa</a>
+          <a href="kokemuksia.html" >Kokemuksia</a>
+          <a class="cta" href="#ota-yhteytta">Ota yhteyttä</a>
+        </div>
+      </nav>
+    </div>
+    <div id="mobiilivalikko" class="container mobile-drawer" data-mobile-drawer>
       <a href="index.html">Etusivu</a>
-      <a href="tietoa.html" aria-current="page">Tietoa</a>
+      <a href="tietoa.html">Tietoa</a>
       <a href="kokemuksia.html">Kokemuksia</a>
-      <a href="yhteys.html">Yhteys</a>
-    </nav>
+      <a href="#ota-yhteytta">Ota yhteyttä</a>
+    </div>
   </header>
-
-  <!-- SISÄLTÖ -->
   <main class="container">
-    <h1>Tietoa</h1>
-    <p>
-      Kimaltaen syntyi tarpeesta luoda tila, jossa neurovähemmistön kokemukset 
-      ja näkökulmat saavat tulla näkyväksi. Sivustolla jaetaan arjen vinkkejä, 
-      tietoa ja ajatuksia lempeästi ja toivoa vaalien.
-    </p>
-    <p>
-      Tavoitteena on lisätä ymmärrystä ja tarjota keinoja, jotka tekevät arjesta 
-      selkeämpää, saavutettavampaa ja turvallisempaa. Jokainen ansaitsee 
-      tulla kohdatuksi omana itsenään.
-    </p>
 
-    <!-- Teemat -->
-    <h2>Teemat</h2>
-    <p>
-      Sivuston teemoina ovat esimerkiksi saavutettavuus ja selkeys arjessa, 
-      kohtaaminen ja vuorovaikutus, omien rajojen tunnistaminen sekä toivo ja 
-      pienten edistysaskeleiden voima.
-    </p>
+<section class="hero">
+  <div>
+    <h1 data-slot="tietoa.title">Tietoa</h1>
+    <p data-slot="tietoa.lead">Ytimekäs tietopaketti palveluista, prosessista ja hinnoittelusta.</p>
+  </div>
+  <div class="hero-media">
+    <img src="assets/info.jpg" alt="Tietoa" onerror="this.src='https://dummyimage.com/1200x720/fee2e2/7f1d1d.png&text=Info'">
+  </div>
+</section>
 
-    <!-- Kuva teemojen jälkeen -->
-    <img src="image2.png" alt="Koristeellinen kuvitus" class="kuvitus">
+<section class="grid grid-2" id="tieto-sections">
+  <!-- Render sections from content.js via simple duplication to keep static HTML too -->
+  <article class="card"><h3 data-slot="tietoa.sections.0.title">Palvelukuvaus</h3><p data-slot="tietoa.sections.0.body">Selkeä erittely siitä, mitä tarjoat ja kenelle.</p></article>
+  <article class="card"><h3 data-slot="tietoa.sections.1.title">Prosessi</h3><p data-slot="tietoa.sections.1.body">Yhteydenotto → kartoitus → toteutus → palaute.</p></article>
+  <article class="card"><h3 data-slot="tietoa.sections.2.title">Hinnoittelu</h3><p data-slot="tietoa.sections.2.body">Tyypilliset paketit ja esimerkkihinnat.</p></article>
+  <article class="card"><h3 data-slot="tietoa.sections.3.title">Usein kysyttyä</h3><p data-slot="tietoa.sections.3.body">Lyhyet vastaukset yleisiin kysymyksiin.</p></article>
+</section>
+
   </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <small>© <span id="year"></span> ✨ Kimaltaen </small>
+  <footer class="footer">
+    <div class="container">
+      © Kimaltaen – kaikki oikeudet pidätetään. · <a href="#tietosuoja">Tietosuojaseloste</a>
+      <div style="float:right">
+        <label for="theme">Teema:</label>
+        <select id="theme" data-theme-picker>
+          <option value="">Default</option>
+          <option value="theme-classic" selected>Classic</option>
+          <option value="theme-forest">Forest</option>
+          <option value="theme-berry">Berry</option>
+          <option value="theme-sunset">Sunset</option>
+          <option value="theme-ink">Ink (tumma)</option>
+        </select>
+      </div>
+    </div>
   </footer>
-
-  <script>
-    // Vuosi automaattisesti
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
