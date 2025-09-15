@@ -2,59 +2,77 @@
 <html lang="fi">
 <head>
   <meta charset="utf-8">
+  <title>Kimaltaen — Jokainen saa loistaa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kimaltaen – Etusivu</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.55; color:#222; background:#fff; }
+    .container { max-width:980px; margin:0 auto; padding:24px; }
+    h1 { margin:16px 0 10px; font-size:2rem; }
+    p { margin:0 0 16px; }
+    img { max-width:100%; height:auto; display:block; }
+
+    /* HEADER */
+    .site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid #eee;background:#fff}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+    .brand img{height:120px;width:auto}
+    @media (max-width:600px){ .brand img{height:80px} }
+    .site-header nav{display:flex;gap:12px;margin-left:auto}
+    .site-header nav a{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid #dcd5f5;background:#f5f2ff;color:#4a3f7a;text-decoration:none;font-weight:500;line-height:1;box-shadow:0 1px 0 rgba(0,0,0,.03);transition:background .2s,border-color .2s,transform .02s}
+    .site-header nav a:hover{background:#ece6ff;border-color:#cfc6f0}
+    .site-header nav a:active{transform:translateY(1px)}
+    .site-header nav a[aria-current="page"]{background:#7d5fb2;border-color:#7d5fb2;color:#fff}
+
+    /* KIMALLUSKUVA */
+    .kimallus { text-align:center; margin-top:24px; }
+    .kimallus img { max-width:200px; opacity:.9; margin:0 auto; }
+
+    /* FOOTER */
+    .site-footer{border-top:1px solid #eee;padding:16px;text-align:center;color:#555}
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="brand container">
-      <a href="/" class="logo">
-        <img src="logo.png" alt="Kimaltaen logo" onerror="this.style.display='none'">
-        <span>Kimaltaen</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav id="primary-nav" class="container" aria-label="Päävalikko">
-      <ul>
-        <li><a href="index.html">Etusivu</a></li>
-        <li><a href="tietoa.html">Tietoa</a></li>
-        <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="yhteys.html">Yhteys</a></li>
-      </ul>
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Kimaltaen logo">
+    </a>
+    <nav aria-label="Päänavigaatio">
+      <a href="index.html" aria-current="page">Etusivu</a>
+      <a href="tietoa.html">Tietoa</a>
+      <a href="kokemuksia.html">Kokemuksia</a>
+      <a href="yhteys.html">Yhteys</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Tervetuloa Kimaltaen-sivustolle</h1>
-        <p>Tämä on puhdas aloituspohja. Navigaatio toimii mobiilissa hamburger-painikkeella ja rullaa yhdellä rivillä.</p>
-      </div>
-    </section>
+  <!-- SISÄLTÖ -->
+  <main class="container">
+    <h1>Kimaltaen</h1>
+    <p>
+      Kimaltaen on tila, jossa jokainen saa loistaa ✨.  
+      Kirjoitan täällä kokemuksia ja ajatuksia neurovähemmistössä elämisestä
+      — rehellisesti ja lempeästi.
+    </p>
+    <p>
+      Täältä löydät vinkkejä ja ideoita arkeen:  
+      pieniä keinoja selkeyteen, rohkaisua kohtaamiseen ja toivoa tulevaan.  
+      Jokaisella meistä on oikeus tulla kohdatuksi omana itsenään.
+    </p>
 
-    <section>
-      <div class="container">
-        
-<div class="card">
-  <h2>Tervetuloa sivustolle</h2>
-  <p>Korvaa tämä sisältö omallasi. Navigaatio ylhäällä toimii sekä desktopissa että puhelimessa.</p>
-</div>
-
-      </div>
-    </section>
+    <!-- Kimalluskuva -->
+    <div class="kimallus">
+      <img src="image1.png" alt="Kimalluskuvio">
+    </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Kimaltaen</p>
-      <p><a href="mailto:info@kimaltaen.fi">info@kimaltaen.fi</a></p>
-    </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
