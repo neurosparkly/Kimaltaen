@@ -1,151 +1,184 @@
-:root { 
-  --nav-pad-x: 1rem; 
-  --nav-gap: .5rem; 
-  --shadow-w: 30px; 
-}
-
-/* ----- Perusrunko ----- */
+/* Base Reset & Typography */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  color: #0f172a; /* slate-900 */
+  background: #ffffff;
 }
-.site-header {
+
+/* Layout Helpers */
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header & Navigation */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffffcc; /* translucent for subtle effect */
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid #e2e8f0; /* slate-200 */
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid #eee;
-}
-.brand {
-  display: flex; 
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
-  padding: .5rem var(--nav-pad-x);
-}
-.nav-toggle {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+  gap: 1rem;
 }
 
-/* ----- Desktop (>600px): näkyy rivinä ----- */
-@media (min-width: 601px){
-  #primary-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem .75rem;
-    margin: 0; padding: 0; list-style: none;
-  }
-  #primary-nav a {
-    padding: .5rem .75rem;
-    text-decoration: none;
-    border-radius: 999px;
-    color: inherit;
-  }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ----- Mobiili (≤600px): suljettuna piilossa ----- */
-@media (max-width: 600px){
-  #primary-nav > ul {
-    display: none;
-  }
-  #primary-nav.open > ul {
-    display: flex;
-    gap: var(--nav-gap);
-    margin: 0;
-    padding: .5rem var(--nav-pad-x);
-    list-style: none;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  #primary-nav.open > ul::-webkit-scrollbar { display: none; }
-
-  #primary-nav a {
-    display: inline-block;
-    white-space: nowrap;
-    padding: .5rem .75rem;
-    border-radius: 999px;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  /* Varjot reunoihin */
-  #primary-nav::before,
-  #primary-nav::after{
-    content:"";
-    position:absolute; top:0; height:100%; width:var(--shadow-w);
-    pointer-events:none; z-index:5; opacity:0; transition:opacity .18s;
-  }
-  #primary-nav::before{
-    left:0;
-    background: linear-gradient(to right, rgba(255,255,255,0.92), transparent);
-  }
-  #primary-nav::after{
-    right:0;
-    background: linear-gradient(to left, rgba(255,255,255,0.92), transparent);
-  }
-  #primary-nav.scrolled-left::before{ opacity:1; }
-  #primary-nav.scrolled-right::after{ opacity:1; }
-
-  /* ettei header leikkaa */
-  .site-header { overflow: visible; }
+.logo img {
+  height: clamp(36px, 6vw, 64px); /* Make logo big enough to read on desktop, adapts on mobile */
+  width: auto;
 }
 
-/* Korostus aktiiviselle linkille */
-#primary-nav a[aria-current="page"] {
-  background: #f4f4f5;
+.logo .brand {
+  font-weight: 800;
+  font-size: clamp(1.125rem, 2.8vw, 1.75rem); /* responsive, large enough to be legible */
+  letter-spacing: .2px;
 }
-/* Hamburger-painike: kolme viivaa */
-.nav-toggle {
+
+/* Desktop Nav */
+.nav-links {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+  align-items: center;
+  gap: .5rem;
 }
 
-.nav-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #111;
-  border-radius: 2px;
-  transition: transform .3s, opacity .3s;
+.nav-links a {
+  padding: .6rem .9rem;
+  border-radius: .75rem;
+  text-decoration: none;
+  color: #0f172a;
+  border: 1px solid transparent;
+  transition: border-color .2s ease, background .2s ease, transform .06s ease;
+  font-weight: 600;
+}
+.nav-links a:hover {
+  background: #f1f5f9; /* slate-100 */
+  border-color: #e2e8f0;
+}
+.nav-links a:active {
+  transform: translateY(1px);
 }
 
-/* Kun menu auki, viivat ristiin */
-.nav-toggle.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Navigaatio oletuksena piilossa mobiilissa */
-#primary-nav {
+/* Hamburger Button (mobile) */
+.hamburger {
   display: none;
+  padding: .5rem .65rem;
+  border-radius: .75rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
 }
-#primary-nav.open {
-  display: block;
+.hamburger:focus-visible {
+  outline: 3px solid #60a5fa; /* blue-400 */
+  outline-offset: 2px;
 }
 
-/* Desktopissa näytä aina */
-@media (min-width: 601px){
-  .nav-toggle { display: none; }
-  #primary-nav { display: block; }
-  #primary-nav ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    margin: 0; padding: 0;
-  }
+.hamburger svg { display: block; height: 22px; width: 22px; }
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  padding: .75rem 0 1rem 0;
 }
+.mobile-drawer a {
+  display: block;
+  padding: .7rem .9rem;
+  margin: .25rem 0;
+  border-radius: .75rem;
+  text-decoration: none;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+/* Hero / Sections */
+.hero {
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+  line-height: 1.2;
+  margin: 0 0 .5rem 0;
+}
+.hero p {
+  margin: 0;
+  font-size: clamp(1rem, 2.7vw, 1.125rem);
+  color: #334155; /* slate-700 */
+}
+
+/* Cards / Columns */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 960px) {
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+
+.card {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  box-shadow: 0 1px 1px rgba(0,0,0,.02);
+}
+.card h3 {
+  margin: .25rem 0 .5rem 0;
+  font-size: 1.125rem;
+}
+.card p {
+  margin: 0;
+  color: #475569; /* slate-600 */
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  color: #475569;
+  font-size: .95rem;
+}
+
+/* Visibility helpers toggled by JS */
+.is-hidden { display: none !important; }
+
+/* Ensure buttons to the right on desktop */
+.right-actions {
+  margin-left: auto;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.cta {
+  background: #0ea5e9; /* sky-500 */
+  color: white;
+  border-color: transparent;
+}
+.cta:hover { background: #0284c7; }
