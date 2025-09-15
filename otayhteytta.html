@@ -36,21 +36,26 @@
       Olen iloinen jokaisesta tervehdyksestä, kysymyksestä ja ajatuksesta ✨
     </p>
 
-    <section id="yhteys">
-      <h2>Lähetä viesti</h2>
-      <form action="https://formspree.io/f/xpwjeabg" method="POST">
-        <label for="nimi">Nimi (valinnainen)</label>
-        <input id="nimi" name="nimi" autocomplete="name">
+   <section id="yhteys">
+  <h2>Lähetä viesti</h2>
+  <form action="https://formspree.io/f/xpwjeabg" method="POST">
+    <label for="nimi">Nimi (valinnainen)</label>
+    <input id="nimi" name="nimi" autocomplete="name">
 
-        <label for="sahkoposti">Sähköposti (valinnainen)</label>
-        <input id="sahkoposti" type="email" name="email" autocomplete="email" placeholder="sinun@email.com">
+    <label for="sahkoposti">Sähköposti (valinnainen)</label>
+    <input id="sahkoposti" type="email" name="email" autocomplete="email" inputmode="email" placeholder="sinun@email.com">
 
-        <label for="viesti">Viesti</label>
-        <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
+    <label for="viesti">Viesti</label>
+    <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
 
-        <button type="submit">Lähetä</button>
-      </form>
-    </section>
+    <!-- Hunajapurkki (valinnainen) -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <button type="submit">Lähetä</button>
+    <p id="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
   </main>
 
   <!-- FOOTER -->
