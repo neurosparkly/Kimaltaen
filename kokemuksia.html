@@ -8,17 +8,72 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <a class="brand" href="index.html">
       <img src="logo.png" alt="Kimaltaen logo">
     </a>
+
+    <button class="nav-toggle" aria-label="Valikon avaus">
+      <span></span><span></span><span></span>
+    </button>
+
     <nav aria-label="Päänavigaatio">
-      <a href="index.html">Etusivu</a>
-      <a href="tietoa.html">Tietoa</a>
-      <a href="kokemuksia.html" aria-current="page">Kokemuksia</a>
-      <a href="yhteys.html">Ota yhteyttä</a>
+      <ul>
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="tietoa.html">Tietoa</a></li>
+        <li><a href="kokemuksia.html" aria-current="page">Kokemuksia</a></li>
+        <li><a href="yhteys.html">Yhteys</a></li>
+      </ul>
     </nav>
   </header>
+
+  <!-- SISÄLTÖ -->
+  <main class="container">
+    <h1>Kokemuksia</h1>
+    <p>
+      Kokoan tänne pieniä välähdyksiä ja ajatuksia omasta arjestani.
+      Uskon, että erilaisuus on voimaa — ja jokainen kokemus saa loistaa.
+    </p>
+
+    <section>
+      <h2>Artikkelit</h2>
+
+      <article>
+        <h3>Maskaamisesta näkyväksi</h3>
+        <p>
+          Olen oppinut peittämään osia itsestäni.  
+          Kun annan tilaa omalle rytmilleni ja tarpeilleni,
+          huomaan, että maailma voi kantaa lempeämmin.
+        </p>
+      </article>
+
+      <article>
+        <h3>Kohtaamisen pikavinkit</h3>
+        <p>
+          Pienet teot tekevät paljon: selkeä viestintä, taukojen salliminen,
+          aistikuorman huomioiminen ja ennakoitavuus.  
+          Ne auttavat minua ja voivat auttaa muitakin.
+        </p>
+      </article>
+    </section>
+
+    <img src="image3.png" alt="Erilaisia ihmisiä valossa" class="kuvitus">
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
   <main class="container">
     <h1>Kokemuksia</h1>
