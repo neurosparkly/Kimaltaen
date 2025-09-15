@@ -14,14 +14,14 @@
   <meta property="og:description" content="Pohdiskeleva essee Pharrellin Piece by Piece -elokuvasta, uskon merkityksestä ja neurovähemmistön kokemuksista.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.esimerkkidomain.fi/pharrell.html">
-  <meta property="og:image" content="https://www.esimerkkidomain.fi/assets/pharrell-hero.jpg">
+  <meta property="og:image" content="https://www.esimerkkidomain.fi/assets/lego-mina.png">
   <meta property="og:locale" content="fi_FI">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pala palalta — Pharrell ja uskon voima">
   <meta name="twitter:description" content="Pohdiskeleva essee Pharrellin Piece by Piece -elokuvasta, uskon merkityksestä ja neurovähemmistön kokemuksista.">
-  <meta name="twitter:image" content="https://www.esimerkkidomain.fi/assets/pharrell-hero.jpg">
+  <meta name="twitter:image" content="https://www.esimerkkidomain.fi/assets/lego-mina.png">
 
   <!-- Styles & Favicons -->
   <link rel="icon" href="favicon.png">
@@ -59,11 +59,11 @@
         <p class="post-meta">
           <time datetime="2025-09-15">15.9.2025</time> • Lukuaika ~5 min
         </p>
-        <!-- Hero-kuva (valinnainen) -->
-        <!-- <figure class="post-hero">
-          <img src="assets/pharrell-hero.jpg" alt="Piece by Piece -elokuvan inspiroima hero-kuva">
-          <figcaption>“Piece by Piece” inspiroi katsomaan tarinaa omilla ehdoilla.</figcaption>
-        </figure> -->
+        <!-- Hero-kuva: Lego-hahmo -->
+        <figure class="post-hero">
+          <img src="assets/lego-mina.png" alt="Lego-hahmona piirretty kirjoittajan avatar" class="hero-image">
+          <figcaption>Lego-hahmo kuvittaa kirjoittajan näkökulmaa “Piece by Piece” -elokuvasta.</figcaption>
+        </figure>
       </header>
 
       <div class="post-body">
@@ -101,7 +101,7 @@
     "datePublished": "2025-09-15",
     "dateModified": "2025-09-15",
     "author": {"@type": "Person", "name": "Kimaltaen"},
-    "image": "https://www.esimerkkidomain.fi/assets/pharrell-hero.jpg",
+    "image": "https://www.esimerkkidomain.fi/assets/lego-mina.png",
     "mainEntityOfPage": "https://www.esimerkkidomain.fi/pharrell.html",
     "inLanguage": "fi"
   }
