@@ -51,8 +51,6 @@
         <button type="submit">Lähetä</button>
       </form>
     </section>
-
-    <img src="image4.png" alt="Koristeellinen kuvitus" class="kuvitus">
   </main>
 
   <!-- FOOTER -->
@@ -65,74 +63,6 @@
   <script src="script.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
-
-  <!-- SISÄLTÖ -->
-  <main class="container" id="yhteys-page">
-    <h1>Yhteys</h1>
-    <p>
-      Jos haluat kirjoittaa minulle, voit lähettää viestin alla olevalla lomakkeella.  
-      Olen iloinen jokaisesta tervehdyksestä, kysymyksestä ja ajatuksesta ✨
-    </p>
-
-    <section id="yhteys">
-      <h2>Lähetä viesti</h2>
-
-      <!-- Vaihda action omaan Formspree-osoitteeseesi -->
-      <form action="https://formspree.io/f/xpwjeabg" method="POST">
-        <label for="nimi">Nimi (valinnainen)</label>
-        <input id="nimi" name="nimi" autocomplete="name">
-
-        <label for="sahkoposti">Sähköposti (valinnainen)</label>
-        <input id="sahkoposti" type="email" name="email" autocomplete="email" placeholder="sinun@email.com">
-
-        <label for="viesti">Viesti</label>
-        <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
-
-        <button type="submit">Lähetä</button>
-        <p id="form-status" role="status"></p>
-      </form>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Kimaltaen ✨</small>
-  </footer>
-
-  <script>
-    // Vuosi footerissa
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Lomakkeen statusviestit
-    const form = document.querySelector("#yhteys form");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          status.textContent = "Kiitos viestistäsi! ✨";
-          status.className = "ok";
-          form.reset();
-        } else {
-          status.textContent = "Lähetyksessä tapahtui virhe. Yritä uudelleen.";
-          status.className = "err";
-        }
-      } catch (error) {
-        status.textContent = "Verkkovirhe. Tarkista yhteys.";
-        status.className = "err";
-      }
-    });
   </script>
 </body>
 </html>
