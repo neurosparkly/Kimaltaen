@@ -2,62 +2,62 @@
 <html lang="fi">
 <head>
   <meta charset="utf-8">
+  <title>Kokemuksia — Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kokemuksia – Kimaltaen</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="brand container">
-      <a href="/" class="logo">
-        <img src="logo.png" alt="Kimaltaen logo" onerror="this.style.display='none'">
-        <span>Kimaltaen</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav id="primary-nav" class="container" aria-label="Päävalikko">
-      <ul>
-        <li><a href="index.html">Etusivu</a></li>
-        <li><a href="tietoa.html">Tietoa</a></li>
-        <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="yhteys.html">Yhteys</a></li>
-      </ul>
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Kimaltaen logo">
+    </a>
+    <nav aria-label="Päänavigaatio">
+      <a href="index.html">Etusivu</a>
+      <a href="tietoa.html">Tietoa</a>
+      <a href="kokemuksia.html" aria-current="page">Kokemuksia</a>
+      <a href="yhteys.html">Yhteys</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Kokemuksia</h1>
-        <p>Tämä on puhdas aloituspohja. Navigaatio toimii mobiilissa hamburger-painikkeella ja rullaa yhdellä rivillä.</p>
-      </div>
-    </section>
+  <main class="container">
+    <h1>Kokemuksia</h1>
+    <p>
+      Kokoan tänne pieniä välähdyksiä ja ajatuksia omasta arjestani.  
+      Uskon, että erilaisuus on voimaa — ja jokainen kokemus saa loistaa.
+    </p>
 
     <section>
-      <div class="container">
-        
-<div class="card">
-  <h2>Asiakaskokemuksia</h2>
-  <ul>
-    <li>"Erinomaista palvelua!" – Asiakas A</li>
-    <li>"Suosittelen lämpimästi." – Asiakas B</li>
-  </ul>
-</div>
+      <h2>Artikkelit</h2>
 
-      </div>
+      <article>
+        <h3>Maskaamisesta näkyväksi</h3>
+        <p>
+          Olen oppinut peittämään osia itsestäni.  
+          Kun annan tilaa omalle rytmilleni ja tarpeilleni,
+          huomaan, että maailma voi kantaa lempeämmin.
+        </p>
+      </article>
+
+      <article>
+        <h3>Kohtaamisen pikavinkit</h3>
+        <p>
+          Pienet teot tekevät paljon: selkeä viestintä, taukojen salliminen,
+          aistikuorman huomioiminen ja ennakoitavuus.  
+          Ne auttavat minua ja voivat auttaa muitakin.
+        </p>
+      </article>
     </section>
+
+    <img src="image3.png" alt="Erilaisia ihmisiä valossa" class="kuvitus">
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Kimaltaen</p>
-      <p><a href="mailto:info@kimaltaen.fi">info@kimaltaen.fi</a></p>
-    </div>
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
