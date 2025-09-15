@@ -1,18 +1,15 @@
-# Kimaltaen — monisivuinen GitHub Pages -pohja
+# Kimaltaen — päivitetty ulkoasu
 
-Tämä paketti sisältää valmiin monisivuisen pohjan:
+Sisältö:
+- index.html, tietoa.html, kokemuksia.html, yhteys.html
+- styles.css (uusi header/nav, paletti, hero)
+- script.js (mobiilivalikko, vuosi)
 
-- `index.html` — etusivu
-- `tietoa.html` — tietosisällöt, myytit & vinkit
-- `kokemuksia.html` — tarinoita ja ajatuksia
-- `yhteys.html` — palaute / yhteydenotto
-- `styles.css` — tyylit
-- `script.js` — pieni apuskripti (vuosi, lomakedemo)
-- `logo.png` — yksinkertainen K-logomerkki
-- `favicon.png` — 32×32 favicon
+Käyttö:
+1) Lataa nämä tiedostot GitHub-repoon ja korvaa vanhat.
+2) Commit changes.
+3) Päivitä sivu selaimessa (Ctrl+F5).
 
-## Julkaisu
-1. Lataa tiedostot GitHub-repoon.
-2. Ota käyttöön **Settings → Pages** (branch: `main`, folder: `/`).
-3. Aseta **Custom domain**: `kimaltaen.fi`.
-4. Lisää DNS: A-tietueet (GitHub IP:t) + CNAME (www → käyttäjänimi.github.io).
+Huom:
+- Header näyttää vain logokuvan; h1 on sisällön teema (ei "Kimaltaen").
+- Vaihda GitHub-linkin osoite headerissa omaan repoosi, jos eri.

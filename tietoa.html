@@ -1,7 +1,59 @@
 <!doctype html>
 <html lang="fi">
-<head> <title>Tietoa — Kimaltaen</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"> <link rel="stylesheet" href="styles.css"> <meta name="description" content="Selkeä tietopaketti neurodiversiteetistä ja siitä, miten voimme tukea moninaisuutta arjessa.">
+<head>
+  <title>Tietoa — Kimaltaen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Optional fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Selkeä tietopaketti neurodiversiteetistä ja siitä, miten voimme tukea moninaisuutta arjessa.">
 </head>
-<body> <header class="site-header"> <a class="brand" href="index.html"> <img src="logo.png" alt="Kimaltaen logo"> <span>Kimaltaen</span> </a> <button class="hamburger" data-hamburger aria-label="Avaa valikko" aria-controls="mobiilivalikko" aria-expanded="false"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/> </svg> </button> <nav aria-label="Päänavigaatio"> <a href="index.html">Etusivu</a> <a href="tietoa.html">Tietoa</a> <a href="kokemuksia.html">Kokemuksia</a> <a href="yhteys.html">Yhteys</a> </nav> </header> <div class="mobile-drawer container" id="mobiilivalikko" hidden> <a href="index.html">Etusivu</a> <a href="tietoa.html">Tietoa</a> <a href="kokemuksia.html">Kokemuksia</a> <a href="yhteys.html">Yhteys</a> </div> <main class="container"> <h1>Tietoa</h1>
-<section class="image-section"><figure><img class="content-image" src="assets/image2.jpg" alt="Kuva 2"></figure></section> <p><strong>Neurodiversiteetti</strong> tarkoittaa sitä, että aivot toimivat monin eri tavoin. Kimaltaen korostaa lempeää, toivoa kantavaa näkökulmaa: maailma voi vahvistaa, eikä rikkoa.</p> <h2>Myytit & faktat</h2> <ul class="checklist"> <li><strong>Myytti:</strong> “Kaikkien pitäisi oppia samalla tavalla.” <br><strong>Fakta:</strong> Opimme eri tavoin — vaihtoehdot lisäävät yhdenvertaisuutta.</li> <li><strong>Myytti:</strong> “Tuki on etuoikeus.” <br><strong>Fakta:</strong> Kohtuulliset mukautukset poistavat esteitä.</li> </ul> <h2 id="vinkit">Kohtaamisen vinkit</h2> <ol> <li>Ole selkeä ja konkreettinen. Kirjoita ylös seuraavat askeleet.</li> <li>Huomioi aistikuorma: hiljaiset tilat, valon säätö, tauot.</li> <li>Kysy, älä oleta — tarpeet ovat yksilöllisiä.</li> </ol> <h2>Resursseja</h2> <p>Lisää myöhemmin: linkkejä järjestöihin, oppaisiin ja yhteisöihin.</p> </main> <footer class="site-footer"> <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small> </footer> <script src="script.js"></script> </body>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Kimaltaen etusivu">
+        <img src="logo.png" alt="Kimaltaen">
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Avaa valikko">☰</button>
+
+      <nav id="primary-nav" class="site-nav" aria-label="Päänavigaatio">
+        <a href="index.html">Etusivu</a>
+        <a href="tietoa.html">Tietoa</a>
+        <a href="kokemuksia.html">Kokemuksia</a>
+        <a href="yhteys.html">Yhteys</a>
+        <a class="ghost" href="https://github.com/neurosparkly/kimaltaen-sivusto" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Tietoa</h1>
+    <p><strong>Neurodiversiteetti</strong> tarkoittaa sitä, että aivot toimivat monin eri tavoin. Kimaltaen korostaa lempeää, toivoa kantavaa näkökulmaa: maailma voi vahvistaa, eikä rikkoa.</p>
+
+    <h2>Myytit & faktat</h2>
+    <ul class="checklist">
+      <li><strong>Myytti:</strong> “Kaikkien pitäisi oppia samalla tavalla.” <br><strong>Fakta:</strong> Opimme eri tavoin — vaihtoehdot lisäävät yhdenvertaisuutta.</li>
+      <li><strong>Myytti:</strong> “Tuki on etuoikeus.” <br><strong>Fakta:</strong> Kohtuulliset mukautukset poistavat esteitä.</li>
+    </ul>
+
+    <h2 id="vinkit">Kohtaamisen vinkit</h2>
+    <ol>
+      <li>Ole selkeä ja konkreettinen. Kirjoita ylös seuraavat askeleet.</li>
+      <li>Huomioi aistikuorma: hiljaiset tilat, valon säätö, tauot.</li>
+      <li>Kysy, älä oleta — tarpeet ovat yksilöllisiä.</li>
+    </ol>
+
+    <h2>Resursseja</h2>
+    <p>Lisää myöhemmin: linkkejä järjestöihin, oppaisiin ja yhteisöihin.</p>
+  </main>
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kimaltaen — Moninaisuus saa loistaa ✨</small>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
 </html>

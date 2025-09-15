@@ -1,36 +1,55 @@
-/* Kimaltaen — kevyt, saavutettava teematyylimäärittely */
+/* Kimaltaen — ammattimainen, responsiivinen teema */
 :root{
-  --bg:#fffefb;
-  --text:#1f2937;
-  --muted:#6b7280;
-  --brand:#ffe066;
-  --accent:#2563eb;
-  --border:#e5e7eb;
+  --bg:#faf9ff;
+  --text:#2d1b3d;
+  --muted:#7a6a8a;
+  --brand:#fddde6;
+  --accent:#7f5af0;
+  --border:#e3d7f3;
   --radius:16px;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+body{margin:0;font-family:'Quicksand', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+img{display:block;max-width:100%;height:auto}
 
-.container{max-width:960px;margin:0 auto;padding:1rem}
-.site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.8);backdrop-filter:saturate(1) blur(8px);border-bottom:1px solid var(--border);display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.5rem 1rem}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
-.brand img{height:40px;width:40px;border-radius:50%}
-.brand span{font-weight:700}
-nav{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
-nav a{padding:.45rem .7rem;border-radius:999px;text-decoration:none;color:inherit;border:1px solid transparent}
-nav a:hover{border-color:var(--border);background:#fff}
-nav .ghost{border-color:var(--border)}
+.container{max-width:960px;margin:0 auto;padding:0 1rem}
 
-.hero{padding:2rem 0;background:linear-gradient(180deg,var(--brand),#fff0);border-radius:var(--radius)}
-.hero h1{margin:.2rem 0 .4rem}
-.cta-row{display:flex;gap:.6rem;margin-top:.6rem}
-.btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:.6rem .9rem;text-decoration:none;display:inline-block}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+.brand img{height:44px;width:44px;border-radius:50%}
+
+.site-nav{display:flex;gap:.6rem;align-items:center}
+.site-nav a{padding:.5rem .8rem;border-radius:999px;text-decoration:none;color:var(--text);border:1px solid transparent}
+.site-nav a:hover{border-color:var(--border);background:#fff}
+.nav-toggle{display:none;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.35rem .55rem;font-size:1.1rem}
+
+@media (max-width:780px){
+  .nav-toggle{display:inline-block}
+  .site-nav{
+    position:absolute;right:1rem;top:64px;display:none;flex-direction:column;gap:.4rem;
+    background:#fff;border:1px solid var(--border);border-radius:12px;padding:.6rem;min-width:200px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08)
+  }
+  .site-nav.open{display:flex}
+}
+
+main.container{padding:1rem}
+
+.hero{padding:3rem 1rem;text-align:center;background:linear-gradient(180deg,var(--brand),#fff0);border-radius:var(--radius);margin-top:1rem}
+.hero h1{margin:0 0 .6rem;font-family:'Raleway', system-ui, sans-serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.cta-row{display:flex;gap:.6rem;justify-content:center;margin-top:.8rem}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:12px;padding:.65rem 1rem;text-decoration:none;display:inline-block}
 .btn.ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
 
+h2{font-family:'Raleway', system-ui, sans-serif;font-weight:700;margin:1.5rem 0 .6rem}
+h3{margin:.4rem 0}
+
 .cards{list-style:none;padding:0;margin:1rem 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.cards li{border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:#fff}
+.cards li{border:1px solid var(--border);border-radius:var(--radius);padding:1rem;background:#fff;transition:box-shadow .2s ease, transform .2s ease}
+.cards li:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.more{text-decoration:none;color:var(--accent)}
 
 .checklist{padding-left:1.1rem}
 .checklist li{margin:.6rem 0}
@@ -43,44 +62,22 @@ input,textarea,button{font:inherit;padding:.6rem .7rem;border:1px solid var(--bo
 button.btn{border:none}
 .muted{color:var(--muted)}
 
-.site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:2rem}
+.site-footer{border-top:1px solid var(--border);padding:1rem;text-align:center;margin-top:3rem}
 
+/* Kimalteleva otsikkoefekti */
+.hero h1{
+  background: linear-gradient(90deg, #7f5af0, #fddde6, #7f5af0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size:200% auto;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
+
+/* Tumma tila */
 @media (prefers-color-scheme: dark){
-  :root{--bg:#0b0b0c;--text:#e5e7eb;--muted:#a1a1aa;--brand:#b59d3b;--border:#2d2f34}
-  nav a:hover{background:#111}
-  .cards li, .site-footer{background:#0b0b0c}
-  .btn.ghost{background:#0b0b0c;color:var(--text)}
+  :root{--bg:#0c0a10;--text:#eceaf0;--muted:#b6aeca;--brand:#6b5bb3;--border:#2d2a35}
+  .site-nav a:hover{background:#111}
+  .cards li,.site-footer{background:#0c0a10}
+  .btn.ghost{background:#0c0a10;color:var(--text)}
 }
-/* --- Added: Mobile navigation (keeps existing värit) --- */
-.hamburger{display:none;padding:.45rem .6rem;border-radius:12px;border:1px solid var(--border);background:#fff}
-.hamburger svg{display:block;width:22px;height:22px}
-.mobile-drawer{display:none;padding:.5rem 1rem}
-.mobile-drawer a{display:block;padding:.5rem .7rem;margin:.25rem 0;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:inherit;background:#fff}
-
-@media (max-width: 780px){
-  .site-header nav{display:none}
-  .hamburger{display:inline-flex;align-items:center;justify-content:center}
-}
-
-
-/* Enlarged logo */
-.site-header .brand img,
-.logo img {
-  height: clamp(60px, 8vw, 120px);
-}
-
-
-/* Added: content images & larger logo */
-.site-header .brand img,
-.logo img { height: clamp(56px, 8vw, 88px); width: auto; } /* larger but responsive */
-
-.content-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 16px;
-  border: 1px solid var(--border, #e2e8f0);
-  display: block;
-}
-.image-section { margin: 1.25rem 0 2rem 0; }
-.image-section figure { margin: 0; }
-.image-section figcaption { font-size: .925rem; color: var(--muted, #475569); margin-top: .4rem; }
