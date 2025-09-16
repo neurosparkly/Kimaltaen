@@ -551,4 +551,52 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
   background:#f6f6fb; /* siisti tausta mahdollisille reunoille */
 }
+/* Kimaltaen vieritysvalikko */
+.km-header { position: relative; display: flex; align-items: center; gap: 1rem; }
+.km-brand img { display: block; max-height: 44px; }
 
+.km-nav { position: relative; }
+.km-menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
+
+.km-link,
+.km-sub-toggle {
+  text-decoration: none;
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+.km-item { position: relative; }
+.km-has-sub { position: relative; }
+
+.km-sub {
+  position: absolute; top: 100%; left: 0;
+  background: #fff;
+  border: 1px solid #ddd; border-radius: 8px;
+  list-style: none; margin: 0; padding: .5rem 0;
+  min-width: 220px; max-height: 50vh; overflow-y: auto;
+  box-shadow: 0 8px 16px rgba(0,0,0,.08);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .15s ease, transform .15s ease, visibility .15s;
+  z-index: 1000;
+}
+.km-sub li a { display: block; padding: .6rem 1rem; color: #222; }
+.km-sub li a:hover, .km-sub li a:focus { background: #f5f5f5; }
+
+.km-has-sub:focus-within .km-sub,
+.km-has-sub:hover .km-sub,
+.km-has-sub.km-open .km-sub {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .km-menu { flex-direction: column; align-items: flex-start; }
+  .km-sub {
+    position: static; max-height: none; overflow: visible;
+    box-shadow: none; border: 0; transform: none;
+    visibility: visible; opacity: 1; display: none;
+  }
+  .km-has-sub.km-open .km-sub { display: block; }
+}
