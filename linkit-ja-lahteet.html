@@ -326,19 +326,41 @@
   <!-- SISÄLTÖ -->
   <main class="links-page" aria-labelledby="links-title">
     <!-- HERO -->
-    <header class="page-hero">
-      <h1 id="links-title">Linkit &amp; lähteet</h1>
-      <p class="lead">Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä. Jokaisen perässä lyhyt kuvaus.</p>
-<nav id="primary-nav" aria-label="Päänavigaatio">
-  <ul>
-    <li><a href="index.html" aria-current="page">Etusivu</a></li>
-    <li><a href="tietoa.html">Tietoa</a></li>
-    <li><a href="kokemuksia.html">Kokemuksia</a></li>
-    <li><a href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
-    <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
-  </ul>
-</nav>
-    </header>
+<header class="km-header">
+  <a class="km-brand" href="index.html" aria-label="Etusivu">
+    <img src="logo.png" alt="Kimaltaen logo">
+  </a>
+
+  <nav class="km-nav" aria-label="Päävalikko">
+    <ul class="km-menu">
+      <!-- Etusivu + alavalikko -->
+      <li class="km-item km-has-sub">
+        <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
+        <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
+          <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
+          <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
+        </ul>
+      </li>
+
+      <!-- Tietoa -->
+      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
+
+      <!-- Kokemuksia + alavalikko -->
+      <li class="km-item km-has-sub">
+        <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
+        <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+          <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+          <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
+        </ul>
+      </li>
+
+      <!-- Linkit ja yhteys -->
+      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
+      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+    </ul>
+  </nav>
+</header>
+
 
     <!-- OSIO 1 -->
     <section id="perus" class="link-section" aria-labelledby="h-perus">
