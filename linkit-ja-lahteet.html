@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
   <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
 
-  <!-- Sivukohtainen tyyli (halutessasi siirrä styles.css:ään) -->
+  <!-- Sivukohtainen tyyli (voit halutessasi siirtää styles.css:ään) -->
   <style>
     :root{
       --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
@@ -55,437 +55,50 @@
     .card-desc{color:var(--muted)}
     .meta{display:flex;gap:.5rem;align-items:center;margin-top:.1rem}
     .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:700;letter-spacing:.01em;padding:.28rem .5rem;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand)}
-    .badge.lang{background:#eef8ff;color:#005a99;border-color:rgba(0,90,153,.2)}
+    .badge.lang{background:#eef8ff;color:#005a99;border-color:rgba(0,0,90,.2)}
     .badge.type{background:#f7f7fa;color:#444;border-color:rgba(0,0,0,.08)}
     .ext{width:14px;height:14px;margin-left:auto;opacity:.7;flex-shrink:0;background:
       conic-gradient(from 45deg at 60% 40%, currentColor 0 25%, transparent 0) top right/10px 10px no-repeat,
       linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
-    .site-header nav a[aria-current="page"]{font-weight:700;color:var(--brand);text-decoration:underline;text-underline-offset:.2em}
   </style>
 </head>
 <body>
-  <!-- HEADER: sama kuin muilla sivuilla -->
-  <!doctype html>
-<html lang="fi">
-<head>
-  <meta charset="utf-8">
-  <title>Linkit & lähteet — Kimaltaen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon & CSS -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+  <!-- KM-HEADER (namespaced, ei sotke muuta) -->
+  <header class="km-header">
+    <a class="km-brand" href="index.html" aria-label="Etusivu">
+      <img src="logo.png" alt="Kimaltaen logo">
+    </a>
 
-  <!-- Canonical & Sitemap -->
-  <link rel="canonical" href="https://kimaltaen.fi/linkit-ja-lahteet.html">
-  <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
+    <nav class="km-nav" aria-label="Päävalikko">
+      <ul class="km-menu">
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
+          <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
+            <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
+            <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
+          </ul>
+        </li>
 
-  <!-- Meta description -->
-  <meta name="description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä.">
+        <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
 
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
+          <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+            <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+            <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
+          </ul>
+        </li>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Linkit & lähteet — Kimaltaen">
-  <meta name="twitter:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
-  <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
-
-  <!-- Sivukohtainen tyyli (halutessasi siirrä styles.css:ään) -->
-  <style>
-    :root{
-      --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
-      --brand:#4a148c; --brand-05:#f3eafe; --ring:rgba(74,20,140,.18);
-    }
-    .links-page{background:var(--bg);}
-    .page-hero{max-width:1100px;margin:0 auto;padding:3rem 1.25rem 1.5rem;text-align:center}
-    .page-hero h1{font-size:clamp(1.8rem,2.6vw,2.4rem);color:var(--brand);margin:.25rem 0 .5rem}
-    .page-hero .lead{max-width:70ch;margin:0 auto;color:var(--muted)}
-    .toc{margin:1rem auto 0;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-    .toc a{padding:.5rem .75rem;border-radius:999px;background:var(--brand-05);color:var(--brand);text-decoration:none;border:1px solid var(--ring);font-weight:600}
-    .toc a:hover{filter:brightness(0.98)}
-    .link-section{max-width:1100px;margin:2rem auto;padding:0 1.25rem}
-    .link-section h2{color:var(--brand);font-size:1.4rem;margin:0 0 .75rem}
-    .backtop{margin:.75rem 0 0}.backtop a{color:var(--muted);text-decoration:none}.backtop a:hover{color:var(--brand)}
-    .link-grid{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media (max-width:1024px){.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (max-width:640px){.link-grid{grid-template-columns:1fr}}
-    .link-card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.05);overflow:hidden;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease}
-    .link-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.10);border-color:rgba(0,0,0,.1)}
-    .card-link{display:flex;flex-direction:column;gap:.45rem;padding:1rem 1.1rem;height:100%;text-decoration:none}
-    .card-title{color:var(--ink);font-weight:700;line-height:1.3}
-    .card-desc{color:var(--muted)}
-    .meta{display:flex;gap:.5rem;align-items:center;margin-top:.1rem}
-    .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:700;letter-spacing:.01em;padding:.28rem .5rem;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand)}
-    .badge.lang{background:#eef8ff;color:#005a99;border-color:rgba(0,90,153,.2)}
-    .badge.type{background:#f7f7fa;color:#444;border-color:rgba(0,0,0,.08)}
-    .ext{width:14px;height:14px;margin-left:auto;opacity:.7;flex-shrink:0;background:
-      conic-gradient(from 45deg at 60% 40%, currentColor 0 25%, transparent 0) top right/10px 10px no-repeat,
-      linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
-    .site-header nav a[aria-current="page"]{font-weight:700;color:var(--brand);text-decoration:underline;text-underline-offset:.2em}
-  </style>
-</head>
-<body>
+        <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html" aria-current="page">Linkit & lähteet</a></li>
+        <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- SISÄLTÖ -->
   <main class="links-page" aria-labelledby="links-title">
     <!-- HERO -->
     <header class="page-hero">
       <h1 id="links-title">Linkit &amp; lähteet</h1>
-      <p class="lead">Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä. Jokaisen perässä lyhyt kuvaus.</p>
-<nav id="primary-nav" aria-label="Päänavigaatio">
-  <ul>
-    <li><a href="index.html" aria-current="page">Etusivu</a></li>
-    <li><a href="tietoa.html">Tietoa</a></li>
-    <li><a href="kokemuksia.html">Kokemuksia</a></li>
-    <li><a href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
-    <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
-  </ul>
-</nav>
-    </header>
-
-    <!-- OSIO 1 -->
-    <section id="perus" class="link-section" aria-labelledby="h-perus">
-      <h2 id="h-perus">Peruskäsitteet &amp; historia</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card" role="listitem">
-          <a class="card-link" href="https://neuroqueer.com/neurodiversity-terms-and-definitions/" target="_blank" rel="noopener">
-            <span class="card-title">Nick Walker — Neurodiversity: Some Basic Terms &amp; Definitions</span>
-            <span class="card-desc">Selkeä sanasto: neurodiversiteetti vs. neurodivergentti, paradigma-ajattelu.</span>
-            <span class="meta"><span class="badge type">Artikkeli</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card" role="listitem">
-          <a class="card-link" href="https://terapiastimulus.fi/wp-content/uploads/2023/07/Odd_People_In_The_Birth_of_Community_amo.pdf" target="_blank" rel="noopener">
-            <span class="card-title">Judy Singer — Odd People In (1998, thesis)</span>
-            <span class="card-desc">Neurodiversity-termin varhaisia muotoiluja ja liikkeen taustaa (PDF).</span>
-            <span class="meta"><span class="badge type">Väitöskirja</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://monotropism.org/" target="_blank" rel="noopener">
-            <span class="card-title">Monotropism.org</span>
-            <span class="card-desc">Monotropismi selitettynä: huomion virrat ja kiinnostuksen fokukset.</span>
-            <span class="meta"><span class="badge type">Sivusto</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://www.autism.org.uk/advice-and-guidance/professional-practice/double-empathy" target="_blank" rel="noopener">
-            <span class="card-title">Damian Milton — The Double Empathy Problem</span>
-            <span class="card-desc">Miksi väärinymmärrys on usein molemminpuolista – ei yksilön “puute”.</span>
-            <span class="meta"><span class="badge type">Artikkeli</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://neuroqueer.com/autism-and-the-pathology-paradigm/" target="_blank" rel="noopener">
-            <span class="card-title">Nick Walker — Autism &amp; the Pathology Paradigm</span>
-            <span class="card-desc">Miksi fokus kannattaa siirtää “korjaamisesta” oikeuksiin ja ympäristöön.</span>
-            <span class="meta"><span class="badge type">Essee</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-
-    <!-- OSIO 2 -->
-    <section id="arki" class="link-section" aria-labelledby="h-arki">
-      <h2 id="h-arki">Arki &amp; käytännöt</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card">
-          <a class="card-link" href="https://autismiliitto.fi/tuki-ja-neuvot/neuvontapalvelu/" target="_blank" rel="noopener">
-            <span class="card-title">Autismiliitto — neuvontapalvelu</span>
-            <span class="card-desc">Neuvontaa puhelimitse ja sähköpostitse, sekä nuorille suunnattuja palveluja.</span>
-            <span class="meta"><span class="badge type">Palvelu</span><span class="badge lang">FI</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://autismiliitto.fi/tuki-ja-neuvot/" target="_blank" rel="noopener">
-            <span class="card-title">Autismiliitto — tuki ja neuvot</span>
-            <span class="card-desc">Koonti: vertaistuki, tukikeinot, palveluihin hakeutuminen ja oppaat.</span>
-            <span class="meta"><span class="badge type">Kooste</span><span class="badge lang">FI</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://adhd-liitto.fi/" target="_blank" rel="noopener">
-            <span class="card-title">ADHD-liitto — arjen vinkkejä & tieto</span>
-            <span class="card-desc">Konkreettisia keinoja arkeen ja oikeuksiin, vertaistukea ja materiaaleja.</span>
-            <span class="meta"><span class="badge type">Sivusto</span><span class="badge lang">FI</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-
-    <!-- OSIO 3 -->
-    <section id="tyo" class="link-section" aria-labelledby="h-tyo">
-      <h2 id="h-tyo">Työ &amp; organisaatiot</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card">
-          <a class="card-link" href="https://www.researchgate.net/publication/366291518_Neurodiversity_at_work_Drive_innovation_performance_and_productivity_with_a_neurodiverse_workforce_by_Theo_Smith_and_Amanda_Kirby_London_Kogan_Page_2021_310_pages_xx_paperback" target="_blank" rel="noopener">
-            <span class="card-title">Theo Smith &amp; Amanda Kirby — Neurodiversity at Work (2021)</span>
-            <span class="card-desc">Käytännönläheinen teos: rekrytointi, prosessit ja johtaminen neuroinklusiivisesti.</span>
-            <span class="meta"><span class="badge type">Kirja</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://www.autism.org.uk/advice-and-guidance/topics/employment" target="_blank" rel="noopener">
-            <span class="card-title">NAS — Employment guidance</span>
-            <span class="card-desc">Työelämän tukikeinot ja kohtuulliset mukautukset tiiviisti.</span>
-            <span class="meta"><span class="badge type">Ohje</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://www.acas.org.uk/disability-at-work" target="_blank" rel="noopener">
-            <span class="card-title">ACAS — Disability at Work</span>
-            <span class="card-desc">Työnantajan ja työntekijän käytännöt saavutettavaan työarkeen.</span>
-            <span class="meta"><span class="badge type">Ohje</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-
-    <!-- OSIO 4 -->
-    <section id="tiede" class="link-section" aria-labelledby="h-tiede">
-      <h2 id="h-tiede">Tutkimus &amp; artikkelit</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card">
-          <a class="card-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8992885/" target="_blank" rel="noopener">
-            <span class="card-title">Autism in Adulthood — Toward a Neuroqueer Future (2021)</span>
-            <span class="card-desc">Haastattelu Nick Walkerin kanssa: paradigman suunta ja käytännöt.</span>
-            <span class="meta"><span class="badge type">Haastattelu</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-
-
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container"><small>© <span id="year"></span> Kimaltaen ✨</small></div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <script>
-    // Vuosi footerissa
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobiilivalikko
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-header nav');
-    if (btn && nav) {
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        nav.classList.toggle('is-open', !open);
-      });
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }));
-    }
-  </script>
-</body>
-</html>
-
-  <!-- SISÄLTÖ -->
-  <main class="links-page" aria-labelledby="links-title">
-    <!-- HERO -->
-<header class="km-header">
-  <a class="km-brand" href="index.html" aria-label="Etusivu">
-    <img src="logo.png" alt="Kimaltaen logo">
-  </a>
-
-  <nav class="km-nav" aria-label="Päävalikko">
-    <ul class="km-menu">
-      <!-- Etusivu + alavalikko -->
-      <li class="km-item km-has-sub">
-        <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
-        <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
-          <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
-          <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
-        </ul>
-      </li>
-
-      <!-- Tietoa -->
-      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
-
-      <!-- Kokemuksia + alavalikko -->
-      <li class="km-item km-has-sub">
-        <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
-        <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-          <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-          <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
-        </ul>
-      </li>
-
-      <!-- Linkit ja yhteys -->
-      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
-      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-    <!-- OSIO 1 -->
-    <section id="perus" class="link-section" aria-labelledby="h-perus">
-      <h2 id="h-perus">Peruskäsitteet &amp; historia</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card" role="listitem">
-          <a class="card-link" href="https://neuroqueer.com/neurodiversity-terms-and-definitions/" target="_blank" rel="noopener">
-            <span class="card-title">Nick Walker — Neurodiversity: Some Basic Terms &amp; Definitions</span>
-            <span class="card-desc">Selkeä sanasto: neurodiversiteetti vs. neurodivergentti, paradigma-ajattelu.</span>
-            <span class="meta"><span class="badge type">Artikkeli</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card" role="listitem">
-          <a class="card-link" href="https://terapiastimulus.fi/wp-content/uploads/2023/07/Odd_People_In_The_Birth_of_Community_amo.pdf" target="_blank" rel="noopener">
-            <span class="card-title">Judy Singer — Odd People In (1998, thesis)</span>
-            <span class="card-desc">Neurodiversity-termin varhaisia muotoiluja ja liikkeen taustaa (PDF).</span>
-            <span class="meta"><span class="badge type">Väitöskirja</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://monotropism.org/" target="_blank" rel="noopener">
-            <span class="card-title">Monotropism.org</span>
-            <span class="card-desc">Monotropismi selitettynä: huomion virrat ja kiinnostuksen fokukset.</span>
-            <span class="meta"><span class="badge type">Sivusto</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://www.autism.org.uk/advice-and-guidance/professional-practice/double-empathy" target="_blank" rel="noopener">
-            <span class="card-title">Damian Milton — The Double Empathy Problem</span>
-            <span class="card-desc">Miksi väärinymmärrys on usein molemminpuolista – ei yksilön “puute”.</span>
-            <span class="meta"><span class="badge type">Artikkeli</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://neuroqueer.com/autism-and-the-pathology-paradigm/" target="_blank" rel="noopener">
-            <span class="card-title">Nick Walker — Autism &amp; the Pathology Paradigm</span>
-            <span class="card-desc">Miksi fokus kannattaa siirtää “korjaamisesta” oikeuksiin ja ympäristöön.</span>
-            <span class="meta"><span class="badge type">Essee</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-
-    <!-- OSIO 2 -->
-    <section id="arki" class="link-section" aria-labelledby="h-arki">
-      <h2 id="h-arki">Arki &amp; käytännöt</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card">
-          <a class="card-link" href="https://autismiliitto.fi/tuki-ja-neuvot/neuvontapalvelu/" target="_blank" rel="noopener">
-            <span class="card-title">Autismiliitto — neuvontapalvelu</span>
-            <span class="card-desc">Neuvontaa puhelimitse ja sähköpostitse, sekä nuorille suunnattuja palveluja.</span>
-            <span class="meta"><span class="badge type">Palvelu</span><span class="badge lang">FI</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://autismiliitto.fi/tuki-ja-neuvot/" target="_blank" rel="noopener">
-            <span class="card-title">Autismiliitto — tuki ja neuvot</span>
-            <span class="card-desc">Koonti: vertaistuki, tukikeinot, palveluihin hakeutuminen ja oppaat.</span>
-            <span class="meta"><span class="badge type">Kooste</span><span class="badge lang">FI</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://adhd-liitto.fi/" target="_blank" rel="noopener">
-            <span class="card-title">ADHD-liitto — arjen vinkkejä & tieto</span>
-            <span class="card-desc">Konkreettisia keinoja arkeen ja oikeuksiin, vertaistukea ja materiaaleja.</span>
-            <span class="meta"><span class="badge type">Sivusto</span><span class="badge lang">FI</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-
-    <!-- OSIO 3 -->
-    <section id="tyo" class="link-section" aria-labelledby="h-tyo">
-      <h2 id="h-tyo">Työ &amp; organisaatiot</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card">
-          <a class="card-link" href="https://www.researchgate.net/publication/366291518_Neurodiversity_at_work_Drive_innovation_performance_and_productivity_with_a_neurodiverse_workforce_by_Theo_Smith_and_Amanda_Kirby_London_Kogan_Page_2021_310_pages_xx_paperback" target="_blank" rel="noopener">
-            <span class="card-title">Theo Smith &amp; Amanda Kirby — Neurodiversity at Work (2021)</span>
-            <span class="card-desc">Käytännönläheinen teos: rekrytointi, prosessit ja johtaminen neuroinklusiivisesti.</span>
-            <span class="meta"><span class="badge type">Kirja</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://www.autism.org.uk/advice-and-guidance/topics/employment" target="_blank" rel="noopener">
-            <span class="card-title">NAS — Employment guidance</span>
-            <span class="card-desc">Työelämän tukikeinot ja kohtuulliset mukautukset tiiviisti.</span>
-            <span class="meta"><span class="badge type">Ohje</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://www.acas.org.uk/disability-at-work" target="_blank" rel="noopener">
-            <span class="card-title">ACAS — Disability at Work</span>
-            <span class="card-desc">Työnantajan ja työntekijän käytännöt saavutettavaan työarkeen.</span>
-            <span class="meta"><span class="badge type">Ohje</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-
-    <!-- OSIO 4 -->
-    <section id="tiede" class="link-section" aria-labelledby="h-tiede">
-      <h2 id="h-tiede">Tutkimus &amp; artikkelit</h2>
-      <ul class="link-grid" role="list">
-        <li class="link-card">
-          <a class="card-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8992885/" target="_blank" rel="noopener">
-            <span class="card-title">Autism in Adulthood — Toward a Neuroqueer Future (2021)</span>
-            <span class="card-desc">Haastattelu Nick Walkerin kanssa: paradigman suunta ja käytännöt.</span>
-            <span class="meta"><span class="badge type">Haastattelu</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://osf.io/" target="_blank" rel="noopener">
-            <span class="card-title">OSF — Avoimen tieteen koosteita</span>
-            <span class="card-desc">Kokoelmia ja preprintejä neurodiversiteettiin liittyen.</span>
-            <span class="meta"><span class="badge type">Kooste</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-        <li class="link-card">
-          <a class="card-link" href="https://scholar.google.com/" target="_blank" rel="noopener">
-            <span class="card-title">Google Scholar — hakuvinkki</span>
-            <span class="card-desc">Kokeile: “neurodiversity paradigm”, “double empathy”, “monotropism”.</span>
-            <span class="meta"><span class="badge type">Haku</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="backtop"><a href="#links-title">↑ Takaisin alkuun</a></p>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container"><small>© <span id="year"></span> Kimaltaen ✨</small></div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <script>
-    // Vuosi footerissa
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobiilivalikko
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-header nav');
-    if (btn && nav) {
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        nav.classList.toggle('is-open', !open);
-      });
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }));
-    }
-  </script>
-</body>
-</html>
+      <p class="lead">Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä. Jokaisen perässä lyhyt kuvaus.<
