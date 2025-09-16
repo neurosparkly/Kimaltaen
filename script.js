@@ -61,3 +61,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// Kimaltaen vieritysvalikko
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.km-sub-toggle');
+  const openItems = document.querySelectorAll('.km-has-sub.km-open');
+
+  if (btn) {
+    const li = btn.closest('.km-has-sub');
+    const isOpen = li.classList.toggle('km-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    openItems.forEach(el => {
+      if (el !== li) {
+        el.classList.remove('km-open');
+        el.querySelector('.km-sub-toggle').setAttribute('aria-expanded','false');
+      }
+    });
+    e.stopPropagation();
+  } else {
+    openItems.forEach(el => {
+      el.classList.remove('km-open');
+      el.querySelector('.km-sub-toggle').setAttribute('aria-expanded','false');
+    });
+  }
+});
+
+// Sulje Escillä
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.km-has-sub.km-open').forEach(el => {
+      el.classList.remove('km-open');
+      el.querySelector('.km-sub-toggle').setAttribute('aria-expanded','false');
+    });
+  }
+});
+
+// Pehmeä vieritys vain km-linkeille
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a.km-link[href^="#"], a.km-link[href*="#"]');
+  if (!a) return;
+  const url = new URL(a.href, location.href);
+  if (url.pathname === location.pathname && url.hash) {
+    const target = document.querySelector(url.hash);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
