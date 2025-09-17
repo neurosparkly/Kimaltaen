@@ -56,3 +56,17 @@ section { padding: 2rem 0; }
 }
 .site-header .brand img{ height: 120px; width: auto; }
 @media (max-width:
+
+/* --- Navigaation nappien yhtenäinen korkeus --- */
+.site-header nav a,
+.km-nav .km-link,
+.km-nav .km-sub-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;         /* kaikille sama korkeus */
+  padding: 0 1rem;      /* leveys määräytyy tekstin mukaan */
+  line-height: 1;       /* ei turhaa venymistä */
+  box-sizing: border-box;
+}
+
