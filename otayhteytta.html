@@ -4,73 +4,174 @@
   <meta charset="utf-8">
   <title>Ota yhteyttä — Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons & base CSS -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Meta -->
+  <meta name="description" content="Lähetä viesti Kimaltaen-sivulle. Lempeä, selkeä palaute- ja kysymyslomake neurodiversiteettiparadigman hengessä.">
+  <link rel="canonical" href="https://www.kimaltaen.fi/otayhteytta.html">
+
+  <!-- Page styles (.km-*) to match the rest of the site -->
+  <style>
+    :root{
+      --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
+      --brand:#4a148c; --brand-05:#f3eafe; --ring:rgba(74,20,140,.18);
+      --border:rgba(0,0,0,.08);
+      --container:1100px; --radius:14px; --shadow:0 10px 22px rgba(0,0,0,.08);
+      --fs-sm:clamp(14px,.9vw,16px); --fs-md:clamp(16px,1.1vw,18px); --fs-lg:clamp(18px,1.4vw,22px); --fs-xl:clamp(22px,2.1vw,28px);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --ink:#f2effa; --muted:#c5bfd6; --bg:#0f0b16; --card:#16101f; --brand:#c6a4ff; --brand-05:#231a34; --ring:rgba(198,164,255,.3); --border:rgba(255,255,255,.08); }
+      img{filter:brightness(.98) contrast(1.02)}
+    }
+
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    img,svg{display:block;max-width:100%;height:auto}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:1.25rem}
+
+    /* Skip link */
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
+
+    /* Header (shared) */
+    .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+    .km-brand img{height:44px;width:auto;max-height:56px}
+    @media (min-width:1000px){.km-brand img{height:52px}}
+    .km-nav{flex:1}
+    .km-menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap}
+    .km-link,.km-sub-toggle{display:inline-flex;align-items:center;gap:.55rem;padding:10px 14px;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand);font-weight:800;font-size:var(--fs-sm);line-height:1;cursor:pointer}
+    .km-link:hover,.km-sub-toggle:hover{filter:brightness(.97)}
+    .km-link:focus-visible,.km-sub-toggle:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+    .km-link[aria-current="page"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .km-item{position:relative}
+    .km-sub{position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;list-style:none;margin:0;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,.08);display:none;z-index:1000}
+    .km-has-sub.km-open>.km-sub{display:block}
+    .km-sub li a{display:block;padding:.45rem .75rem;border-radius:8px;color:var(--brand);font-weight:700}
+    .km-sub li a:hover{background:var(--brand-05)}
+    @media (max-width:800px){.km-menu{flex-direction:column;align-items:flex-start}.km-sub{position:static;box-shadow:none;border:0;padding:0;display:none}.km-has-sub.km-open>.km-sub{display:block}}
+
+    /* Page */
+    main.container{padding-block:2rem}
+    h1{font-size:var(--fs-xl);margin:.25rem 0 .5rem}
+    p{font-size:var(--fs-md);max-width:70ch}
+
+    /* Form card */
+    .form-wrap{margin-top:1rem;max-width:800px}
+    .form-card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:var(--radius);padding:1rem}
+    .form-grid{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+    .form-grid .full{grid-column:1 / -1}
+    @media (max-width:720px){.form-grid{grid-template-columns:1fr}}
+
+    label{font-weight:700;display:block;margin:.25rem 0 .25rem}
+    input, textarea{width:100%;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--ink);padding:.75rem .9rem;font-size:var(--fs-md)}
+    input:focus, textarea:focus{outline:3px solid var(--ring);outline-offset:2px}
+    textarea{min-height:160px;resize:vertical}
+
+    .hint{color:var(--muted);font-size:var(--fs-sm);margin-top:.25rem}
+
+    .actions{display:flex;gap:.75rem;align-items:center;margin-top:.5rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-radius:999px;border:1px solid var(--ring);background:var(--brand);color:#fff;font-weight:800;cursor:pointer}
+    .btn[disabled]{opacity:.65;cursor:not-allowed}
+
+    #form-status{min-height:1.25rem}
+    #form-status.ok{color:#0a7a2e}
+    #form-status.err{color:#b42318}
+    #form-status.pending{color:#7a5eff}
+
+    .privacy{margin-top:.75rem;color:var(--muted);font-size:var(--fs-sm)}
+
+    footer{border-top:1px solid var(--border);margin-top:2rem}
+    footer .container{padding:1rem 1.25rem;color:var(--muted)}
+
+    @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important;scroll-behavior:auto !important}}
+  </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Siirry sisältöön</a>
+
   <!-- HEADER -->
-<header class="km-header">
-  <a class="km-brand" href="index.html" aria-label="Etusivu">
-    <img src="logo.png" alt="Kimaltaen logo">
-  </a>
+  <header class="km-header">
+    <a class="km-brand" href="index.html" aria-label="Etusivu">
+      <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+    </a>
 
-  <nav class="km-nav" aria-label="Päävalikko">
-    <ul class="km-menu">
-      <!-- Etusivu + alavalikko -->
-      <li class="km-item km-has-sub">
-        <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
-        <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
-          <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
-          <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
-        </ul>
-      </li>
+    <nav class="km-nav" aria-label="Päävalikko">
+      <ul class="km-menu">
+        <!-- Etusivu + alavalikko -->
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Etusivu</button>
+          <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
+            <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
+            <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
+          </ul>
+        </li>
 
-      <!-- Tietoa -->
-      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
+        <!-- Tietoa -->
+        <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
 
-      <!-- Kokemuksia + alavalikko -->
-      <li class="km-item km-has-sub">
-        <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
-        <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-          <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-          <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
-        </ul>
-      </li>
+        <!-- Kokemuksia + alavalikko -->
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
+          <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+            <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+            <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
+          </ul>
+        </li>
 
-      <!-- Linkit ja yhteys -->
-      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
-      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
-    </ul>
-  </nav>
-</header>
-
+        <!-- Linkit ja yhteys -->
+        <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
+        <li class="km-item"><a class="km-link" href="otayhteytta.html" aria-current="page">Ota yhteyttä</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- SISÄLTÖ -->
-  <main class="container">
-    <h1>Ota yhteyttä</h1>
+  <main class="container" id="main" aria-labelledby="page-title">
+    <h1 id="page-title">Ota yhteyttä</h1>
     <p>
       Jos haluat kirjoittaa minulle, voit lähettää viestin alla olevalla lomakkeella. <br>
       Olen iloinen jokaisesta tervehdyksestä, kysymyksestä ja ajatuksesta ✨
     </p>
 
-    <section id="yhteys">
-      <h2>Lähetä viesti</h2>
-      <form action="https://formspree.io/f/xpwjeabg" method="POST">
-        <label for="nimi">Nimi (valinnainen)</label>
-        <input id="nimi" name="nimi" type="text" autocomplete="name">
+    <section id="yhteys" class="form-wrap" aria-labelledby="contact-title">
+      <h2 id="contact-title">Lähetä viesti</h2>
+      <div class="form-card">
+        <form action="https://formspree.io/f/xpwjeabg" method="POST" novalidate>
+          <div class="form-grid">
+            <div>
+              <label for="nimi">Nimi <span class="hint">(valinnainen)</span></label>
+              <input id="nimi" name="nimi" type="text" autocomplete="name" inputmode="text">
+            </div>
 
-        <label for="sahkoposti">Sähköposti (valinnainen)</label>
-        <input id="sahkoposti" type="email" name="email" autocomplete="email" inputmode="email" placeholder="sinun@email.com">
+            <div>
+              <label for="sahkoposti">Sähköposti <span class="hint">(valinnainen, jos toivot vastausta)</span></label>
+              <input id="sahkoposti" type="email" name="email" autocomplete="email" inputmode="email" placeholder="sinun@email.com">
+            </div>
 
-        <label for="viesti">Viesti</label>
-        <textarea id="viesti" name="viesti" required placeholder="Kirjoita viestisi tähän..."></textarea>
+            <div class="full">
+              <label for="viesti">Viesti <span class="hint" id="viesti-hint">(vaaditaan)</span></label>
+              <textarea id="viesti" name="viesti" required aria-describedby="viesti-hint" placeholder="Kirjoita viestisi tähän…" minlength="5" maxlength="5000" spellcheck="true"></textarea>
+            </div>
 
-        <!-- Hunajapurkki (spam-ansa) -->
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <!-- Hunajapurkki (spam-ansa) -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          </div>
 
-        <button type="submit">Lähetä</button>
-        <p id="form-status" role="status" aria-live="polite"></p>
-      </form>
+          <div class="actions">
+            <button type="submit" class="btn" id="send-btn">Lähetä</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <p class="privacy">Tietosuoja: lähetetyt tiedot välittyvät Formspree-palvelun kautta. En tallenna tietoja pysyvästi enkä jaa niitä eteenpäin.
+          </p>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -81,9 +182,64 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script: consolidated site behaviors (year, submenu, smooth anchors, form) -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Footer year
+    (function(){ const y=document.getElementById('year'); if(y) y.textContent=String(new Date().getFullYear()); })();
+
+    // Unified click delegation (submenu + anchors)
+    document.addEventListener('click',(e)=>{
+      const t=e.target;
+      // Submenu toggle
+      const btn=t.closest?.('.km-sub-toggle');
+      if(btn){
+        const li=btn.closest('.km-has-sub'); if(!li) return; const isOpen=li.classList.toggle('km-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ if(el!==li){ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }});
+        e.stopPropagation(); return;
+      }
+      // Click outside closes
+      document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); });
+
+      // Smooth anchors (same page only)
+      const a=t.closest?.('a.km-link[href*="#"]');
+      if(a){ const url=new URL(a.getAttribute('href'), location.href);
+        if(url.origin===location.origin && url.pathname===location.pathname && url.hash){
+          const dest=document.querySelector(url.hash); if(dest){ e.preventDefault();
+            const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches; dest.scrollIntoView({behavior: reduced?'auto':'smooth', block:'start'});
+            if(typeof dest.focus==='function'){ const hadTI=dest.hasAttribute('tabindex'); if(!hadTI) dest.setAttribute('tabindex','-1'); dest.focus({preventScroll:true}); if(!hadTI) dest.removeAttribute('tabindex'); }
+          }
+        }
+      }
+    }, {passive:true});
+
+    // Esc closes submenus
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'){ document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }); } });
+
+    // Contact form
+    document.addEventListener('DOMContentLoaded',()=>{
+      const form=document.querySelector('#yhteys form'); const status=document.getElementById('form-status'); const btn=document.getElementById('send-btn');
+      if(!form||!status) return;
+      if(!status.hasAttribute('role')){ status.setAttribute('role','status'); status.setAttribute('aria-live','polite'); }
+
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        // Basic client validation for required message
+        const msg=document.getElementById('viesti');
+        if(msg && !msg.value.trim()){ status.textContent='Kirjoita viesti ennen lähettämistä.'; status.className='err'; msg.focus(); return; }
+
+        const setStatus=(txt,cls)=>{ status.textContent=txt; status.className=cls||''; };
+        try{
+          if(btn) btn.disabled=true; setStatus('Lähetetään…','pending');
+          const controller=new AbortController(); const to=setTimeout(()=>controller.abort(),6000);
+          const res=await fetch(form.action,{ method:form.method||'POST', body:new FormData(form), headers:{'Accept':'application/json'}, signal:controller.signal });
+          clearTimeout(to);
+          if(res.ok){ setStatus('Kiitos viestistäsi! ✨','ok'); form.reset(); }
+          else{ let msg='Lähetyksessä tapahtui virhe. Yritä uudelleen.'; try{ const data=await res.json(); if(data?.error) msg=data.error; }catch{} setStatus(msg,'err'); }
+        }catch(err){ setStatus(err?.name==='AbortError'?'Yhteys aikakatkaistiin. Yritä uudelleen.':'Verkkovirhe. Tarkista yhteys.','err'); }
+        finally{ if(btn) btn.disabled=false; }
+      });
+    });
   </script>
 </body>
 </html>
