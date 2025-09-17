@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Favicon & CSS -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="stylesheet" href="/styles.css">
 
   <!-- Canonical & Sitemap -->
   <link rel="canonical" href="https://kimaltaen.fi/tietoa.html">
@@ -31,41 +31,40 @@
 </head>
 <body>
   <!-- HEADER -->
-<header class="km-header">
-  <a class="km-brand" href="index.html" aria-label="Etusivu">
-    <img src="logo.png" alt="Kimaltaen logo">
-  </a>
+  <header class="km-header">
+    <a class="km-brand" href="/" aria-label="Etusivu">
+      <img src="/logo.png" alt="Kimaltaen logo">
+    </a>
 
-  <nav class="km-nav" aria-label="Päävalikko">
-    <ul class="km-menu">
-      <!-- Etusivu + alavalikko -->
-      <li class="km-item km-has-sub">
-        <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
-        <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
-          <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
-          <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
-        </ul>
-      </li>
+    <nav class="km-nav" aria-label="Päävalikko">
+      <ul class="km-menu">
+        <!-- Etusivu + alavalikko -->
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
+          <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
+            <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
+            <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
+          </ul>
+        </li>
 
-      <!-- Tietoa -->
-      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
+        <!-- Tietoa (aktiivinen) -->
+        <li class="km-item"><a class="km-link" href="/tietoa.html" aria-current="page">Tietoa</a></li>
 
-      <!-- Kokemuksia + alavalikko -->
-      <li class="km-item km-has-sub">
-        <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
-        <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-          <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-          <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
-        </ul>
-      </li>
+        <!-- Kokemuksia + alavalikko -->
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
+          <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+            <li><a role="menuitem" class="km-link" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+            <li><a role="menuitem" class="km-link" href="/kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
+          </ul>
+        </li>
 
-      <!-- Linkit ja yhteys -->
-      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
-      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
-    </ul>
-  </nav>
-</header>
-
+        <!-- Linkit ja yhteys -->
+        <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+        <li class="km-item"><a class="km-link" href="/ota-yhteytta.html">Ota yhteyttä</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- SISÄLTÖ -->
   <main class="container">
@@ -94,10 +93,10 @@
       Kirjoitan <strong>neurodiversiteettiparadigmasta</strong> käsin: neurologinen moninaisuus on osa ihmisyyden kirjoa.
       Usein kuormitus syntyy ympäristön esteistä ja odotuksista, siksi selkeys, ennakoitavuus ja yhteisöllisyys
       ovat tämän sivun ytimessä. Jos haluat sukeltaa syvemmälle tutkimuksiin ja esseisiin tästä näkökulmasta,
-      kurkkaa erillinen sivu <a href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a>.
+      kurkkaa erillinen sivu <a href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a>.
     </p>
 
-    <img src="image2.png" alt="Abstrakti kuvitus" class="kuvitus">
+    <img src="/image2.png" alt="Abstrakti kuvitus" class="kuvitus">
   </main>
 
   <!-- FOOTER -->
@@ -108,22 +107,27 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="/script.js" defer></script>
   <script>
     // Vuosi footerissa
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Päivitetty-leima (ISO datetime attribuuttiin + FI-lokaali näkyville)
+    // Päivitetty-leima
     (function () {
       const el = document.getElementById('updated-date');
       const now = new Date();
       el.setAttribute('datetime', now.toISOString());
-      el.textContent = now.toLocaleDateString('fi-FI', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
+      el.textContent = now.toLocaleDateString('fi-FI', { year: 'numeric', month: 'long', day: 'numeric' });
     })();
+
+    // Alavalikon toggle + aria
+    document.querySelectorAll('.km-sub-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.km-has-sub');
+        const open = item.classList.toggle('km-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
   </script>
 </body>
 </html>
