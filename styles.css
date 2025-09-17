@@ -1,72 +1,126 @@
-/* =========================================================
-   Kimaltaen – Yhtenäinen tyylitiedosto 
-   ========================================================= */
+/* ---------------------------
+   0) Perusreset + laatikkomalli
+---------------------------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; color:#0b0b0c; background:#fff; line-height:1.6}
 
-/* CSS-muuttujat */
+/* Kuvien ja median oletukset */
+img,svg,video{display:block; max-width:100%; height:auto}
+
+/* Linkkien oletus */
+a{color:var(--brand-600); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------------------------
+   1) Design-tunnukset (tokens)
+---------------------------- */
 :root{
-  --nav-pad-x: 1rem;
-  --nav-gap: .5rem;
-  --shadow-w: 30px;
-  --maxw: 1000px;
+  /* Värit */
+  --brand-600:#0ea5e9;  /* pääbrändi */
+  --brand-700:#0284c7;
+  --ink:#0b0b0c;        /* perusteksti */
+  --muted:#6b7280;      /* toissijainen teksti */
+  --bg:#ffffff;
+  --surface:#f8fafc;    /* korttien tausta */
+  --border:#e5e7eb;     /* rajat */
 
-  --pill-bg: #f5f2ff;
-  --pill-border: #dcd5f5;
-  --pill-text: #4a3f7a;
-  --pill-bg-hover: #ece6ff;
-  --pill-border-hover: #cfc6f0;
-  --pill-active-bg: #7d5fb2;
-  --pill-active-text: #fff;
+  /* Mitoitus & rytmi */
+  --radius:14px;
+  --shadow:0 10px 20px rgba(2,8,23,0.06);
+  --space-1:4px;  --space-2:8px;  --space-3:12px; --space-4:16px;
+  --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px;
 
-  --text: #111;
-  --bg: #fff;
-  --muted-border: #eee;
+  /* Typografia-asteikko (clamp ylläpitää skaalaa) */
+  --fs-xxs: clamp(12px, 0.72vw, 13px);
+  --fs-xs:  clamp(13px, 0.78vw, 14px);
+  --fs-sm:  clamp(14px, 0.9vw, 16px);
+  --fs-md:  clamp(16px, 1.1vw, 18px);
+  --fs-lg:  clamp(18px, 1.25vw, 20px);
+  --fs-xl:  clamp(22px, 2.1vw, 28px);
+  --fs-2xl: clamp(28px, 3vw, 36px);
+  --fs-3xl: clamp(36px, 4vw, 48px);
+
+  /* Säiliön (container) leveydet */
+  --container:1200px;
+  --gutter:24px;
 }
 
-/* Perusasetukset */
-* { box-sizing: border-box; }
-html, body { margin:0; padding:0; }
-body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); }
-img { max-width: 100%; height: auto; display: block; }
-p { line-height: 1.6; margin: 0 0 1rem; }
-h1 { font-size: clamp(1.6rem, 1.2rem + 2vw, 2.25rem); margin: 1rem 0 .5rem; }
-h2 { font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); margin: 1rem 0 .5rem; }
+/* ---------------------------
+   2) Rakenne & ruudukko
+---------------------------- */
+.container{max-width:var(--container); margin-inline:auto; padding-inline:var(--gutter)}
+.section{padding-block:var(--space-7)}
+.section--tight{padding-block:var(--space-5)}
 
-/* Otsikoiden väri */
-h1, h2, h3, h4, h5, h6 { color: #4B0082; }
+.grid{display:grid; gap:var(--space-5)}
+@media (min-width:768px){ .grid--2{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:992px){ .grid--3{grid-template-columns:repeat(3,1fr)}
+                           .grid--4{grid-template-columns:repeat(4,1fr)} }
 
-/* Layout */
-.container { width: min(100% - 2rem, var(--maxw)); margin-inline: auto; }
-section { padding: 2rem 0; }
+/* Yleis-otsikointi */
+.h1{font-size:var(--fs-3xl); line-height:1.15; margin:0 0 var(--space-4)}
+.h2{font-size:var(--fs-2xl); line-height:1.2;  margin:0 0 var(--space-4)}
+.h3{font-size:var(--fs-xl);  line-height:1.25; margin:0 0 var(--space-3)}
+.lead{font-size:var(--fs-lg); color:var(--muted); max-width:65ch}
 
-/* =========================================================
-   HEADER + NAV
-   ========================================================= */
-.site-header{
-  position: sticky; top: 0; z-index: 50;
-  background: var(--bg);
-  border-bottom: 1px solid var(--muted-border);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: .5rem var(--nav-pad-x);
-}
+/* Kappaleet & listat */
+p{font-size:var(--fs-md); margin:0 0 var(--space-4)}
+ul,ol{margin:0 0 var(--space-4) var(--space-5)}
+li{margin-block:6px}
 
-/* Logo-linkki */
-.site-header .brand{
-  display: inline-flex; align-items: center; gap: .75rem;
-  text-decoration: none; color: inherit;
-}
-.site-header .brand img{ height: 120px; width: auto; }
-@media (max-width:
+/* ---------------------------
+   3) Header + logo + navigaatio
+---------------------------- */
+.site-header{position:sticky; top:0; background:rgba(255,255,255,0.85); backdrop-filter:saturate(150%) blur(6px); border-bottom:1px solid var(--border); z-index:50}
+.nav{display:flex; align-items:center; gap:var(--space-4); height:64px}
+.site-logo{display:flex; align-items:center; gap:12px; text-decoration:none}
+.site-logo img{height:36px; width:auto}       /* vakio logokorkeus */
+@media (min-width:992px){ .site-logo img{height:44px} } /* isompi desktopilla */
+.site-name{font-weight:700; font-size:var(--fs-lg); color:var(--ink)}
 
-/* --- Navigaation nappien yhtenäinen korkeus --- */
-.site-header nav a,
-.km-nav .km-link,
-.km-nav .km-sub-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 44px;         /* kaikille sama korkeus */
-  padding: 0 1rem;      /* leveys määräytyy tekstin mukaan */
-  line-height: 1;       /* ei turhaa venymistä */
-  box-sizing: border-box;
-}
+.nav-links{margin-left:auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
 
+/* ---------------------------
+   4) Napit – yhdenmukaiset koot
+---------------------------- */
+.btn{ --pad-x:16px; --pad-y:10px;
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:var(--pad-y) var(--pad-x); border-radius:999px; border:1px solid transparent;
+  font-size:var(--fs-sm); font-weight:600; line-height:1; cursor:pointer; text-decoration:none; box-shadow:none; transition:.18s ease}
+.btn:focus-visible{outline:3px solid color-mix(in oklab, var(--brand-600) 40%, white)}
+.btn--primary{background:var(--brand-600); color:#fff}
+.btn--primary:hover{background:var(--brand-700)}
+.btn--ghost{background:transparent; border-color:var(--border); color:var(--ink)}
+.btn--ghost:hover{border-color:var(--brand-600); color:var(--brand-700)}
+.btn--danger{background:#ef4444; color:#fff}
+
+.btn--sm{--pad-x:12px; --pad-y:8px; font-size:var(--fs-xs)}
+.btn--md{--pad-x:18px; --pad-y:12px; font-size:var(--fs-sm)}
+.btn--lg{--pad-x:22px; --pad-y:14px; font-size:var(--fs-md)}
+
+/* ---------------------------
+   5) Kortit, laatikot, linkkilistat
+---------------------------- */
+.card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:var(--space-5)}
+.card h3{margin-top:0}
+
+.link-list{display:grid; gap:12px}
+.link-item{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 16px; border:1px solid var(--border); border-radius:12px; background:#fff}
+.link-item a{font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.link-meta{font-size:var(--fs-xs); color:var(--muted)}
+
+/* ---------------------------
+   6) Footer
+---------------------------- */
+.site-footer{margin-top:var(--space-8); padding-block:var(--space-6); border-top:1px solid var(--border); color:var(--muted); font-size:var(--fs-sm)}
+
+/* ---------------------------
+   7) Hyödyllisiä util-luokkia
+---------------------------- */
+.mt-0{margin-top:0}.mb-0{margin-bottom:0}
+.mt-2{margin-top:var(--space-2)}.mb-2{margin-bottom:var(--space-2)}
+.mt-4{margin-top:var(--space-4)}.mb-4{margin-bottom:var(--space-4)}
+.mt-6{margin-top:var(--space-6)}.mb-6{margin-bottom:var(--space-6)}
+.center{display:grid; place-items:center}
+.hide{display:none !important}
