@@ -28,19 +28,77 @@
   <meta name="twitter:title" content="Tietoa — Kimaltaen">
   <meta name="twitter:description" content="Neurodiversiteettiparadigman näkökulmia arkeen: selkeyttä, saavutettavuutta ja toivoa.">
   <meta name="twitter:image" content="https://www.kimaltaen.fi/og-image.png">
+
+  <!-- Page styles (namespaced .km-*) to unify look with other pages -->
+  <style>
+    :root{
+      --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
+      --brand:#4a148c; --brand-05:#f3eafe; --ring:rgba(74,20,140,.18);
+      --border:rgba(0,0,0,.08);
+      --container:1100px; --radius:14px; --shadow:0 10px 22px rgba(0,0,0,.08);
+      --fs-sm:clamp(14px,.9vw,16px); --fs-md:clamp(16px,1.1vw,18px); --fs-lg:clamp(18px,1.4vw,22px); --fs-xl:clamp(22px,2.1vw,28px);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --ink:#f2effa; --muted:#c5bfd6; --bg:#0f0b16; --card:#16101f; --brand:#c6a4ff; --brand-05:#231a34; --ring:rgba(198,164,255,.3); --border:rgba(255,255,255,.08); }
+      img{filter:brightness(.98) contrast(1.02)}
+    }
+
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    img,svg{display:block;max-width:100%;height:auto}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:1.25rem}
+
+    /* Skip link */
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
+
+    /* Header (shared) */
+    .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+    .km-brand img{height:44px;width:auto;max-height:56px}
+    @media (min-width:1000px){.km-brand img{height:52px}}
+    .km-nav{flex:1}
+    .km-menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap}
+    .km-link,.km-sub-toggle{display:inline-flex;align-items:center;gap:.55rem;padding:10px 14px;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand);font-weight:800;font-size:var(--fs-sm);line-height:1;cursor:pointer}
+    .km-link:hover,.km-sub-toggle:hover{filter:brightness(.97)}
+    .km-link:focus-visible,.km-sub-toggle:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+    .km-link[aria-current="page"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .km-item{position:relative}
+    .km-sub{position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;list-style:none;margin:0;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,.08);display:none;z-index:1000}
+    .km-has-sub.km-open>.km-sub{display:block}
+    .km-sub li a{display:block;padding:.45rem .75rem;border-radius:8px;color:var(--brand);font-weight:700}
+    .km-sub li a:hover{background:var(--brand-05)}
+    @media (max-width:800px){.km-menu{flex-direction:column;align-items:flex-start}.km-sub{position:static;box-shadow:none;border:0;padding:0;display:none}.km-has-sub.km-open>.km-sub{display:block}}
+
+    /* Page layout */
+    main.container{padding-block:2rem}
+    .meta-row{display:flex;justify-content:flex-end;color:var(--muted);font-size:var(--fs-sm)}
+    h1{font-size:var(--fs-xl);margin:.25rem 0 .5rem;color:var(--ink)}
+    h2{font-size:var(--fs-lg);margin:1.25rem 0 .5rem;color:var(--ink)}
+    p{font-size:var(--fs-md);max-width:70ch}
+    .kuvitus{margin:1rem 0 0;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow);background:var(--card)}
+
+    footer{border-top:1px solid var(--border);margin-top:2rem}
+    footer .container{padding:1rem 1.25rem;color:var(--muted)}
+
+    @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important;scroll-behavior:auto !important}}
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#page-title">Siirry sisältöön</a>
+
   <!-- HEADER -->
   <header class="km-header">
     <a class="km-brand" href="/" aria-label="Etusivu">
-      <img src="/logo.png" alt="Kimaltaen logo">
+      <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
     </a>
 
     <nav class="km-nav" aria-label="Päävalikko">
       <ul class="km-menu">
         <!-- Etusivu + alavalikko -->
         <li class="km-item km-has-sub">
-          <button class="km-sub-toggle" aria-expanded="false">Etusivu</button>
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Etusivu</button>
           <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
             <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
             <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
@@ -52,7 +110,7 @@
 
         <!-- Kokemuksia + alavalikko -->
         <li class="km-item km-has-sub">
-          <button class="km-sub-toggle" aria-expanded="false">Kokemuksia</button>
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
           <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
             <li><a role="menuitem" class="km-link" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
             <li><a role="menuitem" class="km-link" href="/kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
@@ -67,12 +125,12 @@
   </header>
 
   <!-- SISÄLTÖ -->
-  <main class="container">
+  <main class="container" aria-labelledby="page-title">
     <div class="meta-row">
       <small class="updated">Päivitetty: <time id="updated-date" datetime=""></time></small>
     </div>
 
-    <h1>Tietoa</h1>
+    <h1 id="page-title">Tietoa</h1>
     <p>
       Minulle Kimaltaen on syntynyt tarpeesta luoda tila, jossa saan jakaa
       omia kokemuksiani ja näkökulmiani.
@@ -96,7 +154,9 @@
       kurkkaa erillinen sivu <a href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a>.
     </p>
 
-    <img src="/image2.png" alt="Abstrakti kuvitus" class="kuvitus">
+    <figure class="kuvitus">
+      <img src="/image2.png" width="1200" height="800" alt="Abstrakti kuvitus" loading="lazy" decoding="async">
+    </figure>
   </main>
 
   <!-- FOOTER -->
@@ -107,26 +167,42 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="/script.js" defer></script>
   <script>
     // Vuosi footerissa
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Päivitetty-leima
+    // Päivitetty-leima — käytä dokumentin viimeisintä muokkausaikaa jos saatavilla
     (function () {
       const el = document.getElementById('updated-date');
-      const now = new Date();
-      el.setAttribute('datetime', now.toISOString());
-      el.textContent = now.toLocaleDateString('fi-FI', { year: 'numeric', month: 'long', day: 'numeric' });
+      const fallback = new Date();
+      const d = (document.lastModified) ? new Date(document.lastModified) : fallback;
+      el.setAttribute('datetime', d.toISOString());
+      el.textContent = d.toLocaleDateString('fi-FI', { year: 'numeric', month: 'long', day: 'numeric' });
     })();
 
-    // Alavalikon toggle + aria
-    document.querySelectorAll('.km-sub-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
+    // Alavalikon toggle + sulkeminen klikatessa ulos ja Escillä
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.km-sub-toggle');
+      const openItems = document.querySelectorAll('.km-has-sub.km-open');
+      if (btn) {
         const item = btn.closest('.km-has-sub');
-        const open = item.classList.toggle('km-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
+        const isOpen = item.classList.toggle('km-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        openItems.forEach(el => { if (el !== item) { el.classList.remove('km-open'); const t = el.querySelector('.km-sub-toggle'); if (t) t.setAttribute('aria-expanded','false'); }});
+        e.stopPropagation();
+      } else {
+        openItems.forEach(el => { el.classList.remove('km-open'); const t = el.querySelector('.km-sub-toggle'); if (t) t.setAttribute('aria-expanded','false'); });
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.km-has-sub.km-open').forEach(el => {
+          el.classList.remove('km-open');
+          const t = el.querySelector('.km-sub-toggle');
+          if (t) t.setAttribute('aria-expanded','false');
+        });
+      }
     });
   </script>
 </body>
