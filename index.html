@@ -75,9 +75,9 @@
     .hero{max-width:var(--container);margin:0 auto;padding:2.5rem 1.25rem 1rem}
     .hero .meta-row{display:flex;justify-content:flex-end;color:var(--muted);font-size:var(--fs-sm)}
     .hero h1{font-size:var(--fs-2xl);margin:.25rem 0 .5rem}
-    .hero p{margin:0 auto 1rem;max-width:70ch;color:var(--ink)}
+    .hero p{margin:0 0 1rem;max-width:70ch;color:var(--ink)} /* linjaus vasemmalle */
 
-    /* Sections */
+    /* Sections (yleiset) */
     section{max-width:var(--container);margin:0 auto;padding:0 1.25rem 1.5rem}
     h2{font-size:var(--fs-xl);margin:1.25rem 0 .5rem}
     p{font-size:var(--fs-md);max-width:70ch}
@@ -100,37 +100,23 @@
       <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
     </a>
 
-<nav class="km-nav" aria-label="Päävalikko">
-  <ul class="km-menu">
-    <!-- Etusivu: suora linkki -->
-    <li class="km-item">
-      <a class="km-link" href="index.html" aria-current="page">Etusivu</a>
-    </li>
+    <nav class="km-nav" aria-label="Päävalikko">
+      <ul class="km-menu">
+        <li class="km-item"><a class="km-link" href="index.html" aria-current="page">Etusivu</a></li>
+        <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
 
-    <!-- Tietoa -->
-    <li class="km-item">
-      <a class="km-link" href="tietoa.html">Tietoa</a>
-    </li>
+        <li class="km-item km-has-sub">
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
+          <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+            <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+            <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
+          </ul>
+        </li>
 
-    <!-- Kokemuksia + alavalikko -->
-    <li class="km-item km-has-sub">
-      <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
-      <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-        <li><a role="menuitem" class="km-link" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-        <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
+        <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
+        <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
       </ul>
-    </li>
-
-    <!-- Linkit ja yhteys -->
-    <li class="km-item">
-      <a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a>
-    </li>
-    <li class="km-item">
-      <a class="km-link" href="otayhteytta.html">Ota yhteyttä</a>
-    </li>
-  </ul>
-</nav>
-
+    </nav>
   </header>
 
   <!-- MAIN -->
@@ -141,21 +127,18 @@
       </div>
       <div class="container">
         <h1 id="page-title">Tervetuloa Kimaltaen-sivustolle ✨</h1>
-        <p>Kimaltaen on lempeä tila, jossa moninaisuus saa loistaa. Sivusto jakaa kokemuksia ja näkökulmia neurovähemmistöjen arjesta myötätuntoisesti ja toivoa vaalien.</p>
+
+        <p>Kimaltaen on lempeä pysähdyspaikka sinulle, joka etsit tilaa hengittää ja tulla nähdyksi omana itsenäsi. Täällä moninaisuus ei ole sivujuonne vaan kaiken ydin.</p>
+
+        <p>Kirjoitan arjesta, joka on välillä sotkuinen ja silti kaunis. Pienistä teoista, joilla päivä helpottuu. Sanoista, joilla voimme kohdata toisiamme hellästi — myös silloin, kun energia on vähissä ja maailma tuntuu kovalta.</p>
+
+        <p>Sivustolta löydät kokemustarinoita, käsitteiden avausta ja kuratoituja lähteitä. Tavoitteeni on tehdä neurodiversiteetistä ymmärrettävää ilman portinvartijuutta: selkeää kieltä, käytännön esimerkkejä ja myötätuntoa joka kohtaan.</p>
+
+        <p>Jos haluat aloittaa tarinoista, kurkkaa <a href="kokemuksia.html">Kokemuksia</a>-osio. Taustat, käsitteet ja hyödylliset materiaalit löydät koottuna sivulle <a href="linkit-ja-lahteet.html">Linkit & lähteet</a>. Ja kun haluat sanoa hei tai kysyä lisää, <a href="otayhteytta.html">ota yhteyttä</a> — vastaan mielelläni.</p>
+
+        <p>Tervetuloa mukaan. Pala kerrallaan, omaan tahtiin. 💫</p>
       </div>
     </header>
-
-    <section id="mista-on-kyse" class="container" aria-labelledby="h-mista">
-      <h2 id="h-mista">Mistä on kyse?</h2>
-      <p>Kirjoitan arjen selkeydestä, saavutettavuudesta, kohtaamisen tavoista ja pienistä teoista, jotka kantavat toivoa.</p>
-    </section>
-
-    <section id="teemat" class="container" aria-labelledby="h-teemat">
-      <h2 id="h-teemat">Teemat</h2>
-      <figure class="kuvitus">
-        <img src="image1.png" width="1200" height="800" alt="Kuvitus etusivulle" loading="lazy" decoding="async">
-      </figure>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -177,37 +160,3 @@
       const d=(document.lastModified)? new Date(document.lastModified): fallback;
       el.setAttribute('datetime', d.toISOString());
       el.textContent=d.toLocaleDateString('fi-FI',{year:'numeric',month:'long',day:'numeric'});
-    })();
-
-    // Yksi delegoiva klikkikuuntelija: submenu + ankkurit
-    document.addEventListener('click',(e)=>{
-      const t=e.target;
-      const btn=t.closest?.('.km-sub-toggle');
-      if(btn){
-        const li=btn.closest('.km-has-sub'); if(!li) return;
-        const isOpen=li.classList.toggle('km-open');
-        btn.setAttribute('aria-expanded', String(isOpen));
-        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ if(el!==li){ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }});
-        e.stopPropagation(); return;
-      }
-      // Klikkaus muualle sulkee
-      document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); });
-
-      // Pehmeä vieritys vain saman sivun ankkureihin
-      const a=t.closest?.('a.km-link[href*="#"]');
-      if(a){ const url=new URL(a.getAttribute('href'), location.href);
-        if(url.origin===location.origin && url.pathname===location.pathname && url.hash){
-          const dest=document.querySelector(url.hash); if(dest){ e.preventDefault();
-            const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-            dest.scrollIntoView({behavior: reduced?'auto':'smooth', block:'start'});
-            if(typeof dest.focus==='function'){ const hadTI=dest.hasAttribute('tabindex'); if(!hadTI) dest.setAttribute('tabindex','-1'); dest.focus({preventScroll:true}); if(!hadTI) dest.removeAttribute('tabindex'); }
-          }
-        }
-      }
-    }, {passive:true});
-
-    // Esc sulkee alavalikot
-    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'){ document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }); } });
-  </script>
-</body>
-</html>
