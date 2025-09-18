@@ -160,3 +160,37 @@
       const d=(document.lastModified)? new Date(document.lastModified): fallback;
       el.setAttribute('datetime', d.toISOString());
       el.textContent=d.toLocaleDateString('fi-FI',{year:'numeric',month:'long',day:'numeric'});
+    })();
+
+    // Yksi delegoiva klikkikuuntelija: submenu + ankkurit
+    document.addEventListener('click',(e)=>{
+      const t=e.target;
+      const btn=t.closest?.('.km-sub-toggle');
+      if(btn){
+        const li=btn.closest('.km-has-sub'); if(!li) return;
+        const isOpen=li.classList.toggle('km-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ if(el!==li){ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }});
+        e.stopPropagation(); return;
+      }
+      // Klikkaus muualle sulkee
+      document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); });
+
+      // Pehmeä vieritys vain saman sivun ankkureihin
+      const a=t.closest?.('a.km-link[href*="#"]');
+      if(a){ const url=new URL(a.getAttribute('href'), location.href);
+        if(url.origin===location.origin && url.pathname===location.pathname && url.hash){
+          const dest=document.querySelector(url.hash); if(dest){ e.preventDefault();
+            const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+            dest.scrollIntoView({behavior: reduced?'auto':'smooth', block:'start'});
+            if(typeof dest.focus==='function'){ const hadTI=dest.hasAttribute('tabindex'); if(!hadTI) dest.setAttribute('tabindex','-1'); dest.focus({preventScroll:true}); if(!hadTI) dest.removeAttribute('tabindex'); }
+          }
+        }
+      }
+    }, {passive:true});
+
+    // Esc sulkee alavalikot
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'){ document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }); } });
+  </script>
+</body>
+</html>
