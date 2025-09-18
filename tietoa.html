@@ -94,33 +94,24 @@
       <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
     </a>
 
-    <nav class="km-nav" aria-label="Päävalikko">
-      <ul class="km-menu">
-        <!-- Etusivu + alavalikko -->
-<li class="km-item km-has-sub"><button class="km-sub-toggle"[^>]*>Etusivu</button>[\s\S]*?</li>
-          <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
-            <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
-            <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
-          </ul>
-        </li>
+<nav class="km-nav" aria-label="Päävalikko">
+  <ul class="km-menu">
+    <li class="km-item"><a class="km-link" href="/">Etusivu</a></li>
+    <li class="km-item"><a class="km-link" href="/tietoa.html" aria-current="page">Tietoa</a></li>
 
-        <!-- Tietoa (aktiivinen) -->
-        <li class="km-item"><a class="km-link" href="/tietoa.html" aria-current="page">Tietoa</a></li>
-
-        <!-- Kokemuksia + alavalikko -->
-        <li class="km-item km-has-sub">
-          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
-          <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-            <li><a role="menuitem" class="km-link" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-            <li><a role="menuitem" class="km-link" href="/kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
-          </ul>
-        </li>
-
-        <!-- Linkit ja yhteys -->
-        <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
-        <li class="km-item"><a class="km-link" href="/otayhteytta.html">Ota yhteyttä</a></li>
+    <li class="km-item km-has-sub">
+      <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
+      <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+        <li><a role="menuitem" class="km-link" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+        <li><a role="menuitem" class="km-link" href="/kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
       </ul>
-    </nav>
+    </li>
+
+    <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+    <li class="km-item"><a class="km-link" href="/otayhteytta.html">Ota yhteyttä</a></li>
+  </ul>
+</nav>
+
   </header>
 
   <!-- SISÄLTÖ -->
