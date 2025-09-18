@@ -97,8 +97,7 @@
     <nav class="km-nav" aria-label="Päävalikko">
       <ul class="km-menu">
         <!-- Etusivu + alavalikko -->
-        <li class="km-item km-has-sub">
-          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Etusivu</button>
+<li class="km-item km-has-sub"><button class="km-sub-toggle"[^>]*>Etusivu</button>[\s\S]*?</li>
           <ul class="km-sub" role="menu" aria-label="Etusivun osiot">
             <li><a role="menuitem" class="km-link" href="/#mista-on-kyse">Mistä on kyse</a></li>
             <li><a role="menuitem" class="km-link" href="/#teemat">Teemat</a></li>
