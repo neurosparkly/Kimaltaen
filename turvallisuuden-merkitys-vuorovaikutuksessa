@@ -1,0 +1,90 @@
+<!-- ==================================================================== -->
+<!-- 1) turvallisuuden-merkitys-vuorovaikutuksessa.html -->
+<!-- ==================================================================== -->
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<title>Turvallisuuden merkitys vuorovaikutuksessa — Kimaltaen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- SEO -->
+<meta name="description" content="Kyse ei ole puutteesta: hermosto tarvitsee turvallisuutta toimiakseen. Pienet lempeät signaalit mahdollistavat yhteyden ja läsnäolon.">
+<link rel="canonical" href="https://www.kimaltaen.fi/turvallisuuden-merkitys-vuorovaikutuksessa.html">
+
+
+<!-- Open Graph -->
+<meta property="og:title" content="Turvallisuuden merkitys vuorovaikutuksessa — Kimaltaen">
+<meta property="og:description" content="Kyse ei ole puutteesta: hermosto tarvitsee turvallisuutta toimiakseen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.kimaltaen.fi/turvallisuuden-merkitys-vuorovaikutuksessa.html">
+<meta property="og:site_name" content="Kimaltaen">
+
+
+<!-- Fav + CSS -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="/styles.css">
+
+
+<style>
+/* Varmuustyylit (voi poistaa jos styles.css hoitaa) */
+.container{max-width:880px;margin-inline:auto;padding:clamp(16px,2vw,24px)}
+.eyebrow{font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;margin:0 0 .25rem}
+.meta{color:#6b7280;margin-top:.5rem}
+article p{margin:1rem 0}
+</style>
+
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Turvallisuuden merkitys vuorovaikutuksessa",
+"datePublished": "2025-10-07",
+"dateModified": "2025-10-07",
+"inLanguage": "fi",
+"publisher": {"@type":"Organization","name":"Kimaltaen"}
+}
+</script>
+</head>
+<body>
+<header class="site-header container">
+<a class="km-brand" href="/index.html" aria-label="Kimaltaen etusivu">Kimaltaen</a>
+<!-- TODO: upota sivuston yhteinen navigaatio tähän -->
+</header>
+
+
+<main class="container">
+<nav aria-label="Murupolku" class="meta"><a href="/index.html">Etusivu</a> › <a href="/kokemuksia.html">Kokemuksia</a> › Turvallisuuden merkitys vuorovaikutuksessa</nav>
+
+
+<article class="entry">
+<header>
+<p class="eyebrow">• Kokemus</p>
+<h1>Turvallisuuden merkitys vuorovaikutuksessa</h1>
+<p class="meta"><time datetime="2025-10-07">7.10.2025</time></p>
+</header>
+
+
+<div class="entry-content">
+<p>Joskus olen miettinyt, miksi joissain tilanteissa sanat tuntuvat juuttuvan kurkkuun. Ei siksi, etten tietäisi mitä haluan sanoa, vaan koska ympäristö ei tunnu turvalliselta.</p>
+<p>Hermosto kuuntelee koko ajan: äänensävyjä, katseita ja tilan energiaa. Kun jokin niissä tuntuu uhkaavalta, keho vetäytyy sisäänpäin – ja yhteys katkeaa ennen kuin se ehti edes alkaa.</p>
+<p>Turvallisuus ei ole vain uhkan poissaoloa. Se on tunne siitä, että saa olla juuri sellainen kuin on. Se syntyy, kun toinen ihminen ei kiirehdi, katsoo lempeästi, ei vaadi eikä tulkitse liikaa.</p>
+<p>Monelle neurovähemmistöön kuuluvalle tällainen turvallisuus ei ole itsestäänselvyys. Siksi monet meistä ovat oppineet havainnoimaan kaikkea ympärillä olevaa herkästi – kuin jatkuvasti viritettyinä tunnistamaan, onko nyt hyvä hetki avautua vai pitääkö suojautua.</p>
+<p>Kun ympäristö muuttuu hyväksyväksi, tapahtuu jotakin yksinkertaista ja ihmeellistä: sanat alkavat virrata, hengitys kevenee ja keho kertoo – nyt on turvallista olla yhteydessä.</p>
+</div>
+</article>
+</main>
+
+
+<footer class="site-footer container">
+<p class="meta">© <span id="year">2025</span> Kimaltaen</p>
+</footer>
+
+
+<script>
+const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
