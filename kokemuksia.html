@@ -1,3 +1,182 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Linkit & lähteet — Kimaltaen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicons & base CSS -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Canonical & Sitemap -->
+  <link rel="canonical" href="https://kimaltaen.fi/linkit-ja-lahteet.html">
+  <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
+
+  <!-- Meta -->
+  <meta name="description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä. Jokaisen perässä lyhyt kuvaus.">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Linkit & lähteet — Kimaltaen">
+  <meta property="og:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kimaltaen.fi/linkit-ja-lahteet.html">
+  <meta property="og:image" content="https://kimaltaen.fi/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linkit & lähteet — Kimaltaen">
+  <meta name="twitter:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
+  <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
+
+  <!-- Page-specific styles (namespaced .km-*) -->
+  <style>
+    :root{
+      /* light */
+      --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
+      --brand:#4a148c; --brand-05:#f3eafe; --ring:rgba(74,20,140,.18);
+      --border:rgba(0,0,0,.08);
+
+      /* rhythm */
+      --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px; --space-7:48px;
+      --radius:14px; --shadow:0 10px 22px rgba(0,0,0,.08);
+
+      /* typography */
+      --fs-xs: clamp(12px, .78vw, 14px);
+      --fs-sm: clamp(14px, .9vw, 16px);
+      --fs-md: clamp(16px, 1.1vw, 18px);
+      --fs-lg: clamp(18px, 1.4vw, 22px);
+      --fs-xl: clamp(22px, 2.1vw, 28px);
+      --fs-2xl: clamp(28px, 3vw, 36px);
+
+      --container: 1100px;
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --ink:#f2effa; --muted:#c5bfd6; --bg:#0f0b16; --card:#16101f;
+        --brand:#c6a4ff; --brand-05:#231a34; --ring:rgba(198,164,255,.3);
+        --border:rgba(255,255,255,.08);
+      }
+      img{filter:brightness(.98) contrast(1.02)}
+    }
+
+    /* base */
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    img,svg,video{display:block;max-width:100%;height:auto}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:1.25rem}
+
+    /* skip link */
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
+
+    /* PAGE HERO */
+    .page-hero{max-width:var(--container);margin:0 auto;padding:3rem 1.25rem 1.25rem;text-align:center}
+    .page-hero h1{font-size:var(--fs-2xl);color:var(--brand);margin:.25rem 0 .5rem}
+    .lead{max-width:70ch;margin:0 auto;color:var(--muted);font-size:var(--fs-md)}
+    .toc{margin:1rem auto 0;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+    .toc a{padding:.5rem .75rem;border-radius:999px;background:var(--brand-05);color:var(--brand);text-decoration:none;border:1px solid var(--ring);font-weight:700;font-size:var(--fs-sm)}
+    .toc a:hover{filter:brightness(0.98)}
+
+    /* SECTIONS */
+    .link-section{max-width:var(--container);margin:2rem auto;padding:0 1.25rem}
+    .link-section h2{color:var(--brand);font-size:var(--fs-xl);margin:0 0 .75rem}
+    .backtop{margin:.75rem 0 0}
+    .backtop a{color:var(--muted)}
+    .backtop a:hover{color:var(--brand)}
+
+    /* GRID & CARDS */
+    .link-grid{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:1024px){.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.link-grid{grid-template-columns:1fr}}
+
+    .link-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease}
+    .link-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(0,0,0,.14)}
+    .card-link{display:flex;flex-direction:column;gap:.45rem;padding:1rem 1.1rem;height:100%;text-decoration:none}
+    .card-link:focus-visible{outline:3px solid var(--ring);outline-offset:3px;border-radius:12px}
+    .card-title{color:var(--ink);font-weight:800;line-height:1.3;font-size:var(--fs-md)}
+    .card-desc{color:var(--muted);font-size:var(--fs-sm)}
+    .meta{display:flex;gap:.5rem;align-items:center;margin-top:.1rem}
+    .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:800;letter-spacing:.01em;padding:.28rem .5rem;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand)}
+    .badge.lang{background:#eef8ff;color:#005a99;border-color:rgba(0,90,153,.2)}
+    .badge.type{background:#f7f7fa;color:#444;border-color:var(--border)}
+    .ext{width:14px;height:14px;margin-left:auto;opacity:.7;flex-shrink:0;background:
+      conic-gradient(from 45deg at 60% 40%, currentColor 0 25%, transparent 0) top right/10px 10px no-repeat,
+      linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
+
+    /* HEADER (km-*) — unified logo size & pill buttons */
+    .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+    .km-brand img{display:block;height:44px;width:auto;aspect-ratio:auto;max-height:56px}
+    @media (min-width:1000px){.km-brand img{height:52px}}
+
+    .km-nav{flex:1}
+    .km-menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap}
+
+    .km-link,.km-sub-toggle{
+      --pad-x:14px; --pad-y:10px;
+      display:inline-flex;align-items:center;gap:.55rem;
+      padding:var(--pad-y) var(--pad-x);
+      border-radius:999px;border:1px solid var(--ring);
+      background:var(--brand-05);color:var(--brand);
+      font-weight:800;font-size:var(--fs-sm);line-height:1;text-decoration:none;cursor:pointer;transition:transform .12s ease, filter .12s ease
+    }
+    .km-link:hover,.km-sub-toggle:hover{filter:brightness(.97)}
+    .km-link:focus-visible,.km-sub-toggle:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+    .km-link[aria-current="page"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+    .km-item{position:relative}
+    .km-sub{
+      position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:12px;
+      padding:.5rem;list-style:none;margin:0;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,.08);display:none;z-index:1000
+    }
+    .km-has-sub.km-open>.km-sub{display:block}
+    .km-sub li a{display:block;padding:.45rem .75rem;border-radius:8px;text-decoration:none;color:var(--brand);font-weight:700}
+    .km-sub li a:hover{background:var(--brand-05)}
+    .km-has-sub.km-open>.km-sub-toggle{background:var(--brand);color:#fff;border-color:var(--brand)}
+    @media (max-width:800px){
+      .km-menu{flex-direction:column;align-items:flex-start}
+      .km-sub{position:static;box-shadow:none;border:0;padding:0;display:none}
+      .km-has-sub.km-open>.km-sub{display:block}
+    }
+
+    /* FOOTER */
+    footer{margin-top:var(--space-7);border-top:1px solid var(--border);padding:var(--space-5) 0;color:var(--muted);font-size:var(--fs-sm)}
+
+    /* motion */
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important}
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#links-title">Siirry sisältöön</a>
+
+  <!-- HEADER -->
+  <header class="km-header">
+    <a class="km-brand" href="index.html" aria-label="Etusivu">
+      <!-- width/height estää CLS:n; fetchpriority parantaa LCP:tä -->
+      <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+    </a>
+   <nav class="km-nav" aria-label="Päävalikko">
+  <ul class="km-menu">
+    <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
+    <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
+
+    <li class="km-item km-has-sub">
+      <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
+      <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+      </ul>
+    </li>
+
+    <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html" aria-current="page">Linkit & lähteet</a></li>
+    <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+  </ul>
+</nav>
+
+  </header>
+
 <section class="story-grid" aria-label="Kokemustarinat" id="tuoreimmat">
 
   <!-- Maskaamisesta näkyväksi -->
