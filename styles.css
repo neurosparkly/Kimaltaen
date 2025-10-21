@@ -345,3 +345,44 @@ footer{ border-top:1px solid var(--border); margin-top:2rem; }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{ transition-duration:.001ms !important; animation-duration:.001ms !important; scroll-behavior: auto !important; }
 }
+/* --- Tarinalaatikot reunoineen --- */
+.story-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+  padding:1.25rem 1.25rem 0;
+  max-width:var(--container);
+  margin:0 auto;
+}
+.story{
+  background:var(--card);
+  border:1px solid var(--border);      /* selkeä reunaviiva */
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.story-link{
+  display:flex; flex-direction:column; height:100%;
+  color:inherit; text-decoration:none;
+}
+.story-link:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:12px}
+
+.story-thumb{aspect-ratio:4/3; background:#f6f6fb; margin:0}
+.story-thumb img{width:100%; height:100%; object-fit:cover}
+
+.story-body{padding:1rem 1.1rem; display:flex; flex-direction:column; gap:.45rem}
+.story-title{font-size:1.12rem; line-height:1.3; margin:0; font-weight:800; color:var(--ink)}
+.story-meta{margin:0; color:var(--muted); font-size:.95rem}
+.story-excerpt{margin:0; color:var(--ink)}
+.story-cta{margin-top:.35rem; text-decoration:underline; font-weight:700; color:var(--brand)}
+
+.story:hover{border-color:var(--ring)} /* kevyt hover-korostus reunoihin */
+
+@media (max-width:640px){
+  .story-grid{grid-template-columns:1fr}
+}
+
+/* Sticky-header offset ankkureille (jos linkität #tuoreimmat jne.) */
+.story[id], .story-title[id] { scroll-margin-top: 90px; }
+
