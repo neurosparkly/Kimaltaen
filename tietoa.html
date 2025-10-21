@@ -99,12 +99,23 @@
     <li class="km-item"><a class="km-link" href="/">Etusivu</a></li>
     <li class="km-item"><a class="km-link" href="/tietoa.html" aria-current="page">Tietoa</a></li>
 
-    <li class="km-item km-has-sub">
-      <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
-      <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-      </ul>
-    </li>
+<li class="km-item km-has-sub">
+  <!-- AINA toimiva päälinkki (vie kokemuksia.html-sivulle) -->
+  <a class="km-link km-sub-toggle" href="/kokemuksia.html" aria-haspopup="true" aria-expanded="false">
+    Kokemuksia
+    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" style="transform:translateY(1px)"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  </a>
 
+  <!-- Alasvetolista (linkit toimivat myös suoraan) -->
+  <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+    <li><a role="menuitem" class="km-link" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+    <li><a role="menuitem" class="km-link" href="/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+    <li><a role="menuitem" class="km-link" href="/pharrell.html">Piece by Piece — Pharrell</a></li>
+    <li><a role="menuitem" class="km-link" href="/turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+    <li><a role="menuitem" class="km-link" href="/erilaisen-hermoston-vahvuus.html">Erilaisen hermoston vahvuus</a></li>
+    <li><a role="menuitem" class="km-link" href="/rohkeus-ylittaa-itsensa.html">Rohkeus ylittää itsensä</a></li>
+  </ul>
+</li>
     <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
     <li class="km-item"><a class="km-link" href="/otayhteytta.html">Ota yhteyttä</a></li>
   </ul>
