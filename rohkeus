@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohkeus ylittää itsensä – oma tarina</title>
+  <style>
+    :root {
+      --bg: #fafbfc;
+      --card: #ffffff;
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --accent: #7c3aed;
+      --accent-weak: #ede9fe;
+      --ring: rgba(124,58,237,0.3);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f14;
+        --card: #0f141a;
+        --ink: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #a78bfa;
+        --accent-weak: #1f1533;
+        --ring: rgba(167,139,250,0.35);
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    .wrap { max-width: 72ch; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    .hero {
+      background: linear-gradient(180deg, var(--accent-weak), transparent 60%);
+      border-radius: 1.25rem; padding: 1.75rem 1.5rem; margin-bottom: 1.5rem;
+      box-shadow: 0 10px 24px -12px rgba(0,0,0,0.18);
+    }
+    h1 { font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem); line-height: 1.15; margin: 0 0 .5rem; }
+    .lead { font-size: 1.125rem; color: var(--muted); margin: 0; }
+    h2 { font-size: 1.35rem; margin: 2rem 0 .5rem; }
+    p { margin: .75rem 0; }
+    strong { font-weight: 700; }
+    .callout {
+      border: 1px solid var(--accent-weak);
+      background: linear-gradient(180deg, var(--card), var(--accent-weak));
+      padding: 1rem 1rem; border-radius: 1rem; margin: 1.25rem 0;
+    }
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: .75rem 1rem; background: var(--card); border-radius: .5rem;
+      box-shadow: 0 8px 18px -14px rgba(0,0,0,0.4);
+    }
+    .cta {
+      display: grid; gap: .75rem; grid-template-columns: 1fr; margin-top: 1.25rem;
+    }
+    .btn {
+      appearance: none; border: 0; border-radius: .75rem; padding: .8rem 1rem; font-weight: 600;
+      background: var(--accent); color: white; cursor: pointer; text-align: center;
+      box-shadow: 0 10px 20px -10px var(--ring);
+    }
+    .btn:focus-visible { outline: 2px dashed var(--accent); outline-offset: 3px; }
+    .muted { color: var(--muted); }
+    blockquote { margin: 1rem 0; padding: .5rem 1rem; border-left: 4px solid var(--accent); background: var(--card); border-radius: .5rem; }
+    hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(0,0,0,.08), transparent); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap" aria-labelledby="title">
+    <section class="hero" role="region" aria-label="Johdanto">
+      <h1 id="title">Rohkeus ylittää itsensä</h1>
+      <p class="lead">Pitkään ajattelin, että olen <strong>arvoton</strong>, toisia huonompi. Että en voisi osata tai tietää mistään. Mutta pienistä askelista alkoi muutos.</p>
+    </section>
+
+    <article>
+      <p>Se ajatus piti minut pitkään pienempänä kuin olin. Olin valmis sulautumaan taustalle, nyökkäämään hiljaa ja antamaan muiden päättää. Kunnes aloin kysyä itseltäni: <em>entä jos minun ajatukseni ovatkin arvokkaita?</em></p>
+
+      <h2>Pienistä askelista alkoi muutos</h2>
+      <p>Uskalsin <strong>ilmaista mielipiteitäni</strong> – sanoa ääneen asioita, jotka ennen nielin. Tartuin toimeen tehtävissä, jotka olin leimannut “liian vaikeiksi minulle”. Jokainen pieni askel kertoi samaa tarinaa: ehkä minussa on enemmän kuin uskoinkaan.</p>
+
+      <div class="callout" role="note" aria-label="Rohkeuden hetket">
+        <p class="muted"><strong>Rohkeuden ketju:</strong> yksi mielipide, yksi toteutettu tehtävä, yksi hetki, jolloin en paennut vaan pysyin. Pienet teot kasvoivat luottamukseksi itseeni.</p>
+      </div>
+
+      <h2>Uskalsin – ja kasvoin</h2>
+      <p>Ensimmäiset kerrat olivat vaikeita. Sydän hakkasi, ääni tärisi ja päässä kaikui vanha ajatus: “Et sinä tähän pysty.” Mutta silti tein. Ja huomasin, että pystyin.</p>
+
+      <blockquote aria-label="Oivallus">
+        <p><strong>Rohkeus ei ole pelottomuutta.</strong> Se on sitä, että toimii siitä huolimatta, että pelottaa.</p>
+      </blockquote>
+
+      <h2>Nyt tiedän</h2>
+      <p>Olen edelleen keskeneräinen, mutta en enää arvoton. En toisia huonompi. Olen ihminen, joka kasvaa ja oppii – ja joka on antanut itselleen luvan <strong>olla mukana, näkyä ja tehdä</strong>.</p>
+
+      <hr>
+
+      <section aria-labelledby="for-you">
+        <h2 id="for-you">Sinulle, joka ehkä tunnet samoin 🌱</h2>
+        <p>Jos joskus ajattelet, ettet osaa tai riitä – muista: arvosi ei synny suorituksista. Aloita pienestä. Yksi lause, yksi teko, yksi uusi “uskalsin”.</p>
+        <div class="note" role="complementary" aria-label="Pieni harjoitus">
+          <p><strong>Pieni harjoitus:</strong> Kirjoita ylös yksi asia, jonka olet siirtänyt, koska se pelottaa. Tee tänään ensimmäinen 10 minuutin askel sitä kohti.</p>
+        </div>
+        <div class="cta" role="group" aria-label="Toimintapainikkeet">
+          <a class="btn" href="#" aria-label="Ota yhteyttä">Ota yhteyttä</a>
+          <p class="muted">Tai jatka lukemista: <a href="#" style="color: inherit; text-decoration: underline;">Miten harjoittelen lempeää rohkeutta arjessa</a></p>
+        </div>
+      </section>
+
+      <p class="muted" style="margin-top:2rem">— <strong>[Kimaltaen]</strong></p>
+    </article>
+  </main>
+</body>
+</html>
