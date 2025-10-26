@@ -1,177 +1,204 @@
-<!doctype html>
-<html lang="fi">
-<head>
-  <meta charset="utf-8">
-  <title>Maskaamisesta näkyväksi — Kimaltaen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kokemus & tieto: miksi maskaamme, mitä se maksaa ja miten tulla näkyväksi — Suomessa.">
-  <link rel="canonical" href="https://www.kimaltaen.fi/maskaamisesta-nakyvaksi.html">
-  <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Poista tämä <style> kun sivuston oma CSS on käytössä */
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;margin:0;color:#111}
-    .site-header,.site-footer{padding:16px 24px;background:#fafafa}
-    .content{max-width:760px;margin:32px auto;padding:0 16px}
-    h1{font-size:2rem;margin:0 0 .25rem 0}
-    .meta{color:#555;margin:0 0 1.25rem 0}
-    h2{margin-top:2rem}
-    blockquote{margin:1rem 0;padding:.75rem 1rem;border-left:4px solid #ddd;background:#f9f9f9}
-    .ref-list{padding-left:1.25rem}
-    .ref-list li{margin:.25rem 0; word-break: break-word;}
-  </style>
-</head>
-<body>
-  <header class="km-header">
-  <a class="km-brand" href="index.html" aria-label="Etusivu">
-    <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
-  </a>
+<!-- HERO -->
+<header class="page-hero">
+  <h1 id="maskaaminen-title">Maskaamisesta näkyväksi</h1>
+  <p class="lead">
+    Maskaaminen ei ole huijausta vaan selviytyvyyttä: keino hakea turvaa, tilaa ja osallisuutta.
+    Tällä sivulla avaan, mitä maskaaminen on, miksi sitä tapahtuu, mitä se maksaa – ja miten
+    näkyväksi tuleminen (unmasking) voi tapahtua omaan tahtiin, turvallisuutta kunnioittaen.
+  </p>
 
-  <nav class="km-nav" aria-label="Päävalikko">
-    <ul class="km-menu">
-      <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
-      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
-
-      <li class="km-item km-has-sub">
-        <!-- Päälinkki + alavalikko yhtenäisesti -->
-        <a class="km-link" href="kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
-        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
-                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
-        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-          <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-          <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html" aria-current="page">Maskaamisesta näkyväksi</a></li>
-          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
-          <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
-          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
-          <!-- Lisää kun julkaistu:
-          <li role="none"><a role="menuitem" href="rohkeus-ylittaa-itsensa.html">Rohkeus ylittää itsensä</a></li>
-          -->
-        </ul>
-      </li>
-
-      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
-      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
-    </ul>
+  <!-- SISÄLLYSLUETTELO -->
+  <nav class="toc" aria-label="Sisällysluettelo">
+    <a href="#mita-on">Mitä on maskaaminen?</a>
+    <a href="#miksi">Miksi maskaamme?</a>
+    <a href="#hinta">Mitä se maksaa?</a>
+    <a href="#unmasking">Unmasking: 5 askelta</a>
+    <a href="#kieli">Kielen pieni opas</a>
+    <a href="#loppu">Lopuksi</a>
+    <a href="#lahteet">Lähteet</a>
   </nav>
 </header>
 
-  <main class="content">
-    <article class="blog-post" itemscope itemtype="https://schema.org/Article">
-      <header>
-        <h1 itemprop="headline">Maskaamisesta näkyväksi</h1>
-        <p class="meta"><time datetime="2025-08-15" itemprop="datePublished">15.8.2025</time> • Kokemus</p>
-      </header>
+<!-- 1. MITÄ ON -->
+<section id="mita-on" class="link-section" aria-labelledby="h-mita-on">
+  <h2 id="h-mita-on">Mitä on maskaaminen?</h2>
 
-      <p>Moni meistä on tottunut piilottamaan osia itsestään. Maski voi olla tapa selviytyä, mutta se myös kuluttaa. Mitä jos maailma vahvistaisi, ei rikkoisi?</p>
-      <p>Kun maski putoaa, esiin tulee ihminen sellaisena kuin hän on — monivivahteisena, arvokkaana ja ainutlaatuisena. Neurovähemmistön näkökulmasta tämä tarkoittaa sitä, että jokaisella on oikeus tulla kohdatuksi ilman pakkoa esittää jotakin muuta kuin on.</p>
-      <p>Aito hyväksyntä rakentuu pienistä teoista: lempeydestä, kuuntelemisesta ja rohkeudesta olla oma itsensä. Kun maailma oppii näkemään pinnan taakse, moni meistä voi vihdoin hengittää vapaammin.</p>
+  <p>
+    Maskaaminen = omien tapojen, reaktioiden ja tarpeiden <strong>peittämistä tai korvaamista</strong>,
+    jotta sopii vallitseviin normeihin. Se voi näyttää esimerkiksi harjoitellulta katsekontaktilta,
+    skriptatulta puheelta, aistitarpeiden piilottamiselta tai itselle luontaisten eleiden ja
+    stimmaamisen hillitsemiseltä.
+  </p>
 
-      <hr>
+  <blockquote class="pull-quote">
+    <p><em>“Maskaaminen on turvataito.”</em> Se on opittu keino navigoida ympäristöissä, jotka eivät
+    ole suunniteltu neurovähemmistöjä varten.</p>
+  </blockquote>
 
-      <section aria-labelledby="mita-on-maskaaminen">
-        <h2 id="mita-on-maskaaminen">Mitä on maskaaminen?</h2>
-        <p>
-          Maskaaminen (camouflaging) tarkoittaa omien piirteiden ja tarpeiden peittämistä tai muokkaamista ympäristön normeihin sopiviksi. Se voi näkyä esimerkiksi opeteltuna katsekontaktina, eleiden ja äänensävyn jäljittelynä, aistikuormituksen piilottamisena tai puhetavan muokkaamisena.
-      
-          (<a href="https://autismiliitto.fi/materiaalia/autismi-lehti/naisten-autismi-maskaaminen-ja-sen-vaikutukset/" target="_blank" rel="noopener">Autismiliitto</a>;).
-        </p>
-      </section>
+  <p>
+    Neurodiversiteettiparadigman näkökulmasta (Nick Walker) ongelma ei ole “meissä”, vaan ympäristön
+    kapeissa normeissa siitä, miten on “sallittua” kommunikoida, oppia ja olla läsnä.
+  </p>
 
-      <section aria-labelledby="miksi-maskaamme">
-        <h2 id="miksi-maskaamme">Miksi maskaamme?</h2>
-        <ul>
-          <li><strong>Turvallisuus ja hyväksyntä:</strong> halu välttää leimautumista tai väärinymmärryksiä yhteisössä, koulussa ja työssä
-                </li>
-          <li><strong>Ympäristön odotukset:</strong> kulttuuriset normit määrittelevät “sopivaa” käytöstä; tytöt ja naiset oppivat usein peittämään piirteitään
-          </li>
-        </ul>
-      </section>
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
 
-      <section aria-labelledby="miten-se-tuntuu">
-        <h2 id="miten-se-tuntuu">Miltä maskaaminen tuntuu?</h2>
-        <p>
-          Moni kuvaa jatkuvaa “roolissa olemista”: tarkkailua, analysointia ja tilanteisiin sopeutumista. Tämä kuluttaa energiaa ja voi johtaa uupumukseen, ahdistukseen ja masennukseen, havainto, jota kuvaavat sekä kokemustarinat että tutkimukset
-          (<a href="https://pubmed.ncbi.nlm.nih.gov/30627892/" target="_blank" rel="noopener">Cage 2019</a>;
-          <a href="https://link.springer.com/article/10.1007/s10803-021-04987-w" target="_blank" rel="noopener">Perry 2022</a>).
-        </p>
-      </section>
+<!-- 2. MIKSI -->
+<section id="miksi" class="link-section" aria-labelledby="h-miksi">
+  <h2 id="h-miksi">Miksi maskaamme?</h2>
 
-      <section aria-labelledby="suomi-kokemuksia">
-        <h2 id="suomi-kokemuksia">Kokemuksia Suomessa</h2>
-        <p>Suomalaisissa jutuissa ja opinnäytteissä toistuu sama havainto: monelle maski on vuosien selviytymiskeino, joka kuitenkin uuvuttaa.</p>
+  <p>
+    Usein, koska haluamme <strong>turvaa, hyväksyntää ja elintilaa</strong>. Moni oppi varhain, että
+    näkyvät erot tulkitaan “virheiksi”, jolloin rooli suojaa syrjinnältä. Damian E. M. Milton kuvaa
+    ilmiötä käsitteellä <strong>double empathy</strong>: väärinymmärrys on molemminpuolista
+    neurotyyppien välillä, mutta sopeutumisen taakka kasautuu tyypillisesti meille.
+  </p>
 
-        <blockquote>“Kasvatus oli kiltteyteen kannustavaa, ja opin lukemaan muiden odotuksia. Koulu meni, mutta iltaisin olin täysin poikki.” —
-          <a href="https://autismiliitto.fi/materiaalia/autismi-lehti/tyttojen-ja-naisten-autismin-tunnistamisesta/" target="_blank" rel="noopener">Autismiliitto</a>
-        </blockquote>
+  <p>
+    Monotropismin (autistiset kirjoittajat) näkökulmasta maskaaminen on myös yritys ohjata
+    <em>huomion virtoja</em> pois omista kiinnostusten uomista kohti ympäristön vaatimuksia –
+    hetken se toimii, mutta kuormittaa.
+  </p>
 
-        <blockquote>“Halusin olla ‘riittävän normaali’. Opin roolin — myöhemmin tajusin, että olin naamioitunut niin hyvin, ettei oma olo enää tunnistunut.” —
-          <a href="https://yle.fi/aihe/a/20-10007049" target="_blank" rel="noopener">Yle, Kirjolla-juttu</a>
-        </blockquote>
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
 
-        <blockquote>“Kun aikuisiällä sain nimen kokemuksilleni, pystyin vähentämään maskausta...” —
-          <a href="https://autismiliitto.fi/materiaalia/autismi-lehti/naisten-autismi-maskaaminen-ja-sen-vaikutukset/" target="_blank" rel="noopener">Autismiliitto: Naisten autismi</a>
-        </blockquote>
-        </p>
+<!-- 3. HINTA -->
+<section id="hinta" class="link-section" aria-labelledby="h-hinta">
+  <h2 id="h-hinta">Mitä se maksaa?</h2>
 
-        <p>Tuore opinnäyte tarkastelee naamiointia autististen ihmisten omasta näkökulmasta ja kuvaa kuormitusta, identiteettiin liittyviä tuntemuksia ja tuen tarvetta:
-          <a href="https://www.utupub.fi/bitstream/handle/10024/182753/Huovinen_Kristiina_opinnayte.pdf?isAllowed=y&sequence=1" target="_blank" rel="noopener">
-            Huovinen 2025 (Turun yliopisto)
-          </a>.
-        </p>
-      </section>
+  <ul>
+    <li><strong>Uupumus ja kuormitus:</strong> roolin ylläpito kuluttaa hermostoa ja mieltä.</li>
+    <li><strong>Identiteetin ohentuminen:</strong> kun “näyttämö minä” korvaa “oman minäni”.</li>
+    <li><strong>Myöhäinen tunnistuminen:</strong> etenkin naisilla ja muilla vähemmistöillä.</li>
+  </ul>
 
-      <section aria-labelledby="autenttisuus">
-        <h2 id="autenttisuus">Miksi näkyväksi tuleminen on tärkeää?</h2>
-        <p>
-          Autenttisuus tukee psyykkistä hyvinvointia ja ihmissuhteita. Kun ihminen voi ilmaista tarpeitaan ja säädellä kuormitusta, riski uupumiselle pienenee ja voimavarat vapautuvat arkeen, työhön ja luovuuteen
-          (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6483965/" target="_blank" rel="noopener">Cage 2019</a>).
-        </p>
-      </section>
+  <p>
+    Devon Price korostaa, että <em>unmasking</em> ei ole “kaiken paljastamista kerralla” vaan taitoa
+    rakentaa vähitellen turvallisia tapoja olla oma itsensä.
+  </p>
 
-      <section aria-labelledby="askelia">
-        <h2 id="askelia">Askeleita maskista näkyväksi — arjessa Suomessa</h2>
-        <ol>
-          <li><strong>Tunnista kuormitustilanteet:</strong> pidä viikon ajan “kuormituspäiväkirjaa”.</li>
-          <li><strong>Rajat ja pyynnöt:</strong> harjoittele lauseita kuten “Tarvitsen tauon”, “Voidaanko sopia selkeä agenda?”, “Minulle sopii kirjallinen viestintä”.</li>
-          <li><strong>Ympäristön säätö:</strong> kuulonsuojaus, valaistus, rauhallinen työpiste/etäpäivät; kohtuulliset mukautukset ovat yleistymässä.</li>
-          <li><strong>Tieto ja arviointi:</strong> katso suositukset ja itsearviointi:
-            <a href="https://www.kaypahoito.fi/hoi50131" target="_blank" rel="noopener">Käypä hoito</a>,
-            <a href="https://autismiliitto.fi/autismi/diagnosointi/" target="_blank" rel="noopener">Autismiliitto: Diagnosointi</a>,
-            <a href="https://autismiliitto.fi/wp-content/uploads/2022/07/GQ-ASC_virallinen-suomennos_saavutettava_22.pdf" target="_blank" rel="noopener">GQ-ASC (PDF)</a>.
-          </li>
-          <li><strong>Turvalliset yhteisöt:</strong> vertaistuki (järjestöt, Discord/FB-ryhmät), terapia, paikalliset ryhmät
-            (<a href="https://autismiliitto.fi/materiaalia/autismi-lehti/naisten-autismi-maskaaminen-ja-sen-vaikutukset/" target="_blank" rel="noopener">Autismiliitto</a>).
-          </li>
-        </ol>
-      </section>
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
 
-      <section aria-labelledby="yhteiskunta">
-        <h2 id="yhteiskunta">Entä yhteiskunta?</h2>
-        <p>
-          Maskaaminen ei ole vain yksilön strategia vaan seuraus ympäristön odotuksista. Suomessa diagnostiikan ja tietoisuuden kehitys auttaa, mutta työtä riittää koulussa, terveydenhuollossa ja työelämässä: tunnistamista, kohtuullisia mukautuksia ja asennemuutosta
-          (<a href="https://www.kaypahoito.fi/autismikirjon-hairion-uusi-kaypa-hoito-suositus-korostaa-arjen-tukitoimia-seka-toimintakykya-edistavaa-ymparistoa" target="_blank" rel="noopener">Käypä hoito -uutinen</a>;
-          <a href="https://blogi.thl.fi/autismin-yleistyminen-voi-johtua-monesta-syysta/" target="_blank" rel="noopener">THL-blogi</a>).
-        </p>
-      </section>
+<!-- 4. UNMASKING: 5 ASKELTA -->
+<section id="unmasking" class="link-section" aria-labelledby="h-unmasking">
+  <h2 id="h-unmasking">Unmasking: 5 askelta</h2>
 
-      <hr>
+  <ol>
+    <li>
+      <strong>Nimeä erot & normit:</strong> listaa <em>omat tarpeet</em> ja ympäristön odotukset.
+      Kumpi on neuvoteltavissa? Missä haluat suojata energiaasi?
+    </li>
+    <li>
+      <strong>Etsi turvalliset tilat & ihmiset:</strong> missä on ok kokeilla näkyvyyttä?
+      Aloita pienesti (yksi kollega/kurssi/kanava).
+    </li>
+    <li>
+      <strong>Anna kiinnostuksille tilaa:</strong> monotropinen syväfokus on voimavara; varaa
+      kalenterista “oman virran” slottia.
+    </li>
+    <li>
+      <strong>Mikromukautukset arkeen:</strong> taukotimeri, melunsuodatus, valaistus,
+      kirjoitetut kanavat, selkeä agenda. Neuvottele näkyväksi.
+    </li>
+    <li>
+      <strong>Iteroi turvallisuus ensin:</strong> tarkista kehon signaalit; jos kuormitus kasvaa,
+      peräänny, säädä ja jatka myöhemmin.
+    </li>
+  </ol>
 
-      <section aria-labelledby="lahteet">
-        <h3 id="lahteet">Lähteet ja lisälukemista</h3>
-        <ul class="ref-list">
-        
-          <li><a href="https://blogi.thl.fi/autismin-yleistyminen-voi-johtua-monesta-syysta/" target="_blank" rel="noopener">THL-blogi: Autismin yleistyminen voi johtua monesta syystä</a></li>
-          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6483965/" target="_blank" rel="noopener">Cage et al. 2019: Reasons, Contexts and Costs of Camouflaging</a></li>
-          <li><a href="https://link.springer.com/article/10.1007/s10803-021-04987-w" target="_blank" rel="noopener">Perry et al. 2022: Camouflaging & stigma</a></li>
-          <li><a href="https://www.utupub.fi/bitstream/handle/10024/182753/Huovinen_Kristiina_opinnayte.pdf?isAllowed=y&sequence=1" target="_blank" rel="noopener">Huovinen 2025: “Haluan olla minä…” (Pro gradu)</a></li>
-        </ul>
-      </section>
-    </article>
-  </main>
+  <aside class="tip" aria-label="Vinkki">
+    <p><strong>Muista:</strong> näkyväksi tuleminen on <em>oikeus, ei velvollisuus</em>.
+    Sinä päätät tahdin ja rajat.</p>
+  </aside>
 
-  <footer class="site-footer">
-    <p>© 2025 Kimaltaen — Moninaisuus saa loistaa ✨</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
+
+<!-- 5. KIELI-OPAS -->
+<section id="kieli" class="link-section" aria-labelledby="h-kieli">
+  <h2 id="h-kieli">Kielen pieni opas</h2>
+
+  <p>
+    Kieli muovaa todellisuutta. Lydia X. Z. Brownin (Autistic Hoya) kootut resurssit auttavat
+    tunnistamaan ableistista kieltä ja tarjoavat vaihtoehtoja, jotka kunnioittavat identiteettiä.
+  </p>
+
+  <ul>
+    <li>Vältä patologisoivia ilmauksia (“oire”, “häiriö”) silloin kun puhut identiteetistä.</li>
+    <li>Käytä ihmisten omaa kieltä (identity-first “autistinen”, jos henkilö niin haluaa).</li>
+    <li>Muista konteksti: joskus tarvitaan diagnoosikieltä (oikeudet/palvelut), usein ei.</li>
+  </ul>
+
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
+
+<!-- 6. LOPETUS -->
+<section id="loppu" class="link-section" aria-labelledby="h-loppu">
+  <h2 id="h-loppu">Lopuksi</h2>
+
+  <p>
+    Maski on auttanut meitä selviytymään. Kun ympäristö muuttuu – kun viestintä, aistit ja
+    rytmit neuvotellaan näkyviksi – maskaamisen tarve pienenee. Tämä on yhteisötaito:
+    me muutumme, ja tilat muuttuvat mukana.
+  </p>
+
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
+
+<!-- 7. LÄHTEET (vain neurovähemmistöjen tekijät) -->
+<section id="lahteet" class="link-section" aria-labelledby="h-lahteet">
+  <h2 id="h-lahteet">Lähteet (neurovähemmistöjen tekijät)</h2>
+  <ul class="link-grid" role="list">
+    <li class="link-card" role="listitem">
+      <a class="card-link" href="https://neuroqueer.com/neurodiversity-terms-and-definitions/" target="_blank" rel="noopener noreferrer">
+        <span class="card-title">Nick Walker — Neurodiversity: Some Basic Terms &amp; Definitions</span>
+        <span class="card-desc">Neurodiversiteettiparadigman peruskäsitteet ja kehys näkyväksi tulemiselle.</span>
+        <span class="meta"><span class="badge type">Artikkeli</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
+      </a>
+    </li>
+
+    <li class="link-card" role="listitem">
+      <a class="card-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8992885/" target="_blank" rel="noopener noreferrer">
+        <span class="card-title">Autism in Adulthood — Toward a Neuroqueer Future (2021)</span>
+        <span class="card-desc">Haastattelu Nick Walkerin kanssa neuroqueer-näkökulmasta.</span>
+        <span class="meta"><span class="badge type">Haastattelu</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
+      </a>
+    </li>
+
+    <li class="link-card">
+      <a class="card-link" href="https://www.autism.org.uk/advice-and-guidance/professional-practice/double-empathy" target="_blank" rel="noopener noreferrer">
+        <span class="card-title">Damian E. M. Milton — The Double Empathy Problem</span>
+        <span class="card-desc">Väärinymmärryksen vastavuoroisuus: miksi sopeutusta ei voi jättää yksilölle.</span>
+        <span class="meta"><span class="badge type">Artikkeli</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
+      </a>
+    </li>
+
+    <li class="link-card">
+      <a class="card-link" href="https://monotropism.org/" target="_blank" rel="noopener noreferrer">
+        <span class="card-title">Monotropism.org</span>
+        <span class="card-desc">Autististen kirjoittajien kehys huomion virroista ja hyvinvoinnista.</span>
+        <span class="meta"><span class="badge type">Sivusto</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
+      </a>
+    </li>
+
+    <li class="link-card">
+      <a class="card-link" href="https://www.devonprice.net" target="_blank" rel="noopener noreferrer">
+        <span class="card-title">Devon Price — Unmasking Autism</span>
+        <span class="card-desc">Unmasking käytäntönä: taito, rajat ja turvallisuus ensin.</span>
+        <span class="meta"><span class="badge type">Kirjoittaja</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
+      </a>
+    </li>
+
+    <li class="link-card">
+      <a class="card-link" href="https://www.autistichoya.com/p/ableismlanguage.html" target="_blank" rel="noopener noreferrer">
+        <span class="card-title">Lydia X. Z. Brown — Ableism/Language</span>
+        <span class="card-desc">Kielen oppaat: miten puhua kunnioittavasti neurovähemmistöistä.</span>
+        <span class="meta"><span class="badge type">Resurssi</span><span class="badge lang">EN</span><span class="ext" aria-hidden="true"></span></span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="backtop"><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+</section>
