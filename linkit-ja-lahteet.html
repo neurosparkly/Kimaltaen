@@ -105,34 +105,41 @@
       conic-gradient(from 45deg at 60% 40%, currentColor 0 25%, transparent 0) top right/10px 10px no-repeat,
       linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
 
-    /* HEADER (km-*) — navigaatio */
-    .km-header{max-width:var(--container);margin:0 auto;padding:var(--space-5) 1.25rem;display:flex;align-items:center;gap:1.25rem}
-    .km-brand{display:inline-flex;align-items:center}
-    .km-nav{margin-left:auto}
-    .km-menu{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
-    .km-link,.km-sub-toggle{font:inherit;background:none;border:0;color:inherit;text-decoration:none;cursor:pointer;padding:.5rem .75rem;border-radius:999px}
-    .km-link:hover,.km-sub-toggle:hover{background:var(--brand-05);text-decoration:none}
+   <!-- HEADER (täsmälleen sama kuin etusivulla) -->
+<header class="km-header">
+  <a class="km-brand" href="index.html" aria-label="Etusivu">
+    <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+  </a>
 
-    /* Alavalikko */
-    .km-has-sub{position:relative}
-    .km-sub{
-      display:none; position:absolute; left:0; top:calc(100% + 6px);
-      margin:0; padding:.5rem; list-style:none;
-      background:var(--card); border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow);
-      min-width:16rem; z-index:999;
-    }
-    /* Näytä hover/focusilla sekä kun JS asettaa km-open */
-    .km-has-sub:hover > .km-sub,
-    .km-has-sub:focus-within > .km-sub,
-    .km-has-sub.km-open > .km-sub{ display:block; }
+  <nav class="km-nav" aria-label="Päävalikko">
+    <ul class="km-menu">
+      <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
+      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
 
-    .km-sub a{display:block; padding:.5rem .6rem; border-radius:8px; color:inherit; text-decoration:none}
-    .km-sub a:hover,.km-sub a:focus{background:#f5f5f5}
+      <li class="km-item km-has-sub">
+        <!-- Tee päälinkistä klikattava kuten muilla sivuilla -->
+        <a class="km-link" href="kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+        <!-- Pieni nuolinappi kosketus/keyboard-käyttöön -->
+        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
 
-    @media (max-width:720px){
-      .km-menu{gap:.5rem}
-      .km-sub{left:auto; right:0; min-width:14rem}
-    }
+        <!-- Alalinkit (sama lista kuin muilla sivuilla) -->
+        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+          <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+          <li role="none"><a role="menuitem" href="kokemukset/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece, pala palalta</a></li>
+          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Erilaisuus on rikkaus</a></li>
+          <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+          <li role="none"><a role="menuitem" href="rohkeus">Rohkeus</a></li>
+
+        </ul>
+      </li>
+
+      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html" aria-current="page">Linkit &amp; lähteet</a></li>
+      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+    </ul>
+  </nav>
+</header>
 
     /* FOOTER */
     footer{margin-top:var(--space-7);border-top:1px solid var(--border);padding:var(--space-5) 0;color:var(--muted);font-size:var(--fs-sm)}
