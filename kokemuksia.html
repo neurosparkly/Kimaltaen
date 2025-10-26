@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
   <meta charset="utf-8">
-  <title>Linkit & lähteet — Kimaltaen</title>
+  <title>Kokemuksia — Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Favicons & base CSS -->
@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="styles.css">
 
   <!-- Canonical & Sitemap -->
-  <link rel="canonical" href="https://kimaltaen.fi/linkit-ja-lahteet.html">
+  <link rel="canonical" href="https://kimaltaen.fi/kokemuksia.html">
   <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
 
   <!-- Meta -->
-  <meta name="description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä. Englanninkieliset teokset alkuperäisnimillä. Jokaisen perässä lyhyt kuvaus.">
+  <meta name="description" content="Kokemustarinoita: näkyväksi tuleminen, turvallisuus vuorovaikutuksessa ja hermoston vahvuus.">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Linkit & lähteet — Kimaltaen">
-  <meta property="og:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
+  <meta property="og:title" content="Kokemuksia — Kimaltaen">
+  <meta property="og:description" content="Kokemustarinoita: näkyväksi tuleminen, turvallisuus vuorovaikutuksessa ja hermoston vahvuus.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kimaltaen.fi/linkit-ja-lahteet.html">
+  <meta property="og:url" content="https://kimaltaen.fi/kokemuksia.html">
   <meta property="og:image" content="https://kimaltaen.fi/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Linkit & lähteet — Kimaltaen">
-  <meta name="twitter:description" content="Kuratoitu linkkilista neurodiversiteettiparadigmasta: historia, käsitteet, arki ja työelämä.">
+  <meta name="twitter:title" content="Kokemuksia — Kimaltaen">
+  <meta name="twitter:description" content="Kokemustarinoita: näkyväksi tuleminen, turvallisuus vuorovaikutuksessa ja hermoston vahvuus.">
   <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
 
   <!-- Page-specific styles (namespaced .km-*) -->
@@ -71,39 +71,13 @@
     .skip-link{position:absolute;left:-9999px;top:auto}
     .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
 
-    /* PAGE HERO */
+    /* PAGE HERO (ei pakollinen tälle sivulle, mutta säilytetään yhteensopivuus) */
     .page-hero{max-width:var(--container);margin:0 auto;padding:3rem 1.25rem 1.25rem;text-align:center}
     .page-hero h1{font-size:var(--fs-2xl);color:var(--brand);margin:.25rem 0 .5rem}
     .lead{max-width:70ch;margin:0 auto;color:var(--muted);font-size:var(--fs-md)}
-    .toc{margin:1rem auto 0;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-    .toc a{padding:.5rem .75rem;border-radius:999px;background:var(--brand-05);color:var(--brand);text-decoration:none;border:1px solid var(--ring);font-weight:700;font-size:var(--fs-sm)}
-    .toc a:hover{filter:brightness(0.98)}
 
-    /* SECTIONS */
-    .link-section{max-width:var(--container);margin:2rem auto;padding:0 1.25rem}
-    .link-section h2{color:var(--brand);font-size:var(--fs-xl);margin:0 0 .75rem}
-    .backtop{margin:.75rem 0 0}
-    .backtop a{color:var(--muted)}
-    .backtop a:hover{color:var(--brand)}
-
-    /* GRID & CARDS */
-    .link-grid{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media (max-width:1024px){.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (max-width:640px){.link-grid{grid-template-columns:1fr}}
-
-    .link-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease}
-    .link-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(0,0,0,.14)}
-    .card-link{display:flex;flex-direction:column;gap:.45rem;padding:1rem 1.1rem;height:100%;text-decoration:none}
-    .card-link:focus-visible{outline:3px solid var(--ring);outline-offset:3px;border-radius:12px}
-    .card-title{color:var(--ink);font-weight:800;line-height:1.3;font-size:var(--fs-md)}
-    .card-desc{color:var(--muted);font-size:var(--fs-sm)}
-    .meta{display:flex;gap:.5rem;align-items:center;margin-top:.1rem}
-    .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:800;letter-spacing:.01em;padding:.28rem .5rem;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand)}
-    .badge.lang{background:#eef8ff;color:#005a99;border-color:rgba(0,90,153,.2)}
-    .badge.type{background:#f7f7fa;color:#444;border-color:var(--border)}
-    .ext{width:14px;height:14px;margin-left:auto;opacity:.7;flex-shrink:0;background:
-      conic-gradient(from 45deg at 60% 40%, currentColor 0 25%, transparent 0) top right/10px 10px no-repeat,
-      linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
+    /* GRID & CARDS: tarinat – oletetaan tyylit styles.css:ssä */
+    /* ... */
 
     /* HEADER (km-*) — unified logo size & pill buttons */
     .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
@@ -151,117 +125,193 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#links-title">Siirry sisältöön</a>
+  <a class="skip-link" href="#stories-title">Siirry sisältöön</a>
 
   <!-- HEADER -->
   <header class="km-header">
     <a class="km-brand" href="index.html" aria-label="Etusivu">
-      <!-- width/height estää CLS:n; fetchpriority parantaa LCP:tä -->
       <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
     </a>
-   <nav class="km-nav" aria-label="Päävalikko">
-  <ul class="km-menu">
-    <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
-    <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
 
-    <li class="km-item km-has-sub">
-      <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
-      <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+    <!-- *** VALIKKO: sama kuin Linkit & lähteet -sivulla, täsmälleen *** -->
+    <nav class="km-nav" aria-label="Päävalikko">
+      <ul class="km-menu">
+        <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
+        <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
+
+        <li class="km-item km-has-sub">
+          <!-- Päälinkki on klikattava ja tällä sivulla aktiivinen -->
+          <a class="km-link" href="kokemuksia.html" aria-current="page" id="kokemuksia-link">Kokemuksia</a>
+          <!-- Nappi kosketus/keyboard-käyttöön -->
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+
+          <!-- Sama alavalikonsisältö kuin toisella sivulla (päivitetyt polut tähän kansioon/juureen) -->
+          <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+            <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+            <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+            <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+            <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+            <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
+            <!-- Lisää tämä vasta kun sivu on olemassa:
+            <li role="none"><a role="menuitem" href="rohkeus-ylittaa-itsensa.html">Rohkeus ylittää itsensä</a></li>
+            -->
+          </ul>
+        </li>
+
+        <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+        <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
       </ul>
-    </li>
-
-    <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html" aria-current="page">Linkit & lähteet</a></li>
-    <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
-  </ul>
-</nav>
-
+    </nav>
   </header>
 
-<section class="story-grid" aria-label="Kokemustarinat" id="tuoreimmat">
+  <!-- MAIN -->
+  <main>
+    <header class="page-hero">
+      <h1 id="stories-title">Kokemuksia</h1>
+      <p class="lead">Tuoreimpia tarinoita ja oivalluksia — lempeä ja arkea tukeva näkökulma neurodiversiteettiin.</p>
+    </header>
 
-  <!-- Maskaamisesta näkyväksi -->
-  <article class="story">
-    <a class="story-link" href="maskaamisesta-nakyvaksi.html">
-      <figure class="story-thumb">
-        <img src="assets/image3.png" alt="Artikkelia kuvittava kuva — näkyväksi tuleminen" loading="lazy">
-      </figure>
-      <div class="story-body">
-        <h2 class="story-title">Maskaamisesta näkyväksi</h2>
-        <p class="story-meta"><time datetime="2025-08-15">15.8.2025</time></p>
-        <p class="story-excerpt">
-          Moni meistä on tottunut piilottamaan osia itsestään. Mitä jos maailma vahvistaisi, ei rikkoisi?
-        </p>
-        <span class="story-cta">Lue koko juttu →</span>
-      </div>
-    </a>
-  </article>
+    <section class="story-grid" aria-label="Kokemustarinat" id="tuoreimmat">
 
-  <!-- Piece by Piece — Pharrell ja luottamuksen voima -->
-  <article class="story">
-    <a class="story-link" href="pharrell.html">
-      <figure class="story-thumb">
-        <img src="assets/piecebypiece.png" alt="LEGO-tyylinen siluetti — Pharrellin elokuva Piece by Piece" loading="lazy">
-      </figure>
-      <div class="story-body">
-        <h2 class="story-title">Piece by Piece — Pharrell ja luottamuksen voima</h2>
-        <p class="story-meta"><time datetime="2025-09-15">15.9.2025</time></p>
-        <p class="story-excerpt">
-          Miten luottamus, sekä muiden että oma, voi muuttaa kaiken — ajatuksia Pharrellin <em>Piece by Piece</em> -elokuvasta.
-        </p>
-        <span class="story-cta">Lue koko juttu →</span>
-      </div>
-    </a>
-  </article>
+      <!-- Maskaamisesta näkyväksi -->
+      <article class="story">
+        <a class="story-link" href="maskaamisesta-nakyvaksi.html">
+          <figure class="story-thumb">
+            <img src="assets/image3.png" alt="Artikkelia kuvittava kuva — näkyväksi tuleminen" loading="lazy">
+          </figure>
+          <div class="story-body">
+            <h2 class="story-title">Maskaamisesta näkyväksi</h2>
+            <p class="story-meta"><time datetime="2025-08-15">15.8.2025</time></p>
+            <p class="story-excerpt">
+              Moni meistä on tottunut piilottamaan osia itsestään. Mitä jos maailma vahvistaisi, ei rikkoisi?
+            </p>
+            <span class="story-cta">Lue koko juttu →</span>
+          </div>
+        </a>
+      </article>
 
-  <!-- Turvallisuuden merkitys vuorovaikutuksessa -->
-  <article class="story">
-    <a class="story-link" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">
-      <figure class="story-thumb">
-        <img src="assets/vuorovaikutus.png" alt="Kuvitus turvallisesta vuorovaikutuksesta — lämmin sävy" loading="lazy">
-      </figure>
-      <div class="story-body">
-        <h2 class="story-title">Turvallisuuden merkitys vuorovaikutuksessa</h2>
-        <p class="story-meta"><time datetime="2025-10-07">7.10.2025</time></p>
-        <p class="story-excerpt">
-          Hermosto tarvitsee turvallisuutta toimiakseen. Pienet lempeät signaalit mahdollistavat yhteyden ja läsnäolon.
-        </p>
-        <span class="story-cta">Lue koko juttu →</span>
-      </div>
-    </a>
-  </article>
+      <!-- Piece by Piece — Pharrell ja luottamuksen voima -->
+      <article class="story">
+        <a class="story-link" href="pharrell.html">
+          <figure class="story-thumb">
+            <img src="assets/piecebypiece.png" alt="LEGO-tyylinen siluetti — Pharrellin elokuva Piece by Piece" loading="lazy">
+          </figure>
+          <div class="story-body">
+            <h2 class="story-title">Piece by Piece — Pharrell ja luottamuksen voima</h2>
+            <p class="story-meta"><time datetime="2025-09-15">15.9.2025</time></p>
+            <p class="story-excerpt">
+              Miten luottamus, sekä muiden että oma, voi muuttaa kaiken — ajatuksia Pharrellin <em>Piece by Piece</em> -elokuvasta.
+            </p>
+            <span class="story-cta">Lue koko juttu →</span>
+          </div>
+        </a>
+      </article>
 
-  <!-- Mitä jos näkisimme erilaiset hermostot vahvuutena? -->
-  <article class="story">
-    <a class="story-link" href="erilaisen-hermoston-vahvuus.html">
-      <figure class="story-thumb">
-        <img src="assets/hermosto.png" alt="Abstrakti kuvitus hermoston vahvuudesta" loading="lazy">
-      </figure>
-      <div class="story-body">
-        <h2 class="story-title">Mitä jos näkisimme erilaiset hermostot vahvuutena?</h2>
-        <p class="story-meta"><time datetime="2025-10-07">7.10.2025</time></p>
-        <p class="story-excerpt">
-          Herkkyys on vahvuus: vivahteet, yhteys luontoon ja ihmisiin ja yhteisöjen rikastuminen.
-        </p>
-        <span class="story-cta">Lue koko juttu →</span>
-      </div>
-    </a>
-  </article>
+      <!-- Turvallisuuden merkitys vuorovaikutuksessa -->
+      <article class="story">
+        <a class="story-link" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">
+          <figure class="story-thumb">
+            <img src="assets/vuorovaikutus.png" alt="Kuvitus turvallisesta vuorovaikutuksesta — lämmin sävy" loading="lazy">
+          </figure>
+          <div class="story-body">
+            <h2 class="story-title">Turvallisuuden merkitys vuorovaikutuksessa</h2>
+            <p class="story-meta"><time datetime="2025-10-07">7.10.2025</time></p>
+            <p class="story-excerpt">
+              Hermosto tarvitsee turvallisuutta toimiakseen. Pienet lempeät signaalit mahdollistavat yhteyden ja läsnäolon.
+            </p>
+            <span class="story-cta">Lue koko juttu →</span>
+          </div>
+        </a>
+      </article>
 
-  <!-- Rohkeus ylittää itsensä -->
-  <article class="story">
-    <a class="story-link" href="rohkeus.html">
-      <figure class="story-thumb">
-        <img src="assets/rohkeus.png" alt="Abstrakti kuvitus rohkeudesta ja kasvusta" loading="lazy">
-      </figure>
-      <div class="story-body">
-        <h2 class="story-title">Rohkeus ylittää itsensä</h2>
-        <p class="story-meta"><time datetime="2025-10-21">21.10.2025</time></p>
-        <p class="story-excerpt">
-          Miten pienet rohkeuden teot muuttivat suuntaa, kun uskalsin puhua ja tarttua toimeen.
-        </p>
-        <span class="story-cta">Lue koko juttu →</span>
-      </div>
-    </a>
-  </article>
+      <!-- Mitä jos näemme erilaisen hermoston vahvuutena? -->
+      <article class="story">
+        <a class="story-link" href="erilaisen-hermoston-vahvuus.html">
+          <figure class="story-thumb">
+            <img src="assets/hermosto.png" alt="Abstrakti kuvitus hermoston vahvuudesta" loading="lazy">
+          </figure>
+          <div class="story-body">
+            <h2 class="story-title">Mitä jos näemme erilaisen hermoston vahvuutena?</h2>
+            <p class="story-meta"><time datetime="2025-10-07">7.10.2025</time></p>
+            <p class="story-excerpt">
+              Herkkyys on vahvuus: vivahteet, yhteys luontoon ja ihmisiin — ja yhteisöjen rikastuminen.
+            </p>
+            <span class="story-cta">Lue koko juttu →</span>
+          </div>
+        </a>
+      </article>
 
-</section>
+      <!-- Rohkeus ylittää itsensä (ota käyttöön kun sivu on julkaistu) -->
+      <!--
+      <article class="story">
+        <a class="story-link" href="rohkeus-ylittaa-itsensa.html">
+          <figure class="story-thumb">
+            <img src="assets/rohkeus.png" alt="Abstrakti kuvitus rohkeudesta ja kasvusta" loading="lazy">
+          </figure>
+          <div class="story-body">
+            <h2 class="story-title">Rohkeus ylittää itsensä</h2>
+            <p class="story-meta"><time datetime="2025-10-21">21.10.2025</time></p>
+            <p class="story-excerpt">
+              Miten pienet rohkeuden teot muuttivat suuntaa, kun uskalsin puhua ja tarttua toimeen.
+            </p>
+            <span class="story-cta">Lue koko juttu →</span>
+          </div>
+        </a>
+      </article>
+      -->
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container"><small>© <span id="year"></span> Kimaltaen ✨</small></div>
+  </footer>
+
+  <!-- JS: year, submenu toggle, close on outside/Esc -->
+  <script>
+    // Vuosi footerissa
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // KM-alavalikko (click outside + Esc)
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.km-sub-toggle');
+      const openItems = document.querySelectorAll('.km-has-sub.km-open');
+
+      if (btn) {
+        const li = btn.closest('.km-has-sub');
+        const isOpen = li.classList.toggle('km-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        // Sulje muut auki olevat
+        openItems.forEach(el => { if (el !== li) {
+          el.classList.remove('km-open');
+          const t = el.querySelector('.km-sub-toggle');
+          if (t) t.setAttribute('aria-expanded','false');
+        }});
+        // Fokus ensimmäiseen alalinkkiin avattaessa
+        if (isOpen) {
+          const first = li.querySelector('.km-sub a');
+          setTimeout(() => first && first.focus(), 0);
+        }
+        e.stopPropagation();
+      } else {
+        openItems.forEach(el => {
+          el.classList.remove('km-open');
+          const t = el.querySelector('.km-sub-toggle');
+          if (t) t.setAttribute('aria-expanded','false');
+        });
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.km-has-sub.km-open').forEach(el => {
+          el.classList.remove('km-open');
+          const t = el.querySelector('.km-sub-toggle');
+          if (t) t.setAttribute('aria-expanded','false');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
