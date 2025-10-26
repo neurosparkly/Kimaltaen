@@ -22,18 +22,38 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html"><img src="logo.png" alt="Kimaltaen logo"></a>
-    <nav aria-label="Päänavigaatio">
-      <ul>
-        <li><a href="index.html">Etusivu</a></li>
-        <li><a href="tietoa.html">Tietoa</a></li>
-        <li><a href="kokemuksia.html">Kokemuksia</a></li>
-        <li><a href="yhteys.html">Yhteys</a></li>
-        <li><a href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header class="km-header">
+  <a class="km-brand" href="index.html" aria-label="Etusivu">
+    <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+  </a>
+
+  <nav class="km-nav" aria-label="Päävalikko">
+    <ul class="km-menu">
+      <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
+      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
+
+      <li class="km-item km-has-sub">
+        <!-- Päälinkki + alavalikko yhtenäisesti -->
+        <a class="km-link" href="kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+          <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+          <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html" aria-current="page">Maskaamisesta näkyväksi</a></li>
+          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+          <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
+          <!-- Lisää kun julkaistu:
+          <li role="none"><a role="menuitem" href="rohkeus-ylittaa-itsensa.html">Rohkeus ylittää itsensä</a></li>
+          -->
+        </ul>
+      </li>
+
+      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main class="content">
     <article class="blog-post" itemscope itemtype="https://schema.org/Article">
