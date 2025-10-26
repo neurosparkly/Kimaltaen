@@ -106,39 +106,27 @@
       linear-gradient(currentColor,currentColor) 75% 25%/10px 1.6px no-repeat;color:var(--muted)}
 
     /* HEADER (km-*) — unified logo size & pill buttons */
-    .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
-    .km-brand img{display:block;height:44px;width:auto;aspect-ratio:auto;max-height:56px}
-    @media (min-width:1000px){.km-brand img{height:52px}}
+<a class="skip-link" href="#content">Siirry sisältöön</a>
 
-    .km-nav{flex:1}
-    .km-menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap}
+<nav aria-label="Päävalikko">
+  <ul class="main-nav">
+    <li><a href="/">Etusivu</a></li>
+    <li><a href="/tietoa.html">Tietoa</a></li>
 
-    .km-link,.km-sub-toggle{
-      --pad-x:14px; --pad-y:10px;
-      display:inline-flex;align-items:center;gap:.55rem;
-      padding:var(--pad-y) var(--pad-x);
-      border-radius:999px;border:1px solid var(--ring);
-      background:var(--brand-05);color:var(--brand);
-      font-weight:800;font-size:var(--fs-sm);line-height:1;text-decoration:none;cursor:pointer;transition:transform .12s ease, filter .12s ease
-    }
-    .km-link:hover,.km-sub-toggle:hover{filter:brightness(.97)}
-    .km-link:focus-visible,.km-sub-toggle:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
-    .km-link[aria-current="page"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+    <li class="has-submenu">
+      <a href="/kokemuksia.html" aria-haspopup="true" aria-expanded="false">Kokemuksia</a>
+      <ul class="submenu">
+        <li><a href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+        <li><a href="/kokemukset/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+        <li><a href="/kokemukset/piece-by-piece.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+      </ul>
+    </li>
 
-    .km-item{position:relative}
-    .km-sub{
-      position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:12px;
-      padding:.5rem;list-style:none;margin:0;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,.08);display:none;z-index:1000
-    }
-    .km-has-sub.km-open>.km-sub{display:block}
-    .km-sub li a{display:block;padding:.45rem .75rem;border-radius:8px;text-decoration:none;color:var(--brand);font-weight:700}
-    .km-sub li a:hover{background:var(--brand-05)}
-    .km-has-sub.km-open>.km-sub-toggle{background:var(--brand);color:#fff;border-color:var(--brand)}
-    @media (max-width:800px){
-      .km-menu{flex-direction:column;align-items:flex-start}
-      .km-sub{position:static;box-shadow:none;border:0;padding:0;display:none}
-      .km-has-sub.km-open>.km-sub{display:block}
-    }
+    <li><a href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+    <li><a href="/otayhteytta.html">Ota yhteyttä</a></li>
+  </ul>
+</nav>
+
 
     /* FOOTER */
     footer{margin-top:var(--space-7);border-top:1px solid var(--border);padding:var(--space-5) 0;color:var(--muted);font-size:var(--fs-sm)}
