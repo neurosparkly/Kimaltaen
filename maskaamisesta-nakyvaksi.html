@@ -1,30 +1,41 @@
+   <!-- HEADER (täsmälleen sama kuin etusivulla) -->
 <header class="km-header">
   <a class="km-brand" href="index.html" aria-label="Etusivu">
     <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
   </a>
 
-  <nav class="km-nav" aria-label="Päävalikko">
-    <ul class="km-menu">
-      <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
-      <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
-
+<li class="km-item km-has-sub">
+  <a class="km-link" href="kokemuksia.html" aria-current="page">Kokemuksia</a>
+  <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+          aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+  <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+    <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+    <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html" aria-current="page">Maskaamisesta näkyväksi</a></li>
+    <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+    <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+    <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
+  </ul>
+</li>
       <li class="km-item km-has-sub">
-        <a class="km-link" href="kokemuksia.html" aria-current="page" id="kokemuksia-link">Kokemuksia</a>
+        <!-- Tee päälinkistä klikattava kuten muilla sivuilla -->
+        <a class="km-link" href="kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+        <!-- Pieni nuolinappi kosketus/keyboard-käyttöön -->
         <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
                 aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+
+        <!-- Alalinkit (sama lista kuin muilla sivuilla) -->
         <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
           <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-          <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html" aria-current="page">Maskaamisesta näkyväksi</a></li>
-          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+          <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece, pala palalta</a></li>
+          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Erilaisuus on rikkaus</a></li>
           <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
-          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
-          <!-- Lisää kun julkaistu:
-          <li role="none"><a role="menuitem" href="rohkeus-ylittaa-itsensa.html">Rohkeus ylittää itsensä</a></li>
-          -->
+          <li role="none"><a role="menuitem" href="rohkeus">Rohkeus</a></li>
+
         </ul>
       </li>
 
-      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html" aria-current="page">Linkit &amp; lähteet</a></li>
       <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
     </ul>
   </nav>
