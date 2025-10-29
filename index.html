@@ -75,90 +75,19 @@
 <body>
   <a class="skip-link" href="#page-title">Siirry sisältöön</a>
 
+  <!-- HEADER (yhtenäinen kaikilla sivuilla) -->
+  <header class="km-header">
+    <a class="km-brand" href="/index.html" aria-label="Etusivu">
+      <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+    </a>
 
-<!-- HEADER (yhtenäinen kaikilla sivuilla) -->
-<header class="km-header">
-  <a class="km-brand" href="/index.html" aria-label="Etusivu">
-    <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
-  </a>
+    <nav class="km-nav" aria-label="Päävalikko">
+      <ul class="km-menu">
+        <li class="km-item"><a class="km-link" href="/index.html" aria-current="page">Etusivu</a></li>
+        <li class="km-item"><a class="km-link" href="/tietoa.html">Tietoa</a></li>
 
-  <nav class="km-nav" aria-label="Päävalikko">
-    <ul class="km-menu">
-      <!-- Etusivu: aria-current tähän, koska ollaan index.html-sivulla -->
-      <li class="km-item">
-        <a class="km-link" href="/index.html" aria-current="page">Etusivu</a>
-      </li>
-
-      <li class="km-item">
-        <a class="km-link" href="/tietoa.html">Tietoa</a>
-      </li>
-
-      <!-- Kokemuksia + alavalikko -->
-      <li class="km-item km-has-sub">
-        <a class="km-link" href="/kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
-        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
-                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
-
-        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-          <li role="none"><a role="menuitem" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-          <li role="none"><a role="menuitem" href="/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
-          <li role="none"><a role="menuitem" href="/pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
-          <li role="none"><a role="menuitem" href="/turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
-          <li role="none"><a role="menuitem" href="/erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
-          <!-- Lisää kun julkaiset:
-          <li role="none"><a role="menuitem" href="/rohkeus.html">Rohkeus</a></li>
-          -->
-        </ul>
-      </li>
-
-      <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
-      <li class="km-item"><a class="km-link" href="/otayhteytta.html">Ota yhteyttä</a></li>
-    </ul>
-  </nav>
-</header>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Kimaltaen ✨</small>
-    </div>
-  </footer>
-
-  <script>
-    (function(){ const y=document.getElementById('year'); if(y) y.textContent=String(new Date().getFullYear()); })();
-    (function(){
-      const el=document.getElementById('updated-date'); if(!el) return;
-      const fallback=new Date();
-      const d=(document.lastModified)? new Date(document.lastModified): fallback;
-      el.setAttribute('datetime', d.toISOString());
-      el.textContent=d.toLocaleDateString('fi-FI',{year:'numeric',month:'long',day:'numeric'});
-    })();
-
-    document.addEventListener('click',(e)=>{
-      const t=e.target;
-      const btn=t.closest?.('.km-sub-toggle');
-      if(btn){
-        const li=btn.closest('.km-has-sub'); if(!li) return;
-        const isOpen=li.classList.toggle('km-open');
-        btn.setAttribute('aria-expanded', String(isOpen));
-        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
-          if(el!==li){ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }
-        });
-        e.stopPropagation(); return;
-      }
-      document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
-        el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false');
-      });
-    }, {passive:true});
-
-    document.addEventListener('keydown',(e)=>{
-      if(e.key==='Escape'){
-        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
-          el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false');
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+        <li class="km-item km-has-sub">
+          <a class="km-link" href="/kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+                  aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+          <ul class="km-sub" id="kokemuksia-sub" role="menu
