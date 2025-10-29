@@ -88,40 +88,53 @@
 <body>
   <a class="skip-link" href="#page-title">Siirry sisältöön</a>
 
-  <!-- HEADER -->
-  <header class="km-header">
-    <a class="km-brand" href="/" aria-label="Etusivu">
-      <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
-    </a>
-
-<nav class="km-nav" aria-label="Päävalikko">
-  <ul class="km-menu">
-    <li class="km-item"><a class="km-link" href="/">Etusivu</a></li>
-    <li class="km-item"><a class="km-link" href="/tietoa.html" aria-current="page">Tietoa</a></li>
-
-<li class="km-item km-has-sub">
-  <!-- AINA toimiva päälinkki (vie kokemuksia.html-sivulle) -->
-  <a class="km-link km-sub-toggle" href="/kokemuksia.html" aria-haspopup="true" aria-expanded="false">
-    Kokemuksia
-    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" style="transform:translateY(1px)"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+ <!-- HEADER (sama rakenne kuin maskaamisesta-nakyvaksi.html) -->
+<header class="km-header">
+  <a class="km-brand" href="index.html" aria-label="Etusivu">
+    <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
   </a>
 
-  <!-- Alasvetolista (linkit toimivat myös suoraan) -->
-  <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-    <li><a role="menuitem" class="km-link" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-    <li><a role="menuitem" class="km-link" href="/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
-    <li><a role="menuitem" class="km-link" href="/pharrell.html">Piece by Piece — Pharrell</a></li>
-    <li><a role="menuitem" class="km-link" href="/turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
-    <li><a role="menuitem" class="km-link" href="/erilaisen-hermoston-vahvuus.html">Erilaisen hermoston vahvuus</a></li>
-    <li><a role="menuitem" class="km-link" href="/rohkeus-ylittaa-itsensa.html">Rohkeus ylittää itsensä</a></li>
-  </ul>
-</li>
-    <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
-    <li class="km-item"><a class="km-link" href="/otayhteytta.html">Ota yhteyttä</a></li>
-  </ul>
-</nav>
+  <nav class="km-nav" aria-label="Päävalikko">
+    <ul class="km-menu">
+      <!-- Etusivu -->
+      <li class="km-item">
+        <a class="km-link" href="index.html">Etusivu</a>
+      </li>
 
-  </header>
+      <!-- Tietoa (laita aria-current tähän kun olet tietoa.html-sivulla) -->
+      <li class="km-item">
+        <a class="km-link" href="tietoa.html">Tietoa</a>
+      </li>
+
+      <!-- Kokemuksia + alavalikko -->
+      <li class="km-item km-has-sub">
+        <a class="km-link" href="kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+
+        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+          <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+
+          <!-- Laita aria-current tänne, kun olet maskaamisesta-nakyvaksi.html-sivulla -->
+          <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+
+          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+          <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
+          <!-- Lisää kun julkaiset:
+          <li role="none"><a role="menuitem" href="rohkeus.html">Rohkeus</a></li>
+          -->
+        </ul>
+      </li>
+
+      <!-- Linkit & lähteet -->
+      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+
+      <!-- Ota yhteyttä -->
+      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- SISÄLTÖ -->
   <main class="container" aria-labelledby="page-title">
