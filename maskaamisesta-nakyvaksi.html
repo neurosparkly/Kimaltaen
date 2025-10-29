@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="Maskaaminen ei ole huijausta vaan selviytymistä. Mitä maskaaminen on, miksi sitä tapahtuu ja miten näkyväksi tuleminen (unmasking) voi edetä turvallisesti.">
   <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
 
-  <!-- Page-specific styles (.km-* header + sticky TOC) -->
+  <!-- Sivukohtaiset tyylit: sama värimaailma + Tietoa-sivun kaltainen kapea .prose-palsta -->
   <style>
     :root{
       /* light */
@@ -48,6 +48,7 @@
       --fs-2xl: clamp(28px, 3vw, 36px);
 
       --container: 1100px;
+      --readable: 68ch; /* Tietoa-sivun kaltainen lukuleveys */
     }
 
     @media (prefers-color-scheme: dark){
@@ -71,7 +72,7 @@
     .skip-link{position:absolute;left:-9999px;top:auto}
     .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
 
-    /* HEADER (.km-*) — sama kuin kokemuksia.html */
+    /* HEADER (.km-*) — yhtenäinen */
     .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
     .km-brand img{display:block;height:44px;width:auto;aspect-ratio:auto;max-height:56px}
     @media (min-width:1000px){.km-brand img{height:52px}}
@@ -109,34 +110,55 @@
     /* PAGE HERO */
     .page-hero{max-width:var(--container);margin:0 auto;padding:3rem 1.25rem 1.25rem;text-align:center}
     .page-hero h1{font-size:var(--fs-2xl);color:var(--brand);margin:.25rem 0 .5rem}
-    .lead{max-width:70ch;margin:0 auto;color:var(--muted);font-size:var(--fs-md)}
+    .lead{max-width:70ch;margin:0 auto;color:var(--muted);font-size:var(--fs-md);line-height:1.75}
 
-    /* LAYOUT: sisältö + sticky TOC oikealla */
-    .layout{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:2rem;padding:1rem 1.25rem 3rem}
-    @media(max-width:900px){
+    /* LAYOUT: kapea .prose + sticky TOC oikealla (Tietoa-sivun tuntu) */
+    .layout{
+      max-width:var(--container);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 300px; /* sisältö + valikko */
+      gap:2rem;
+      padding:1rem 1.25rem 3rem;
+      align-items:start;
+    }
+    @media(max-width:980px){
       .layout{grid-template-columns:1fr}
     }
 
-    /* CONTENT */
-    .content h2{font-size:var(--fs-xl);margin-top:2rem}
-    .content ul,.content ol{padding-left:1.25rem}
-    .content hr{border:0;border-top:1px solid var(--border);margin:1.5rem 0}
+    /* PROSE (kapeampi lukuleveys, ilmava rytmi) */
+    .prose{
+      max-width:var(--readable);
+      margin:0 auto;        /* keskittää tekstipalstan */
+      font-size:var(--fs-md);
+      line-height:1.8;
+    }
+    .prose p{margin:.9em 0 1.1em}
+    .prose h2{
+      font-size:var(--fs-xl);
+      line-height:1.3;
+      margin:2.4rem 0 1rem;
+      color:var(--ink);
+    }
+    .prose ul,.prose ol{padding-left:1.25rem;margin:.6rem 0 1.2rem}
+    .prose li{margin:.35rem 0}
+    .prose hr{border:0;border-top:1px solid var(--border);margin:1.75rem 0}
 
-    /* Sticky kappalevalikko */
+    /* Sticky kappalevalikko (PIS) */
     .toc-sticky{
       position:sticky; top:6rem; align-self:start;
       background:var(--card); border:1px solid var(--border);
-      border-radius:12px; padding:1rem 1.25rem; margin:2rem 0 0;
+      border-radius:12px; padding:1rem 1.25rem; margin:2.1rem 0 0;
       box-shadow:var(--shadow); max-width:280px;
       font-size:var(--fs-sm)
     }
     .toc-sticky h2{font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.05em;margin:0 0 .5rem;color:var(--muted)}
     .toc-sticky ul{list-style:none;padding:0;margin:0}
     .toc-sticky li+li{margin-top:.4rem}
-    .toc-sticky a{display:block;padding:.3rem .4rem;border-radius:6px;color:var(--brand);font-weight:700;text-decoration:none}
+    .toc-sticky a{display:block;padding:.35rem .5rem;border-radius:8px;color:var(--brand);font-weight:700;text-decoration:none}
     .toc-sticky a:hover{background:var(--brand-05)}
     .toc-sticky a.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-    @media(max-width:900px){
+    @media(max-width:980px){
       .toc-sticky{position:static;max-width:unset;margin:1rem 0}
     }
 
@@ -194,11 +216,9 @@
       </p>
     </header>
 
-    <!-- Grid-layout: sisältö + sticky TOC -->
+    <!-- LAYOUT: kapea .prose + sticky TOC -->
     <div class="layout">
-      <div class="content" id="content">
-        <nav class="toc" aria-label="Sisällysluettelo" style="display:none"><!-- fallback, ei näytetä kun sticky käytössä --></nav>
-
+      <article class="prose" id="content">
         <hr>
 
         <h2 id="mita-on">Mitä on maskaaminen?</h2>
@@ -270,7 +290,7 @@
         </ul>
 
         <p><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
-      </div>
+      </article>
 
       <!-- KAPPALEVALIKKO (sticky) -->
       <nav class="toc-sticky" aria-label="Kappalevalikko">
