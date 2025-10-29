@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Kimaltaen: neurodiversiteettiparadigman näkökulmia ja kokemuksia arjesta.">
   <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
 
-  <!-- Inline-perustyylit (voit poistaa jos kaikki on styles.css:ssä) -->
+  <!-- Inline-perustyylit -->
   <style>
     :root{
       --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
@@ -71,13 +71,12 @@
     .hero .meta-row{display:flex;justify-content:flex-end;color:var(--muted);font-size:var(--fs-sm)}
     .hero h1{font-size:var(--fs-2xl);margin:.25rem 0 .5rem}
     .hero p{margin:0 0 1rem;max-width:70ch;color:var(--ink)}
-
     .kuvitus{margin:1.5rem 0;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow);background:var(--card);overflow:hidden}
-
     footer{border-top:1px solid var(--border);margin-top:2rem}
     footer .container{padding:1rem 1.25rem;color:var(--muted)}
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#page-title">Siirry sisältöön</a>
 
@@ -86,7 +85,6 @@
     <a class="km-brand" href="/index.html" aria-label="Etusivu">
       <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
     </a>
-
     <nav class="km-nav" aria-label="Päävalikko">
       <ul class="km-menu">
         <li class="km-item"><a class="km-link" href="/index.html" aria-current="page">Etusivu</a></li>
@@ -94,8 +92,7 @@
 
         <li class="km-item km-has-sub">
           <a class="km-link" href="/kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
-          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
-                  aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko" type="button">▾</button>
+          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko" type="button">▾</button>
           <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
             <li role="none"><a role="menuitem" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
             <li role="none"><a role="menuitem" href="/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
@@ -114,12 +111,17 @@
   <!-- PÄÄSISÄLTÖ -->
   <main id="content" class="hero" tabindex="-1">
     <div class="container">
-      <div class="meta-row">
-        <time id="updated-date" aria-label="Päivitetty"></time>
-      </div>
+      <div class="meta-row"><time id="updated-date" aria-label="Päivitetty"></time></div>
 
       <h1 id="page-title">Kimaltaen — lempeä tila, jossa moninaisuus saa loistaa</h1>
-      <p>Kimaltaen kokoaa neurodiversiteettiparadigman näkökulmia ja kokemuksia. Tavoitteena on lisätä turvaa, yhteyttä ja toivoa arkeen.</p>
+
+      <p>Kimaltaen on lempeä tila, jossa moninaisuus saa loistaa. Sivusto kokoaa neurodiversiteettiparadigman näkökulmia, kokemuksia ja ajatuksia arjen ja yhteisöjen tueksi.</p>
+
+      <p>Lähtökohtana on ajatus siitä, että erilaiset hermostot eivät ole puutteita tai ongelmia, vaan luonnollista inhimillistä vaihtelua. Kun hermosto saa toimia turvallisesti, ihminen pystyy olemaan läsnä, oppimaan ja olemaan yhteydessä muihin.</p>
+
+      <p>Täältä löydät tekstejä, jotka avaavat turvallisuuden merkitystä vuorovaikutuksessa, näkyväksi tulemisen kokemuksia sekä toivoa siitä, että yhteys on mahdollista ilman maskia tai suorittamista.</p>
+
+      <p>Kimaltaen kasvaa vähitellen – artikkelit, kokemukset ja linkit täydentyvät matkan varrella. Toivon, että tämä tila tuo sinulle rauhaa, tunnistamista ja lempeyttä itseäsi kohtaan.</p>
 
       <figure class="kuvitus">
         <img src="/assets/1.png" alt="Kimaltaen-kuvitus" width="1200" height="675" loading="lazy">
@@ -135,15 +137,9 @@
     </div>
   </footer>
 
-  <!-- JS: vuosi, päivitysaika ja alavalikko -->
+  <!-- JS -->
   <script defer>
-    // Vuosi footeriin
-    (function(){
-      const y=document.getElementById('year');
-      if(y) y.textContent=String(new Date().getFullYear());
-    })();
-
-    // Päivitysaika
+    (function(){ const y=document.getElementById('year'); if(y) y.textContent=String(new Date().getFullYear()); })();
     (function(){
       const el=document.getElementById('updated-date'); if(!el) return;
       const d=document.lastModified ? new Date(document.lastModified) : new Date();
@@ -151,21 +147,17 @@
       el.textContent=d.toLocaleDateString('fi-FI',{year:'numeric',month:'long',day:'numeric'});
     })();
 
-    // Alavalikon avaaminen/sulkeminen
     document.addEventListener('click',(e)=>{
       const btn=e.target.closest?.('.km-sub-toggle');
       if(btn){
         const li=btn.closest('.km-has-sub');
         const isOpen=li.classList.toggle('km-open');
         btn.setAttribute('aria-expanded', String(isOpen));
-
-        // Sulje muut auki olevat
         document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
           if(el!==li){ el.classList.remove('km-open'); el.querySelector('.km-sub-toggle')?.setAttribute('aria-expanded','false'); }
         });
         e.stopPropagation();
       }else{
-        // Klikki muualle: sulje
         document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
           el.classList.remove('km-open');
           el.querySelector('.km-sub-toggle')?.setAttribute('aria-expanded','false');
@@ -173,7 +165,6 @@
       }
     }, {passive:true});
 
-    // ESC sulkee
     document.addEventListener('keydown',(e)=>{
       if(e.key==='Escape'){
         document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
