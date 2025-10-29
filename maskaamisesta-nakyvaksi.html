@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="Maskaaminen ei ole huijausta vaan selviytymistä. Mitä maskaaminen on, miksi sitä tapahtuu ja miten näkyväksi tuleminen (unmasking) voi edetä turvallisesti.">
   <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
 
-  <!-- Page-specific styles (sama blokki kuin kokemuksia.html:ssä, .km-* yläpalkki) -->
+  <!-- Page-specific styles (.km-* header + sticky TOC) -->
   <style>
     :root{
       /* light */
@@ -71,19 +71,6 @@
     .skip-link{position:absolute;left:-9999px;top:auto}
     .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
 
-    /* PAGE HERO */
-    .page-hero{max-width:var(--container);margin:0 auto;padding:3rem 1.25rem 1.25rem;text-align:center}
-    .page-hero h1{font-size:var(--fs-2xl);color:var(--brand);margin:.25rem 0 .5rem}
-    .lead{max-width:70ch;margin:0 auto;color:var(--muted);font-size:var(--fs-md)}
-
-    /* CONTENT */
-    .content{max-width:var(--container);margin:0 auto;padding:1rem 1.25rem 3rem}
-    .content h2{font-size:var(--fs-xl);margin-top:2rem}
-    .content ul,.content ol{padding-left:1.25rem}
-    .content hr{border:0;border-top:1px solid var(--border);margin:1.5rem 0}
-    .toc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;box-shadow:var(--shadow)}
-    .toc a{font-weight:700}
-
     /* HEADER (.km-*) — sama kuin kokemuksia.html */
     .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
     .km-brand img{display:block;height:44px;width:auto;aspect-ratio:auto;max-height:56px}
@@ -119,6 +106,40 @@
       .km-has-sub.km-open>.km-sub{display:block}
     }
 
+    /* PAGE HERO */
+    .page-hero{max-width:var(--container);margin:0 auto;padding:3rem 1.25rem 1.25rem;text-align:center}
+    .page-hero h1{font-size:var(--fs-2xl);color:var(--brand);margin:.25rem 0 .5rem}
+    .lead{max-width:70ch;margin:0 auto;color:var(--muted);font-size:var(--fs-md)}
+
+    /* LAYOUT: sisältö + sticky TOC oikealla */
+    .layout{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:2rem;padding:1rem 1.25rem 3rem}
+    @media(max-width:900px){
+      .layout{grid-template-columns:1fr}
+    }
+
+    /* CONTENT */
+    .content h2{font-size:var(--fs-xl);margin-top:2rem}
+    .content ul,.content ol{padding-left:1.25rem}
+    .content hr{border:0;border-top:1px solid var(--border);margin:1.5rem 0}
+
+    /* Sticky kappalevalikko */
+    .toc-sticky{
+      position:sticky; top:6rem; align-self:start;
+      background:var(--card); border:1px solid var(--border);
+      border-radius:12px; padding:1rem 1.25rem; margin:2rem 0 0;
+      box-shadow:var(--shadow); max-width:280px;
+      font-size:var(--fs-sm)
+    }
+    .toc-sticky h2{font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.05em;margin:0 0 .5rem;color:var(--muted)}
+    .toc-sticky ul{list-style:none;padding:0;margin:0}
+    .toc-sticky li+li{margin-top:.4rem}
+    .toc-sticky a{display:block;padding:.3rem .4rem;border-radius:6px;color:var(--brand);font-weight:700;text-decoration:none}
+    .toc-sticky a:hover{background:var(--brand-05)}
+    .toc-sticky a.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+    @media(max-width:900px){
+      .toc-sticky{position:static;max-width:unset;margin:1rem 0}
+    }
+
     /* FOOTER */
     footer{margin-top:var(--space-7);border-top:1px solid var(--border);padding:var(--space-5) 0;color:var(--muted);font-size:var(--fs-sm)}
 
@@ -132,7 +153,7 @@
 
   <a class="skip-link" href="#maskaaminen-title">Siirry sisältöön</a>
 
-  <!-- HEADER (täsmälleen sama rakenne kuin kokemuksia.html) -->
+  <!-- HEADER -->
   <header class="km-header">
     <a class="km-brand" href="index.html" aria-label="Etusivu">
       <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
@@ -153,9 +174,6 @@
             <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
             <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
             <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
-            <!-- Lisää kun julkaiset:
-            <li role="none"><a role="menuitem" href="rohkeus.html">Rohkeus</a></li>
-            -->
           </ul>
         </li>
 
@@ -170,84 +188,103 @@
     <header class="page-hero">
       <h1 id="maskaaminen-title">Maskaamisesta näkyväksi</h1>
       <p class="lead">
-        Maskaaminen ei ole huijausta vaan selviytyvyyttä: keino hakea turvaa, tilaa ja osallisuutta.
+        Maskaaminen ei ole huijausta vaan selviytymistä: keino hakea turvaa, tilaa ja osallisuutta.
         Tällä sivulla avaan, mitä maskaaminen on, miksi sitä tapahtuu, mitä se maksaa – ja miten
         näkyväksi tuleminen (unmasking) voi tapahtua omaan tahtiin, turvallisuutta kunnioittaen.
       </p>
     </header>
 
+    <!-- Grid-layout: sisältö + sticky TOC -->
+    <div class="layout">
+      <div class="content" id="content">
+        <nav class="toc" aria-label="Sisällysluettelo" style="display:none"><!-- fallback, ei näytetä kun sticky käytössä --></nav>
 
-      <hr>
+        <hr>
 
-      <h2 id="mita-on">Mitä on maskaaminen?</h2>
-      <p>
-        Maskaaminen tarkoittaa omien tapojen, reaktioiden ja tarpeiden <strong>peittämistä tai korvaamista</strong>,
-        jotta sopii vallitseviin normeihin. Se voi olla harjoiteltua katsekontaktia, skriptattua puhetta,
-        aistitarpeiden piilottamista tai itselle luontaisten eleiden ja stimmaamisen hillitsemistä.
-      </p>
-      <p>
-        Neurodiversiteettiparadigman (Nick Walker) näkökulmasta ongelma ei ole “meissä”, vaan
-        ympäristön kapeissa normeissa siitä, miten on “sallittua” kommunikoida, oppia ja olla läsnä.
-      </p>
+        <h2 id="mita-on">Mitä on maskaaminen?</h2>
+        <p>
+          Maskaaminen tarkoittaa omien tapojen, reaktioiden ja tarpeiden <strong>peittämistä tai korvaamista</strong>,
+          jotta sopii vallitseviin normeihin. Se voi olla harjoiteltua katsekontaktia, skriptattua puhetta,
+          aistitarpeiden piilottamista tai itselle luontaisten eleiden ja stimmaamisen hillitsemistä.
+        </p>
+        <p>
+          Neurodiversiteettiparadigman (Nick Walker) näkökulmasta ongelma ei ole “meissä”, vaan
+          ympäristön kapeissa normeissa siitä, miten on “sallittua” kommunikoida, oppia ja olla läsnä.
+        </p>
 
-      <h2 id="miksi">Miksi maskaamme?</h2>
-      <p>
-        Syyt ovat yleensä <strong>turva, hyväksyntä ja elintila</strong>. Moni oppii varhain, että näkyvät erot
-        tulkitaan “virheiksi”, jolloin rooli suojaa syrjinnältä. Damian E. M. Milton kuvaa tätä
-        käsitteellä <strong>double empathy</strong>: väärinymmärrys on molemminpuolista neurotyyppien välillä,
-        mutta sopeutumisen taakka kasautuu tyypillisesti neurovähemmistöille.
-      </p>
-      <p>
-        Monotropismin (autistiset kirjoittajat) näkökulmasta maskaaminen on myös yritys ohjata
-        huomion virtoja pois omista kiinnostusten uomista kohti ympäristön vaatimuksia – hetken se
-        toimii, mutta kuormittaa.
-      </p>
+        <h2 id="miksi">Miksi maskaamme?</h2>
+        <p>
+          Syyt ovat yleensä <strong>turva, hyväksyntä ja elintila</strong>. Moni oppii varhain, että näkyvät erot
+          tulkitaan “virheiksi”, jolloin rooli suojaa syrjinnältä. Damian E. M. Milton kuvaa tätä
+          käsitteellä <strong>double empathy</strong>: väärinymmärrys on molemminpuolista neurotyyppien välillä,
+          mutta sopeutumisen taakka kasautuu tyypillisesti neurovähemmistöille.
+        </p>
+        <p>
+          Monotropismin (autistiset kirjoittajat) näkökulmasta maskaaminen on myös yritys ohjata
+          huomion virtoja pois omista kiinnostusten uomista kohti ympäristön vaatimuksia – hetken se
+          toimii, mutta kuormittaa.
+        </p>
 
-      <h2 id="hinta">Mitä se maksaa?</h2>
-      <ul>
-        <li><strong>Uupumus ja kuormitus:</strong> roolin ylläpito kuluttaa hermostoa ja mieltä.</li>
-        <li><strong>Identiteetin oheneminen:</strong> kun “näyttämö-minä” syrjäyttää “oman minän”.</li>
-        <li><strong>Myöhäinen tunnistuminen:</strong> etenkin naisilla ja muilla vähemmistöillä.</li>
-      </ul>
-      <p>
-        Devon Price korostaa, että <em>unmasking</em> ei ole “kaiken paljastamista kerralla” vaan taitoa
-        rakentaa vähitellen turvallisia tapoja olla oma itsensä.
-      </p>
+        <h2 id="hinta">Mitä se maksaa?</h2>
+        <ul>
+          <li><strong>Uupumus ja kuormitus:</strong> roolin ylläpito kuluttaa hermostoa ja mieltä.</li>
+          <li><strong>Identiteetin oheneminen:</strong> kun “näyttämö-minä” syrjäyttää “oman minän”.</li>
+          <li><strong>Myöhäinen tunnistuminen:</strong> etenkin naisilla ja muilla vähemmistöillä.</li>
+        </ul>
+        <p>
+          Devon Price korostaa, että <em>unmasking</em> ei ole “kaiken paljastamista kerralla” vaan taitoa
+          rakentaa vähitellen turvallisia tapoja olla oma itsensä.
+        </p>
 
-      <h2 id="unmasking">Unmasking: 5 askelta</h2>
-      <ol>
-        <li><strong>Nimeä erot &amp; normit:</strong> listaa omat tarpeet ja ympäristön odotukset; päätä, mitä neuvottelet.</li>
-        <li><strong>Etsi turvalliset tilat &amp; ihmiset:</strong> aloita pienin askelin siellä, missä on hyvä olla.</li>
-        <li><strong>Tilaa kiinnostuksille:</strong> suojaa omaa syväfokusta (monotropinen virta) ajalla ja tilalla.</li>
-        <li><strong>Mikromukautukset arkeen:</strong> tauot, ääniympäristö, valaistus, kirjoitetut kanavat, selkeä agenda.</li>
-        <li><strong>Turvallisuus ensin:</strong> tarkkaile kuormitusta; säädä, peräänny ja jatka myöhemmin.</li>
-      </ol>
-      <p><em>Muista:</em> näkyväksi tuleminen on <strong>oikeus, ei velvollisuus</strong>; sinä päätät tahdin ja rajat.</p>
+        <h2 id="unmasking">Unmasking: 5 askelta</h2>
+        <ol>
+          <li><strong>Nimeä erot &amp; normit:</strong> listaa omat tarpeet ja ympäristön odotukset; päätä, mitä neuvottelet.</li>
+          <li><strong>Etsi turvalliset tilat &amp; ihmiset:</strong> aloita pienin askelin siellä, missä on hyvä olla.</li>
+          <li><strong>Tilaa kiinnostuksille:</strong> suojaa omaa syväfokusta (monotropinen virta) ajalla ja tilalla.</li>
+          <li><strong>Mikromukautukset arkeen:</strong> tauot, ääniympäristö, valaistus, kirjoitetut kanavat, selkeä agenda.</li>
+          <li><strong>Turvallisuus ensin:</strong> tarkkaile kuormitusta; säädä, peräänny ja jatka myöhemmin.</li>
+        </ol>
+        <p><em>Muista:</em> näkyväksi tuleminen on <strong>oikeus, ei velvollisuus</strong>; sinä päätät tahdin ja rajat.</p>
 
-      <h2 id="kieli">Kielen pieni opas</h2>
-      <ul>
-        <li>Vältä patologisoivia ilmauksia identiteetistä puhuessa.</li>
-        <li>Käytä ihmisten omaa kieltä (identity-first “autistinen”, jos henkilö niin haluaa).</li>
-        <li>Muista konteksti: diagnoosikieli voi olla tarpeen oikeuksissa/palveluissa.</li>
-      </ul>
+        <h2 id="kieli">Kielen pieni opas</h2>
+        <ul>
+          <li>Vältä patologisoivia ilmauksia identiteetistä puhuessa.</li>
+          <li>Käytä ihmisten omaa kieltä (identity-first “autistinen”, jos henkilö niin haluaa).</li>
+          <li>Muista konteksti: diagnoosikieli voi olla tarpeen oikeuksissa/palveluissa.</li>
+        </ul>
 
-      <h2 id="loppu">Lopuksi</h2>
-      <p>
-        Maski on auttanut meitä selviytymään. Kun viestintä, aistit ja rytmit neuvotellaan näkyviksi,
-        maskaamisen tarve pienenee. Tämä on yhteisötaito: me muutumme, ja tilat muuttuvat mukana.
-      </p>
+        <h2 id="loppu">Lopuksi</h2>
+        <p>
+          Maski on auttanut meitä selviytymään. Kun viestintä, aistit ja rytmit neuvotellaan näkyviksi,
+          maskaamisen tarve pienenee. Tämä on yhteisötaito: me muutumme, ja tilat muuttuvat mukana.
+        </p>
 
-      <h2 id="lahteet">Lähteet</h2>
-      <ul>
-        <li><a href="https://neuroqueer.com/neurodiversity-terms-and-definitions/" target="_blank" rel="noopener">Nick Walker — Neurodiversity: Some Basic Terms &amp; Definitions</a></li>
-        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8992885/" target="_blank" rel="noopener">Autism in Adulthood — Toward a Neuroqueer Future (2021) — haastattelu Nick Walkerin kanssa</a></li>
-        <li><a href="https://www.autism.org.uk/advice-and-guidance/professional-practice/double-empathy" target="_blank" rel="noopener">Damian E. M. Milton — The Double Empathy Problem</a></li>
-        <li><a href="https://monotropism.org/" target="_blank" rel="noopener">Monotropism.org — autististen kirjoittajien kehys huomion virroista</a></li>
-        <li><a href="https://www.devonprice.net" target="_blank" rel="noopener">Devon Price — Unmasking Autism</a></li>
-        <li><a href="https://www.autistichoya.com/p/ableismlanguage.html" target="_blank" rel="noopener">Lydia X. Z. Brown (Autistic Hoya) — Ableism/Language</a></li>
-      </ul>
+        <h2 id="lahteet">Lähteet</h2>
+        <ul>
+          <li><a href="https://neuroqueer.com/neurodiversity-terms-and-definitions/" target="_blank" rel="noopener">Nick Walker — Neurodiversity: Some Basic Terms &amp; Definitions</a></li>
+          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8992885/" target="_blank" rel="noopener">Autism in Adulthood — Toward a Neuroqueer Future (2021) — haastattelu Nick Walkerin kanssa</a></li>
+          <li><a href="https://www.autism.org.uk/advice-and-guidance/professional-practice/double-empathy" target="_blank" rel="noopener">Damian E. M. Milton — The Double Empathy Problem</a></li>
+          <li><a href="https://monotropism.org/" target="_blank" rel="noopener">Monotropism.org — autististen kirjoittajien kehys huomion virroista</a></li>
+          <li><a href="https://www.devonprice.net" target="_blank" rel="noopener">Devon Price — Unmasking Autism</a></li>
+          <li><a href="https://www.autistichoya.com/p/ableismlanguage.html" target="_blank" rel="noopener">Lydia X. Z. Brown (Autistic Hoya) — Ableism/Language</a></li>
+        </ul>
 
-      <p><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+        <p><a href="#maskaaminen-title">↑ Takaisin alkuun</a></p>
+      </div>
+
+      <!-- KAPPALEVALIKKO (sticky) -->
+      <nav class="toc-sticky" aria-label="Kappalevalikko">
+        <h2>Osioissa</h2>
+        <ul>
+          <li><a href="#mita-on">Mitä on maskaaminen?</a></li>
+          <li><a href="#miksi">Miksi maskaamme?</a></li>
+          <li><a href="#hinta">Mitä se maksaa?</a></li>
+          <li><a href="#unmasking">Unmasking: 5 askelta</a></li>
+          <li><a href="#kieli">Kielen pieni opas</a></li>
+          <li><a href="#loppu">Lopuksi</a></li>
+          <li><a href="#lahteet">Lähteet</a></li>
+        </ul>
+      </nav>
     </div>
   </main>
 
@@ -256,7 +293,7 @@
     <div class="container"><small>© <span id="year"></span> Kimaltaen ✨</small></div>
   </footer>
 
-  <!-- JS: year, submenu toggle, close on outside/Esc -->
+  <!-- JS: year, submenu toggle, sticky TOC highlight, close on outside/Esc -->
   <script>
     // Vuosi footerissa
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -290,6 +327,23 @@
         });
       }
     });
+
+    // Sticky TOC: aktiivinen linkki scrollin mukaan
+    const tocLinks = document.querySelectorAll('.toc-sticky a');
+    const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+
+    const onScroll = () => {
+      let current = null;
+      for (let i = 0; i < sections.length; i++) {
+        const sec = sections[i];
+        if (!sec) continue;
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight * 0.3) current = sec; else break;
+      }
+      tocLinks.forEach(a => a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id));
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
