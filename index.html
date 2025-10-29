@@ -94,28 +94,47 @@
         <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
       </ul>
     </nav>
-  </header>
+<!-- HEADER (yhtenäinen kaikilla sivuilla) -->
+<header class="km-header">
+  <a class="km-brand" href="/index.html" aria-label="Etusivu">
+    <img src="/logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+  </a>
 
-  <main aria-labelledby="page-title">
-    <header class="hero">
-      <div class="meta-row">
-        <small class="updated">Päivitetty: <time id="updated-date" datetime=""></time></small>
-      </div>
-      <div class="container">
-        <h1 id="page-title">Tervetuloa Kimaltaen-sivustolle ✨</h1>
+  <nav class="km-nav" aria-label="Päävalikko">
+    <ul class="km-menu">
+      <!-- Etusivu: aria-current tähän, koska ollaan index.html-sivulla -->
+      <li class="km-item">
+        <a class="km-link" href="/index.html" aria-current="page">Etusivu</a>
+      </li>
 
-        <p>Kimaltaen on lempeä pysähdyspaikka sinulle, joka etsit tilaa hengittää ja tulla nähdyksi omana itsenäsi. Täällä moninaisuus ei ole sivujuonne vaan kaiken ydin.</p>
-        <p>Kirjoitan arjesta, joka on välillä sotkuinen ja silti kaunis. Pienistä teoista, joilla päivä helpottuu. Sanoista, joilla voimme kohdata toisiamme hellästi, myös silloin, kun energia on vähissä ja maailma tuntuu kovalta.</p>
-        <p>Sivustolta löydät kokemustarinoita, käsitteiden avausta ja kuratoituja lähteitä. Tavoitteeni on tehdä neurodiversiteetistä ymmärrettävää ilman portinvartijuutta: selkeää kieltä, käytännön esimerkkejä ja myötätuntoa joka kohtaan.</p>
-        <p>Jos haluat aloittaa tarinoista, kurkkaa <a href="kokemuksia.html">Kokemuksia</a>-osio. Taustat, käsitteet ja hyödylliset materiaalit löydät koottuna sivulle <a href="linkit-ja-lahteet.html">Linkit & lähteet</a>. Ja kun haluat sanoa hei tai kysyä lisää, <a href="otayhteytta.html">ota yhteyttä</a> ,vastaan mielelläni.</p>
-        <p>Tervetuloa mukaan. Pala kerrallaan, omaan tahtiin. 💫</p>
+      <li class="km-item">
+        <a class="km-link" href="/tietoa.html">Tietoa</a>
+      </li>
 
-        <!-- KUVA ASSETS-KANSIOSTA -->
-        <figure class="kuvitus">
-          <img src="assets/1.png" alt="Kimaltaen kuvitus" width="1100" height="700" loading="lazy">
-        </figure>
-      </div>
-    </header>
+      <!-- Kokemuksia + alavalikko -->
+      <li class="km-item km-has-sub">
+        <a class="km-link" href="/kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+
+        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+          <li role="none"><a role="menuitem" href="/kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+          <li role="none"><a role="menuitem" href="/maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+          <li role="none"><a role="menuitem" href="/pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+          <li role="none"><a role="menuitem" href="/turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+          <li role="none"><a role="menuitem" href="/erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
+          <!-- Lisää kun julkaiset:
+          <li role="none"><a role="menuitem" href="/rohkeus.html">Rohkeus</a></li>
+          -->
+        </ul>
+      </li>
+
+      <li class="km-item"><a class="km-link" href="/linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+      <li class="km-item"><a class="km-link" href="/otayhteytta.html">Ota yhteyttä</a></li>
+    </ul>
+  </nav>
+</header>
+
   </main>
 
   <footer>
