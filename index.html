@@ -5,31 +5,25 @@
   <title>Kimaltaen — Etusivu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon & CSS -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Canonical & Sitemap -->
   <link rel="canonical" href="https://kimaltaen.fi/index.html">
   <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
 
-  <!-- Meta description -->
   <meta name="description" content="Kimaltaen on lempeä tila, jossa moninaisuus saa loistaa. Neurodiversiteettiparadigman näkökulmia, kokemuksia ja toivoa arkeen.">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Kimaltaen — Etusivu">
   <meta property="og:description" content="Kimaltaen: lempeä tila, jossa moninaisuus saa loistaa. Neurodiversiteettiparadigman näkökulmia ja kokemuksia.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kimaltaen.fi/">
   <meta property="og:image" content="https://kimaltaen.fi/og-image.png">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kimaltaen — Etusivu">
   <meta name="twitter:description" content="Kimaltaen: neurodiversiteettiparadigman näkökulmia ja kokemuksia arjesta.">
   <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
 
-  <!-- Page styles (.km-*) to match the site-wide system -->
   <style>
     :root{
       --ink:#1b1b1f; --muted:#5a5a6a; --bg:#faf9fc; --card:#ffffff;
@@ -50,11 +44,9 @@
     a:hover{text-decoration:underline}
     .container{max-width:var(--container);margin-inline:auto;padding-inline:1.25rem}
 
-    /* Skip link */
     .skip-link{position:absolute;left:-9999px;top:auto}
     .skip-link:focus{left:1rem;top:1rem;background:var(--brand);color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
 
-    /* Header (shared) */
     .km-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:rgba(255,255,255,.75);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
     .km-brand img{height:44px;width:auto;max-height:56px}
     @media (min-width:1000px){.km-brand img{height:52px}}
@@ -62,49 +54,35 @@
     .km-menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap}
     .km-link,.km-sub-toggle{display:inline-flex;align-items:center;gap:.55rem;padding:10px 14px;border-radius:999px;border:1px solid var(--ring);background:var(--brand-05);color:var(--brand);font-weight:800;font-size:var(--fs-sm);line-height:1;cursor:pointer}
     .km-link:hover,.km-sub-toggle:hover{filter:brightness(.97)}
-    .km-link:focus-visible,.km-sub-toggle:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
     .km-link[aria-current="page"]{background:var(--brand);color:#fff;border-color:var(--brand)}
     .km-item{position:relative}
     .km-sub{position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;list-style:none;margin:0;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,.08);display:none;z-index:1000}
     .km-has-sub.km-open>.km-sub{display:block}
     .km-sub li a{display:block;padding:.45rem .75rem;border-radius:8px;color:var(--brand);font-weight:700}
     .km-sub li a:hover{background:var(--brand-05)}
-    @media (max-width:800px){.km-menu{flex-direction:column;align-items:flex-start}.km-sub{position:static;box-shadow:none;border:0;padding:0;display:none}.km-has-sub.km-open>.km-sub{display:block}}
 
-    /* Hero */
     .hero{max-width:var(--container);margin:0 auto;padding:2.5rem 1.25rem 1rem}
     .hero .meta-row{display:flex;justify-content:flex-end;color:var(--muted);font-size:var(--fs-sm)}
     .hero h1{font-size:var(--fs-2xl);margin:.25rem 0 .5rem}
-    .hero p{margin:0 0 1rem;max-width:70ch;color:var(--ink)} /* linjaus vasemmalle */
+    .hero p{margin:0 0 1rem;max-width:70ch;color:var(--ink)}
 
-    /* Sections (yleiset) */
-    section{max-width:var(--container);margin:0 auto;padding:0 1.25rem 1.5rem}
-    h2{font-size:var(--fs-xl);margin:1.25rem 0 .5rem}
-    p{font-size:var(--fs-md);max-width:70ch}
-
-    .kuvitus{margin:1rem 0;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow);background:var(--card)}
+    .kuvitus{margin:1.5rem 0;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow);background:var(--card);overflow:hidden}
 
     footer{border-top:1px solid var(--border);margin-top:2rem}
     footer .container{padding:1rem 1.25rem;color:var(--muted)}
-
-    @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important;scroll-behavior:auto !important}}
   </style>
 </head>
 <body>
-
   <a class="skip-link" href="#page-title">Siirry sisältöön</a>
 
-  <!-- HEADER -->
   <header class="km-header">
     <a class="km-brand" href="index.html" aria-label="Etusivu">
       <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
     </a>
-
     <nav class="km-nav" aria-label="Päävalikko">
       <ul class="km-menu">
         <li class="km-item"><a class="km-link" href="index.html" aria-current="page">Etusivu</a></li>
         <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
-
         <li class="km-item km-has-sub">
           <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true">Kokemuksia</button>
           <ul class="km-sub" role="menu" aria-label="Kokemuksia – artikkelit">
@@ -112,14 +90,12 @@
             <li><a role="menuitem" class="km-link" href="kokemuksia.html#maskaamisesta-nakyvaksi">Maskaamisesta näkyväksi</a></li>
           </ul>
         </li>
-
         <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit & lähteet</a></li>
         <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN -->
   <main aria-labelledby="page-title">
     <header class="hero">
       <div class="meta-row">
@@ -129,31 +105,27 @@
         <h1 id="page-title">Tervetuloa Kimaltaen-sivustolle ✨</h1>
 
         <p>Kimaltaen on lempeä pysähdyspaikka sinulle, joka etsit tilaa hengittää ja tulla nähdyksi omana itsenäsi. Täällä moninaisuus ei ole sivujuonne vaan kaiken ydin.</p>
-
         <p>Kirjoitan arjesta, joka on välillä sotkuinen ja silti kaunis. Pienistä teoista, joilla päivä helpottuu. Sanoista, joilla voimme kohdata toisiamme hellästi — myös silloin, kun energia on vähissä ja maailma tuntuu kovalta.</p>
-
         <p>Sivustolta löydät kokemustarinoita, käsitteiden avausta ja kuratoituja lähteitä. Tavoitteeni on tehdä neurodiversiteetistä ymmärrettävää ilman portinvartijuutta: selkeää kieltä, käytännön esimerkkejä ja myötätuntoa joka kohtaan.</p>
-
         <p>Jos haluat aloittaa tarinoista, kurkkaa <a href="kokemuksia.html">Kokemuksia</a>-osio. Taustat, käsitteet ja hyödylliset materiaalit löydät koottuna sivulle <a href="linkit-ja-lahteet.html">Linkit & lähteet</a>. Ja kun haluat sanoa hei tai kysyä lisää, <a href="otayhteytta.html">ota yhteyttä</a> — vastaan mielelläni.</p>
-
         <p>Tervetuloa mukaan. Pala kerrallaan, omaan tahtiin. 💫</p>
+
+        <!-- KUVA ASSETS-KANSIOSTA -->
+        <figure class="kuvitus">
+          <img src="assets/1.png" alt="Kimaltaen kuvitus" width="1100" height="700" loading="lazy">
+        </figure>
       </div>
     </header>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <small>© <span id="year"></span> Kimaltaen ✨</small>
     </div>
   </footer>
 
-  <!-- Scripts: year, lastModified, submenu, smooth anchors -->
   <script>
-    // Vuosi footerissa
     (function(){ const y=document.getElementById('year'); if(y) y.textContent=String(new Date().getFullYear()); })();
-
-    // Päivitetty-leima — käytä dokumentin viimeisintä muokkausaikaa jos saatavilla
     (function(){
       const el=document.getElementById('updated-date'); if(!el) return;
       const fallback=new Date();
@@ -162,7 +134,6 @@
       el.textContent=d.toLocaleDateString('fi-FI',{year:'numeric',month:'long',day:'numeric'});
     })();
 
-    // Yksi delegoiva klikkikuuntelija: submenu + ankkurit
     document.addEventListener('click',(e)=>{
       const t=e.target;
       const btn=t.closest?.('.km-sub-toggle');
@@ -170,27 +141,23 @@
         const li=btn.closest('.km-has-sub'); if(!li) return;
         const isOpen=li.classList.toggle('km-open');
         btn.setAttribute('aria-expanded', String(isOpen));
-        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ if(el!==li){ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }});
+        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
+          if(el!==li){ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }
+        });
         e.stopPropagation(); return;
       }
-      // Klikkaus muualle sulkee
-      document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); });
-
-      // Pehmeä vieritys vain saman sivun ankkureihin
-      const a=t.closest?.('a.km-link[href*="#"]');
-      if(a){ const url=new URL(a.getAttribute('href'), location.href);
-        if(url.origin===location.origin && url.pathname===location.pathname && url.hash){
-          const dest=document.querySelector(url.hash); if(dest){ e.preventDefault();
-            const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-            dest.scrollIntoView({behavior: reduced?'auto':'smooth', block:'start'});
-            if(typeof dest.focus==='function'){ const hadTI=dest.hasAttribute('tabindex'); if(!hadTI) dest.setAttribute('tabindex','-1'); dest.focus({preventScroll:true}); if(!hadTI) dest.removeAttribute('tabindex'); }
-          }
-        }
-      }
+      document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
+        el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false');
+      });
     }, {passive:true});
 
-    // Esc sulkee alavalikot
-    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'){ document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{ el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false'); }); } });
+    document.addEventListener('keydown',(e)=>{
+      if(e.key==='Escape'){
+        document.querySelectorAll('.km-has-sub.km-open').forEach(el=>{
+          el.classList.remove('km-open'); const b=el.querySelector('.km-sub-toggle'); if(b) b.setAttribute('aria-expanded','false');
+        });
+      }
+    });
   </script>
 </body>
 </html>
