@@ -60,11 +60,54 @@ article p{margin:1rem 0}
 
 
 <article class="entry">
-<header>
-<p class="eyebrow">• Kokemus</p>
-<h1>Turvallisuuden merkitys vuorovaikutuksessa</h1>
-<p class="meta"><time datetime="2025-10-07">7.10.2025</time></p>
+<!-- HEADER (sama rakenne kuin maskaamisesta-nakyvaksi.html) -->
+<header class="km-header">
+  <a class="km-brand" href="index.html" aria-label="Etusivu">
+    <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
+  </a>
+
+  <nav class="km-nav" aria-label="Päävalikko">
+    <ul class="km-menu">
+      <!-- Etusivu -->
+      <li class="km-item">
+        <a class="km-link" href="index.html">Etusivu</a>
+      </li>
+
+      <!-- Tietoa (laita aria-current tähän kun olet tietoa.html-sivulla) -->
+      <li class="km-item">
+        <a class="km-link" href="tietoa.html">Tietoa</a>
+      </li>
+
+      <!-- Kokemuksia + alavalikko -->
+      <li class="km-item km-has-sub">
+        <a class="km-link" href="kokemuksia.html" id="kokemuksia-link">Kokemuksia</a>
+        <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true"
+                aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
+
+        <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
+          <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
+
+          <!-- Laita aria-current tänne, kun olet maskaamisesta-nakyvaksi.html-sivulla -->
+          <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
+
+          <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece — Pharrell ja luottamuksen voima</a></li>
+          <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
+          <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
+          <!-- Lisää kun julkaiset:
+          <li role="none"><a role="menuitem" href="rohkeus.html">Rohkeus</a></li>
+          -->
+        </ul>
+      </li>
+
+      <!-- Linkit & lähteet -->
+      <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit &amp; lähteet</a></li>
+
+      <!-- Ota yhteyttä -->
+      <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
+    </ul>
+  </nav>
 </header>
+
 
 
 <div class="entry-content">
