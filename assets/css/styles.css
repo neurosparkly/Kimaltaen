@@ -284,6 +284,10 @@ h3 {
   height: 100%;
   object-fit: cover;
 }
+.card__image img.face-focus {
+  object-fit: cover;
+  object-position: center 20%;
+}
 
 .card__body {
   padding: 1.2rem 1.25rem 1.3rem;
