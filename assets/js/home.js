@@ -13,6 +13,7 @@
   function renderHighlightCards(targetId, items) {
     const target = document.getElementById(targetId);
     if (!target || !Array.isArray(items)) return;
+
     target.innerHTML = items.map(item => `
       <div class="mini-card">
         <h3>${escapeHtml(item.title)}</h3>
@@ -24,6 +25,7 @@
   function renderCards(targetId, items) {
     const target = document.getElementById(targetId);
     if (!target || !Array.isArray(items)) return;
+
     target.innerHTML = items.map(item => `
       <article class="card">
         <a href="${escapeHtml(item.href)}" aria-label="Lue: ${escapeHtml(item.title)}">
