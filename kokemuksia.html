@@ -4,540 +4,131 @@
   <meta charset="utf-8">
   <title>Kokemuksia | Kimaltaen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
-
-  <link rel="canonical" href="https://kimaltaen.fi/kokemuksia.html">
-  <link rel="sitemap" type="application/xml" href="https://kimaltaen.fi/sitemap.xml">
-
   <meta name="description" content="Kokemustekstejä näkyväksi tulemisesta, turvallisuudesta, luottamuksesta ja erilaisen hermoston vahvuuksista.">
-
-  <meta property="og:title" content="Kokemuksia | Kimaltaen">
-  <meta property="og:description" content="Kokemustekstejä näkyväksi tulemisesta, turvallisuudesta, luottamuksesta ja erilaisen hermoston vahvuuksista.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kimaltaen.fi/kokemuksia.html">
-  <meta property="og:image" content="https://kimaltaen.fi/og-image.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kokemuksia | Kimaltaen">
-  <meta name="twitter:description" content="Kokemustekstejä näkyväksi tulemisesta, turvallisuudesta, luottamuksesta ja erilaisen hermoston vahvuuksista.">
-  <meta name="twitter:image" content="https://kimaltaen.fi/og-image.png">
-
-  <style>
-    :root{
-      --ink:#1b1b1f;
-      --muted:#5a5a6a;
-      --bg:#faf9fc;
-      --card:#ffffff;
-      --brand:#4a148c;
-      --brand-05:#f3eafe;
-      --ring:rgba(74,20,140,.18);
-      --border:rgba(0,0,0,.08);
-
-      --space-2:8px;
-      --space-3:12px;
-      --space-4:16px;
-      --space-5:24px;
-      --space-6:32px;
-      --space-7:48px;
-
-      --radius:14px;
-      --shadow:0 10px 22px rgba(0,0,0,.08);
-
-      --fs-xs: clamp(12px, .78vw, 14px);
-      --fs-sm: clamp(14px, .9vw, 16px);
-      --fs-md: clamp(16px, 1.1vw, 18px);
-      --fs-lg: clamp(18px, 1.4vw, 22px);
-      --fs-xl: clamp(22px, 2.1vw, 28px);
-      --fs-2xl: clamp(28px, 3vw, 36px);
-
-      --container: 1100px;
-    }
-
-    @media (prefers-color-scheme: dark){
-      :root{
-        --ink:#f2effa;
-        --muted:#c5bfd6;
-        --bg:#0f0b16;
-        --card:#16101f;
-        --brand:#c6a4ff;
-        --brand-05:#231a34;
-        --ring:rgba(198,164,255,.3);
-        --border:rgba(255,255,255,.08);
-      }
-      img{filter:brightness(.98) contrast(1.02)}
-    }
-
-    html{-webkit-text-size-adjust:100%}
-
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.6;
-    }
-
-    img,svg,video{
-      display:block;
-      max-width:100%;
-      height:auto;
-    }
-
-    a{
-      color:var(--brand);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    .container{
-      max-width:var(--container);
-      margin-inline:auto;
-      padding-inline:1.25rem;
-    }
-
-    .skip-link{
-      position:absolute;
-      left:-9999px;
-      top:auto;
-    }
-
-    .skip-link:focus{
-      left:1rem;
-      top:1rem;
-      background:var(--brand);
-      color:#fff;
-      padding:.5rem .75rem;
-      border-radius:10px;
-      z-index:999;
-    }
-
-    .page-hero{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:3rem 1.25rem 1.25rem;
-      text-align:center;
-    }
-
-    .page-hero h1{
-      font-size:var(--fs-2xl);
-      color:var(--brand);
-      margin:.25rem 0 .5rem;
-    }
-
-    .lead{
-      max-width:70ch;
-      margin:0 auto;
-      color:var(--muted);
-      font-size:var(--fs-md);
-    }
-
-    .story-grid{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:1rem 1.25rem 0;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-      gap:1.25rem;
-    }
-
-    .story{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-
-    .story:hover{
-      transform:translateY(-2px);
-      box-shadow:0 14px 28px rgba(0,0,0,.10);
-    }
-
-    .story-link{
-      display:block;
-      height:100%;
-      color:inherit;
-      text-decoration:none;
-    }
-
-    .story-link:hover{
-      text-decoration:none;
-    }
-
-    .story-thumb{
-      margin:0;
-      aspect-ratio:16 / 10;
-      overflow:hidden;
-      background:var(--brand-05);
-    }
-
-    .story-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .story-body{
-      padding:1rem 1rem 1.2rem;
-    }
-
-    .story-title{
-      margin:0 0 .4rem;
-      font-size:var(--fs-lg);
-      color:var(--ink);
-    }
-
-    .story-meta{
-      margin:0 0 .75rem;
-      color:var(--muted);
-      font-size:var(--fs-xs);
-    }
-
-    .story-excerpt{
-      margin:0 0 1rem;
-      color:var(--muted);
-      font-size:var(--fs-sm);
-    }
-
-    .story-cta{
-      font-weight:800;
-      color:var(--brand);
-      font-size:var(--fs-sm);
-    }
-
-    .km-header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:.6rem 1rem;
-      background:rgba(255,255,255,.75);
-      backdrop-filter:saturate(150%) blur(6px);
-      border-bottom:1px solid var(--border);
-      position:sticky;
-      top:0;
-      z-index:20;
-    }
-
-    .km-brand img{
-      display:block;
-      height:44px;
-      width:auto;
-      aspect-ratio:auto;
-      max-height:56px;
-    }
-
-    @media (min-width:1000px){
-      .km-brand img{height:52px}
-    }
-
-    .km-nav{flex:1}
-
-    .km-menu{
-      list-style:none;
-      margin:0;
-      padding:0;
-      display:flex;
-      gap:.5rem;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-
-    .km-link,
-    .km-sub-toggle{
-      --pad-x:14px;
-      --pad-y:10px;
-      display:inline-flex;
-      align-items:center;
-      gap:.55rem;
-      padding:var(--pad-y) var(--pad-x);
-      border-radius:999px;
-      border:1px solid var(--ring);
-      background:var(--brand-05);
-      color:var(--brand);
-      font-weight:800;
-      font-size:var(--fs-sm);
-      line-height:1;
-      text-decoration:none;
-      cursor:pointer;
-      transition:transform .12s ease, filter .12s ease;
-    }
-
-    .km-link:hover,
-    .km-sub-toggle:hover{
-      filter:brightness(.97);
-      text-decoration:none;
-    }
-
-    .km-link:focus-visible,
-    .km-sub-toggle:focus-visible{
-      outline:3px solid var(--ring);
-      outline-offset:2px;
-    }
-
-    .km-link[aria-current="page"]{
-      background:var(--brand);
-      color:#fff;
-      border-color:var(--brand);
-    }
-
-    .km-item{position:relative}
-
-    .km-sub{
-      position:absolute;
-      top:100%;
-      left:0;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:.5rem;
-      list-style:none;
-      margin:0;
-      min-width:220px;
-      box-shadow:0 8px 16px rgba(0,0,0,.08);
-      display:none;
-      z-index:1000;
-    }
-
-    .km-has-sub.km-open > .km-sub{
-      display:block;
-    }
-
-    .km-sub li a{
-      display:block;
-      padding:.45rem .75rem;
-      border-radius:8px;
-      text-decoration:none;
-      color:var(--brand);
-      font-weight:700;
-    }
-
-    .km-sub li a:hover{
-      background:var(--brand-05);
-      text-decoration:none;
-    }
-
-    .km-has-sub.km-open > .km-sub-toggle{
-      background:var(--brand);
-      color:#fff;
-      border-color:var(--brand);
-    }
-
-    footer{
-      margin-top:var(--space-7);
-      border-top:1px solid var(--border);
-      padding:var(--space-5) 0;
-      color:var(--muted);
-      font-size:var(--fs-sm);
-    }
-
-    @media (max-width:800px){
-      .km-menu{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .km-sub{
-        position:static;
-        box-shadow:none;
-        border:0;
-        padding:0;
-        display:none;
-      }
-
-      .km-has-sub.km-open > .km-sub{
-        display:block;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      *, *::before, *::after{
-        animation-duration:0.001ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:0.001ms !important;
-        scroll-behavior:auto !important;
-      }
-    }
-  </style>
+  <link rel="canonical" href="https://www.kimaltaen.fi/kokemuksia.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Siirry sisältöön</a>
 
-  <a class="skip-link" href="#stories-title">Siirry sisältöön</a>
-
-  <header class="km-header">
-    <a class="km-brand" href="index.html" aria-label="Etusivu">
-      <img src="logo.png" alt="Kimaltaen logo" width="240" height="72" loading="eager" fetchpriority="high">
-    </a>
-
-    <nav class="km-nav" aria-label="Päävalikko">
-      <ul class="km-menu">
-        <li class="km-item"><a class="km-link" href="index.html">Etusivu</a></li>
-        <li class="km-item"><a class="km-link" href="tietoa.html">Tietoa</a></li>
-
-        <li class="km-item km-has-sub">
-          <a class="km-link" href="kokemuksia.html" aria-current="page">Kokemuksia</a>
-          <button class="km-sub-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="kokemuksia-sub" aria-label="Avaa Kokemuksia-alavalikko">▾</button>
-
-          <ul class="km-sub" id="kokemuksia-sub" role="menu" aria-label="Kokemuksia – artikkelit">
-            <li role="none"><a role="menuitem" href="kokemuksia.html#tuoreimmat">Tuoreimmat</a></li>
-            <li role="none"><a role="menuitem" href="maskaamisesta-nakyvaksi.html">Maskaamisesta näkyväksi</a></li>
-            <li role="none"><a role="menuitem" href="pharrell.html">Piece by Piece – Pharrell ja luottamuksen voima</a></li>
-            <li role="none"><a role="menuitem" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">Turvallisuuden merkitys vuorovaikutuksessa</a></li>
-            <li role="none"><a role="menuitem" href="erilaisen-hermoston-vahvuus.html">Mitä jos näemme erilaisen hermoston vahvuutena?</a></li>
-            <li role="none"><a role="menuitem" href="rohkeus.html">Rohkeus</a></li>
-          </ul>
-        </li>
-
-        <li class="km-item"><a class="km-link" href="linkit-ja-lahteet.html">Linkit ja lähteet</a></li>
-        <li class="km-item"><a class="km-link" href="otayhteytta.html">Ota yhteyttä</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Kimaltaen etusivu">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>Kimaltaen</span>
+      </a>
+      <nav class="nav" aria-label="Päänavigaatio">
+        <ul>
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="tietoa.html">Tietoa</a></li>
+          <li><a href="kokemuksia.html" aria-current="page">Kokemuksia</a></li>
+          <li><a href="linkit-ja-lahteet.html">Linkit ja lähteet</a></li>
+          <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <header class="page-hero">
-      <h1 id="stories-title">Kokemuksia</h1>
-      <p class="lead">Täältä löydät kokemustekstejä, oivalluksia ja pohdintoja näkyväksi tulemisesta, turvallisuudesta, luottamuksesta ja omasta tavasta olla maailmassa.</p>
-    </header>
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <h1>Kokemuksia</h1>
+          <p class="lead">Täältä löydät kokemustekstejä, oivalluksia ja pohdintoja näkyväksi tulemisesta, turvallisuudesta, luottamuksesta ja omasta tavasta olla maailmassa.</p>
+        </div>
+      </div>
+    </section>
 
-    <section class="story-grid" aria-label="Kokemustekstit" id="tuoreimmat">
-
-      <article class="story">
-        <a class="story-link" href="maskaamisesta-nakyvaksi.html">
-          <figure class="story-thumb">
-            <img src="assets/image3.png" alt="Kuvitus näkyväksi tulemisesta" loading="lazy">
-          </figure>
-          <div class="story-body">
-            <h2 class="story-title">Maskaamisesta näkyväksi</h2>
-            <p class="story-meta"><time datetime="2025-08-15">15.8.2025</time></p>
-            <p class="story-excerpt">
-              Moni meistä on tottunut piilottamaan osia itsestään. Miltä tuntuu, kun oma tapa olla alkaa vähitellen tulla näkyväksi myös itselle.
-            </p>
-            <span class="story-cta">Lue koko juttu →</span>
+    <section class="section" id="tuoreimmat">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2>Tuoreimmat tekstit</h2>
+            <p>Kirjoituksia hetkistä, joissa oma kokemus, ymmärrys ja toivo alkavat saada sanoja.</p>
           </div>
-        </a>
-      </article>
+        </div>
 
-      <article class="story">
-        <a class="story-link" href="pharrell.html">
-          <figure class="story-thumb">
-            <img src="assets/piecebypiece.png" alt="LEGO-tyylinen kuvitus Pharrellin Piece by Piece -elokuvasta" loading="lazy">
-          </figure>
-          <div class="story-body">
-            <h2 class="story-title">Piece by Piece – Pharrell ja luottamuksen voima</h2>
-            <p class="story-meta"><time datetime="2025-09-15">15.9.2025</time></p>
-            <p class="story-excerpt">
-              Miten luottamus, sekä muiden että oma, voi muuttaa kaiken. Ajatuksia Pharrellin Piece by Piece -elokuvasta.
-            </p>
-            <span class="story-cta">Lue koko juttu →</span>
-          </div>
-        </a>
-      </article>
+        <div class="cards">
+          <article class="card">
+            <a href="maskaamisesta-nakyvaksi.html" aria-label="Lue: Maskaamisesta näkyväksi">
+              <div class="card__image">
+                <img src="assets/image3.png" alt="Kuvitus näkyväksi tulemisesta">
+              </div>
+              <div class="card__body">
+                <div class="card__tag">Kokemus</div>
+                <h3>Maskaamisesta näkyväksi</h3>
+                <p>Moni meistä on tottunut piilottamaan osia itsestään. Miltä tuntuu, kun oma tapa olla alkaa vähitellen tulla näkyväksi myös itselle.</p>
+                <span>Lue lisää</span>
+              </div>
+            </a>
+          </article>
 
-      <article class="story">
-        <a class="story-link" href="turvallisuuden-merkitys-vuorovaikutuksessa.html">
-          <figure class="story-thumb">
-            <img src="assets/vuorovaikutus.png" alt="Kuvitus turvallisesta vuorovaikutuksesta" loading="lazy">
-          </figure>
-          <div class="story-body">
-            <h2 class="story-title">Turvallisuuden merkitys vuorovaikutuksessa</h2>
-            <p class="story-meta"><time datetime="2025-10-07">7.10.2025</time></p>
-            <p class="story-excerpt">
-              Hermosto tarvitsee turvallisuutta toimiakseen. Pienet lempeät signaalit mahdollistavat yhteyden ja läsnäolon.
-            </p>
-            <span class="story-cta">Lue koko juttu →</span>
-          </div>
-        </a>
-      </article>
+          <article class="card">
+            <a href="pharrell.html" aria-label="Lue: Piece by Piece – Pharrell ja luottamuksen voima">
+              <div class="card__image">
+                <img src="assets/piecebypiece.png" alt="LEGO-tyylinen kuvitus Pharrellin Piece by Piece -elokuvasta">
+              </div>
+              <div class="card__body">
+                <div class="card__tag">Luottamus</div>
+                <h3>Piece by Piece – Pharrell ja luottamuksen voima</h3>
+                <p>Miten luottamus, sekä muiden että oma, voi muuttaa kaiken. Ajatuksia Pharrellin Piece by Piece -elokuvasta.</p>
+                <span>Lue lisää</span>
+              </div>
+            </a>
+          </article>
 
-      <article class="story">
-        <a class="story-link" href="erilaisen-hermoston-vahvuus.html">
-          <figure class="story-thumb">
-            <img src="assets/hermosto.png" alt="Abstrakti kuvitus hermoston vahvuudesta" loading="lazy">
-          </figure>
-          <div class="story-body">
-            <h2 class="story-title">Mitä jos näemme erilaisen hermoston vahvuutena?</h2>
-            <p class="story-meta"><time datetime="2025-10-07">7.10.2025</time></p>
-            <p class="story-excerpt">
-              Mitä muuttuu, kun herkkyys, vivahteiden havaitseminen ja omat tavat kokea maailmaa nähdään vahvuutena.
-            </p>
-            <span class="story-cta">Lue koko juttu →</span>
-          </div>
-        </a>
-      </article>
+          <article class="card">
+            <a href="turvallisuuden-merkitys-vuorovaikutuksessa.html" aria-label="Lue: Turvallisuuden merkitys vuorovaikutuksessa">
+              <div class="card__image">
+                <img src="assets/vuorovaikutus.png" alt="Kuvitus turvallisesta vuorovaikutuksesta">
+              </div>
+              <div class="card__body">
+                <div class="card__tag">Vuorovaikutus</div>
+                <h3>Turvallisuuden merkitys vuorovaikutuksessa</h3>
+                <p>Hermosto tarvitsee turvallisuutta toimiakseen. Pienet lempeät signaalit mahdollistavat yhteyden ja läsnäolon.</p>
+                <span>Lue lisää</span>
+              </div>
+            </a>
+          </article>
 
-      <article class="story">
-        <a class="story-link" href="rohkeus.html">
-          <figure class="story-thumb">
-            <img src="assets/rohkeus.png" alt="Kuvitus rohkeudesta ja kasvusta" loading="lazy">
-          </figure>
-          <div class="story-body">
-            <h2 class="story-title">Rohkeus</h2>
-            <p class="story-meta"><time datetime="2025-10-21">21.10.2025</time></p>
-            <p class="story-excerpt">
-              Miten pienet rohkeuden teot voivat muuttaa suuntaa, kun uskaltaa puhua, kokeilla ja ottaa tilaa omana itsenään.
-            </p>
-            <span class="story-cta">Lue koko juttu →</span>
-          </div>
-        </a>
-      </article>
+          <article class="card">
+            <a href="erilaisen-hermoston-vahvuus.html" aria-label="Lue: Mitä jos näemme erilaisen hermoston vahvuutena">
+              <div class="card__image">
+                <img src="assets/hermosto.png" alt="Abstrakti kuvitus hermoston vahvuudesta">
+              </div>
+              <div class="card__body">
+                <div class="card__tag">Neurodiversiteetti</div>
+                <h3>Mitä jos näemme erilaisen hermoston vahvuutena?</h3>
+                <p>Mitä muuttuu, kun herkkyys, vivahteiden havaitseminen ja omat tavat kokea maailmaa nähdään vahvuutena.</p>
+                <span>Lue lisää</span>
+              </div>
+            </a>
+          </article>
 
+          <article class="card">
+            <a href="rohkeus.html" aria-label="Lue: Rohkeus">
+              <div class="card__image">
+                <img src="assets/rohkeus.png" alt="Kuvitus rohkeudesta ja kasvusta">
+              </div>
+              <div class="card__body">
+                <div class="card__tag">Kasvu</div>
+                <h3>Rohkeus</h3>
+                <p>Miten pienet rohkeuden teot voivat muuttaa suuntaa, kun uskaltaa puhua, kokeilla ja ottaa tilaa omana itsenään.</p>
+                <span>Lue lisää</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container"><small>© <span id="year"></span> Kimaltaen</small></div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>Kimaltaen</div>
+      <div>Neurovähemmistöihin liittyviä kokemuksia, ajatuksia ja tietoa.</div>
+    </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.km-sub-toggle');
-      const openItems = document.querySelectorAll('.km-has-sub.km-open');
-
-      if (btn) {
-        const li = btn.closest('.km-has-sub');
-        const isOpen = li.classList.toggle('km-open');
-        btn.setAttribute('aria-expanded', String(isOpen));
-
-        openItems.forEach(el => {
-          if (el !== li) {
-            el.classList.remove('km-open');
-            const t = el.querySelector('.km-sub-toggle');
-            if (t) t.setAttribute('aria-expanded', 'false');
-          }
-        });
-
-        if (isOpen) {
-          const first = li.querySelector('.km-sub a');
-          setTimeout(() => first && first.focus(), 0);
-        }
-
-        e.stopPropagation();
-      } else {
-        openItems.forEach(el => {
-          el.classList.remove('km-open');
-          const t = el.querySelector('.km-sub-toggle');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.km-has-sub.km-open').forEach(el => {
-          el.classList.remove('km-open');
-          const t = el.querySelector('.km-sub-toggle');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-  </script>
 </body>
 </html>
