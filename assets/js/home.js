@@ -30,8 +30,7 @@
       <article class="card">
         <a href="${escapeHtml(item.href)}" aria-label="Lue: ${escapeHtml(item.title)}">
           <div class="card__image">
-            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || '')}">
-          </div>
+<img class="${item.imageClass ? escapeHtml(item.imageClass) : ''}" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || '')}"></div>
           <div class="card__body">
             ${item.tag ? `<div class="card__tag">${escapeHtml(item.tag)}</div>` : ''}
             <h3>${escapeHtml(item.title)}</h3>
