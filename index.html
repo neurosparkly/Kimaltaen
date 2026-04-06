@@ -3,341 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kimaltaen" />
-  <style>
-    :root {
-      --bg: #fcf8fd;
-      --surface: rgba(255,255,255,0.82);
-      --surface-strong: #ffffff;
-      --text: #2f2234;
-      --muted: #6e6172;
-      --brand: #8b57a1;
-      --brand-2: #d58ed7;
-      --line: #eadcf0;
-      --shadow: 0 10px 30px rgba(91, 52, 101, 0.08);
-      --radius: 24px;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(213, 142, 215, 0.25), transparent 28%),
-        radial-gradient(circle at top right, rgba(139, 87, 161, 0.15), transparent 30%),
-        linear-gradient(180deg, #fff9ff 0%, #f8f2fa 100%);
-      line-height: 1.65;
-    }
-
-    a { color: inherit; }
-
-    img { max-width: 100%; display: block; }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-      background: #fff;
-      padding: 0.85rem 1rem;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .skip-link:focus {
-      left: 1rem;
-      top: 1rem;
-      z-index: 100;
-    }
-
-    .container {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(252, 248, 253, 0.8);
-      border-bottom: 1px solid rgba(234, 220, 240, 0.7);
-    }
-
-    .site-header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .brand__mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: var(--shadow);
-    }
-
-    .nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav a {
-      display: inline-block;
-      padding: 0.7rem 1rem;
-      text-decoration: none;
-      border-radius: 999px;
-      color: var(--muted);
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible {
-      background: rgba(139, 87, 161, 0.08);
-      color: var(--text);
-      outline: none;
-    }
-
-    .hero {
-      padding: 4.5rem 0 3rem;
-    }
-
-    .hero__grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.25rem;
-      align-items: stretch;
-    }
-
-    .panel {
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 2rem;
-      backdrop-filter: blur(16px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(139, 87, 161, 0.08);
-      color: var(--brand);
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.1;
-      margin: 0 0 0.8rem;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      letter-spacing: -0.03em;
-      margin-top: 1rem;
-    }
-
-    .lead {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 58ch;
-      margin: 0;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1.5rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-      outline: none;
-    }
-
-    .button--primary {
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color: #fff;
-    }
-
-    .button--secondary {
-      background: #fff;
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-
-    .hero-card-list {
-      display: grid;
-      gap: 0.9rem;
-      height: 100%;
-    }
-
-    .mini-card {
-      background: rgba(255,255,255,0.75);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 1.1rem;
-    }
-
-    .mini-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .section {
-      padding: 1.2rem 0 3rem;
-    }
-
-    .section__head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .section__head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 50ch;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1.35rem;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 1.15rem;
-    }
-
-    .card p {
-      margin: 0 0 1rem;
-      color: var(--muted);
-    }
-
-    .card a {
-      text-decoration: none;
-      font-weight: 700;
-      color: var(--brand);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .quote {
-      font-size: 1.4rem;
-      line-height: 1.4;
-      margin: 0;
-    }
-
-    .footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-    }
-
-    .footer__inner {
-      border-top: 1px solid var(--line);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-      .hero__grid,
-      .cards,
-      .split {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .site-header__inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .panel {
-        padding: 1.35rem;
-      }
-
-      .hero {
-        padding-top: 2rem;
-      }
-
-      h1 {
-        font-size: clamp(2.2rem, 12vw, 3.2rem);
-      }
-    }
-  </style>
+  <title>Kimaltaen</title>
+  <meta name="description" content="Lempeä tila neurovähemmistöihin liittyville kokemuksille, ajatuksille ja tiedolle." />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/site-data.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Siirry sisältöön</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <span class="brand__mark" aria-hidden="true"></span>
         <span>Kimaltaen</span>
       </a>
       <nav class="nav" aria-label="Päänavigaatio">
         <ul>
           <li><a href="#uusimmat">Uusimmat</a></li>
-          <li><a href="#teemat">Teemat</a></li>
-          <li><a href="#tietoa">Tietoa</a></li>
-          <li><a href="#yhteys">Ota yhteyttä</a></li>
+          <li><a href="#aiheet">Aiheet</a></li>
+          <li><a href="#tietoa">Mikä Kimaltaen on</a></li>
+          <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
         </ul>
       </nav>
     </div>
@@ -347,31 +34,18 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="panel">
-          <span class="eyebrow">Kimaltaen</span>
+          <span class="eyebrow">Neurovähemmistöt. Kokemus. Tieto.</span>
           <h1>Kimaltaen</h1>
-          <p class="lead">Lempeä tila neurovähemmistöihin liittyville kokemuksille, ajatuksille ja tiedolle.
-            Kimaltaen kokoaa yhteen tekstejä neurodiversiteetistä, arjen kokemuksista, kuormituksesta, turvallisuudesta ja vuorovaikutuksesta.
-            Täällä tieto ja kokemus kulkevat rinnakkain. Kaikkea ei tarvitse osata selittää heti. Joskus riittää, että jokin tuntuu tutulta.</p>
+          <p class="lead">Lempeä tila neurovähemmistöihin liittyville kokemuksille, ajatuksille ja tiedolle.</p>
+          <p>Kimaltaen kokoaa yhteen tekstejä neurodiversiteetistä, arjen kokemuksista, kuormituksesta, turvallisuudesta ja vuorovaikutuksesta.</p>
+          <p>Täällä tieto ja kokemus kulkevat rinnakkain. Kaikkea ei tarvitse osata selittää heti. Joskus riittää, että jokin tuntuu tutulta.</p>
           <div class="actions">
             <a class="button button--primary" href="#uusimmat">Lue uusimmat tekstit</a>
-            <a class="button button--secondary" href="#teemat">Tutustu teemoihin</a>
+            <a class="button button--secondary" href="#aiheet">Tutustu aiheisiin</a>
           </div>
         </div>
 
-        <div class="hero-card-list">
-          <div class="mini-card">
-            <h3>Tunnistamista ja oivalluksia</h3>
-            <p>Tekstejä hetkistä, joissa oma kokemus alkaa vähitellen saada sanoja.</p>
-          </div>
-          <div class="mini-card">
-            <h3>Tietoa ja näkökulmia</h3>
-            <p>Selkeitä tekstejä ilmiöistä, käsitteistä ja tavoista ymmärtää neurodiversiteettiä arvostavasti.</p>
-          </div>
-          <div class="mini-card">
-            <h3>Turvaa ja ymmärrystä</h3>
-            <p>Pohdintoja siitä, miten turvallisuus vaikuttaa oloon, yhteyteen ja kohtaamiseen.</p>
-          </div>
-        </div>
+        <div class="hero-card-list" id="home-highlights"></div>
       </div>
     </section>
 
@@ -380,85 +54,34 @@
         <div class="section__head">
           <div>
             <h2>Uusimmat tekstit</h2>
-            <p>Etusivulle riittää muutama vahva nosto. Näin kävijä näkee heti, mistä aloittaa.</p>
+            <p>Täältä löydät uusimmat kirjoitukset ja pohdinnat.</p>
           </div>
         </div>
-        <div class="cards">
-          <article class="card">
-            <h3>Maskaamisesta näkyväksi</h3>
-            <p>Miltä tuntuu, kun oma tapa olla alkaa tulla näkyväksi myös itselle.</p>
-            <a href="#">Lue teksti</a>
-          </article>
-          <article class="card">
-            <h3>Turvallisuuden merkitys vuorovaikutuksessa</h3>
-            <p>Yhteys syntyy turvasta, tilasta ja ymmärretyksi tulemisesta.</p>
-            <a href="#">Lue teksti</a>
-          </article>
-          <article class="card">
-            <h3>Erilaisen hermoston vahvuus</h3>
-            <p>Mitä muuttuu, kun erilaisuutta katsotaan arvostavasti.</p>
-            <a href="#">Lue teksti</a>
-          </article>
-        </div>
+        <div class="cards" id="featured-posts"></div>
       </div>
     </section>
 
-    <section class="section" id="teemat">
+    <section class="section" id="aiheet">
       <div class="container">
         <div class="section__head">
           <div>
-            <h2>Teemat</h2>
-            <p>Sisällöt kannattaa ryhmitellä teemoihin. Se helpottaa löytämistä ja tekee sivustosta uskottavamman.</p>
+            <h2>Aiheet</h2>
+            <p>Voit tutustua sisältöihin myös aiheiden kautta.</p>
           </div>
         </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Turva ja vuorovaikutus</h3>
-            <p>Miten turvallisuus vaikuttaa oloon, yhteyteen ja kohtaamiseen.</p>
-          </div>
-          <div class="card">
-            <h3>Neurodiversiteetti arjessa</h3>
-            <p>Ajatuksia erilaisista tavoista kokea, toimia ja olla maailmassa.</p>
-          </div>
-          <div class="card">
-            <h3>Kokemukset ja tunnistaminen</h3>
-            <p>Kirjoituksia oivalluksista, kuormituksesta, helpotuksesta ja näkyväksi tulemisesta.</p>
-          </div>
-        </div>
+        <div class="cards" id="topic-cards"></div>
       </div>
     </section>
 
     <section class="section" id="tietoa">
       <div class="container split">
         <div class="panel">
-          <h2>Mikä muuttuu tässä uudistuksessa</h2>
-          <p>Vanhan sivun vahvuus on lämmin tunnelma. Uudistuksessa sitä ei poisteta. Sen ympärille rakennetaan vain selkeämpi rakenne, vahvempi typografia ja rauhallisempi visuaalinen rytmi.</p>
-          <p>Tavoite on tehdä sivusta yhtä aikaa henkilökohtainen, uskottava ja helpommin ylläpidettävä.</p>
+          <h2>Mikä Kimaltaen on</h2>
+          <p>Kimaltaen on paikka, jossa neurovähemmistöihin liittyviä kokemuksia ja ilmiöitä käsitellään lempeästi, selkeästi ja arvostavasti.</p>
+          <p>Täällä saa pohtia omaa kokemusta, löytää sanoja tutuille tunteille ja pysähtyä sellaisten aiheiden äärelle, jotka koskettavat monia mutta jäävät usein liian vähälle tilalle.</p>
+          <p>Tavoitteena on lisätä ymmärrystä, vahvistaa tunnistamista ja tehdä näkyväksi sitä, että erilaiset tavat olla ja kokea kuuluvat maailmaan.</p>
         </div>
         <div class="panel">
-          <p class="quote">Kaikkea ei tarvitse sanoa kerralla. Hyvä etusivu kutsuu sisään. Hyvä alasivu kantaa ajatuksen loppuun.</p>
+          <p class="quote">Et ole liikaa. Et ole vääränlainen. Jos jokin täällä tuntuu tutulta, olet oikeassa paikassa.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="yhteys">
-      <div class="container">
-        <div class="panel">
-          <h2>Ota yhteyttä</h2>
-          <p>Jos haluat kysyä, kommentoida tai ehdottaa aihetta.</p>
-          <div class="actions">
-            <a class="button button--primary" href="#">Siirry yhteydenottoon</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>Kimaltaen</div>
-      <div>Neurovähemmistöihin liittyviä kokemuksia, ajatuksia ja tietoa.</div>
-    </div>
-  </footer>
-</body>
 </html>
