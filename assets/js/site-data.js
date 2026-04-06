@@ -14,14 +14,15 @@ window.KIMALTAEN_HOME = {
     }
   ],
   featured: [
-    {
-      title: 'Maskaamisesta näkyväksi',
-      excerpt: 'Miltä tuntuu, kun oma tapa olla alkaa tulla näkyväksi myös itselle.',
-      href: 'maskaamisesta-nakyvaksi.html',
-      image: 'assets/lego-mina.png',
-      imageAlt: 'Lego-hahmo, joka kuvastaa näkyväksi tulemista ja oman itsen tunnistamista.',
-      tag: 'Kokemus'
-    },
+{
+  title: 'Maskaamisesta näkyväksi',
+  excerpt: 'Miltä tuntuu, kun oma tapa olla alkaa tulla näkyväksi myös itselle.',
+  href: 'maskaamisesta-nakyvaksi.html',
+  image: 'assets/lego-mina.png',
+  imageAlt: 'Lego-hahmo, joka kuvastaa näkyväksi tulemista ja oman itsen tunnistamista.',
+  imageClass: 'face-focus',
+  tag: 'Kokemus'
+},
     {
       title: 'Turvallisuuden merkitys vuorovaikutuksessa',
       excerpt: 'Yhteys syntyy turvasta, tilasta ja ymmärretyksi tulemisesta.',
